@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="가상메모리(Virtual Memory System) 가상 메모리 또는 가상 기억 장치는 RAM을 관리하는 방법의 하나로, 각 프로그램에 실제 메모리 주소가 아닌 가상의 메모리 주소를 주는 방식을 말한다.   폰노이만 구조(현 컴퓨터 구조) 폰노이만이 제안한 구조 Memory에 프로그램과 데이터가 저장 하나씩 꺼내어 CPU:Arithmetic Logic Un">
+<meta name="keywords" content="Develop,Computer Science">
+<meta property="og:type" content="article">
+<meta property="og:title" content="가상메모리">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;08&#x2F;%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC&#x2F;index.html">
+<meta property="og:site_name" content="hongbeen&#39;s blog">
+<meta property="og:description" content="가상메모리(Virtual Memory System) 가상 메모리 또는 가상 기억 장치는 RAM을 관리하는 방법의 하나로, 각 프로그램에 실제 메모리 주소가 아닌 가상의 메모리 주소를 주는 방식을 말한다.   폰노이만 구조(현 컴퓨터 구조) 폰노이만이 제안한 구조 Memory에 프로그램과 데이터가 저장 하나씩 꺼내어 CPU:Arithmetic Logic Un">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81396706-d8e51080-9160-11ea-8b81-8097615afdd7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81396727-dedaf180-9160-11ea-8749-df6a6b147f6b.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81396741-e8fcf000-9160-11ea-9160-0b61c3758891.png">
+<meta property="og:updated_time" content="2020-05-08T10:22:37.880Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81396706-d8e51080-9160-11ea-8b81-8097615afdd7.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/08/%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>가상메모리 | hongbeen's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hongbeen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Beginner Developer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/08/%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          가상메모리
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-08 19:15:48 / Modified: 19:22:37" itemprop="dateCreated datePublished" datetime="2020-05-08T19:15:48+09:00">2020-05-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">운영체제</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="가상메모리-Virtual-Memory-System"><a href="#가상메모리-Virtual-Memory-System" class="headerlink" title="가상메모리(Virtual Memory System)"></a>가상메모리(Virtual Memory System)</h2><blockquote>
+<p><strong>가상 메모리</strong> 또는 <strong>가상 기억 장치</strong>는 <a href="https://ko.wikipedia.org/wiki/랜덤_액세스_메모리" target="_blank" rel="noopener">RAM</a>을 관리하는 방법의 하나로, 각 프로그램에 실제 메모리 주소가 아닌 가상의 메모리 주소를 주는 방식을 말한다.</p>
+</blockquote>
+<hr>
+<h3 id="폰노이만-구조-현-컴퓨터-구조"><a href="#폰노이만-구조-현-컴퓨터-구조" class="headerlink" title="폰노이만 구조(현 컴퓨터 구조)"></a>폰노이만 구조(현 컴퓨터 구조)</h3><ul>
+<li>폰노이만이 제안한 구조</li>
+<li>Memory에 프로그램과 데이터가 저장</li>
+<li>하나씩 꺼내어 CPU:Arithmetic Logic Unit으로 연산</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/81396706-d8e51080-9160-11ea-8b81-8097615afdd7.png" alt="image-20200225003829369"></p>
+<h3 id="폰노이만-구조는-CPU-메모리-프로그램으로-구성"><a href="#폰노이만-구조는-CPU-메모리-프로그램으로-구성" class="headerlink" title="폰노이만 구조는 CPU, 메모리, 프로그램으로 구성"></a>폰노이만 구조는 CPU, 메모리, 프로그램으로 구성</h3><ul>
+<li><p>폰노이만 구조 이전: 컴퓨터들은 다른 작업을 하려고 할 때 스위치 설치, 전선 재배치하여 데이터 전송, 신호 처리</p>
+</li>
+<li><p>폰노이만 구조 이후: 소프트웨어만 교체하면 됨</p>
+<hr>
+</li>
+</ul>
+<h3 id="컴퓨터-주요-구성-요소-3가지가-핵심"><a href="#컴퓨터-주요-구성-요소-3가지가-핵심" class="headerlink" title="컴퓨터 주요 구성 요소(3가지가 핵심)"></a>컴퓨터 주요 구성 요소(3가지가 핵심)</h3><ul>
+<li>CPU(중앙처리장치, Central Processor Unit)<ul>
+<li>연산: ALU<ul>
+<li>산술연산: Arithmetic Operation</li>
+<li>논리연산: Login Operation</li>
+</ul>
+</li>
+<li>제어: Control Device<ul>
+<li>IO Device(입출력장치), Memory, ALU동작 제어</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Memory(<em>코드</em> 와 <em>데이터</em> 를 저장하는 장치)<ul>
+<li>프로그램과 프로그램수행에 필요한 데이터를 저장</li>
+<li>내부 기억장치(주기억장치)<ul>
+<li>CPU안에 레지스터, 캐쉬</li>
+<li>DRAM등 메모리(램, RAM, DDR4)</li>
+</ul>
+</li>
+<li>외부 기억장치(보고기억장치)<ul>
+<li>SSD, HDD</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IO Device(입출력 장치)<ul>
+<li>입력장치: 마우스, 키보드, 터치패스 등</li>
+<li>출력장치: 모니터, 프린터, 스피커 등</li>
+</ul>
+</li>
+<li>Bus(버스)<ul>
+<li>CPU, Memory, IO Devices를 연결해주는 장치</li>
+<li>개별적인 IO Devices들을 연결해주고 데이터를 송소신해주는 장치</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/81396727-dedaf180-9160-11ea-8749-df6a6b147f6b.png" alt="image-20200225004640343"></p>
+<hr>
+<h3 id="가상-메모리가-필요한-이유"><a href="#가상-메모리가-필요한-이유" class="headerlink" title="가상 메모리가 필요한 이유"></a>가상 메모리가 필요한 이유</h3><ul>
+<li>하나의 프로세스만 실행 가능한 시스템(배치 처리 시스템등)<ul>
+<li>프로그램을 메모리로 로드</li>
+<li>프로세스 실행</li>
+<li>프로세스 종료(메모리 해체)</li>
+</ul>
+</li>
+<li>여러 프로세스 동시 실행 시스템<ul>
+<li>메모리 용량 부족 이슈</li>
+<li>프로세스 메모리 영역간에 침범 이슈</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="가상-메모리"><a href="#가상-메모리" class="headerlink" title="가상 메모리"></a>가상 메모리</h3><ul>
+<li>가상 메모리: 메모리가 실제 메모리보다 많아보이게 하는 기술<ul>
+<li>실제 사용하는 메모리는 작다는 점에 착안해서 고안된 기술</li>
+<li>프로세스간 공간 분리로, 프로세스 이슈가 전체 시스템에 영향을 주지 않을 수 있음</li>
+</ul>
+</li>
+<li>가상 메모리 기본 아이디어<ul>
+<li>프로세스는 가상 주소를 사용하고, 실제 해당 주소에서 데이터를 읽고/사용할때만 물리 주소로 바꿔주면 된다.</li>
+<li>virtual address(가상 주소): 프로세스가 참조하는 주소</li>
+<li>physical address(물리 주소): 실제 메모리 주소</li>
+</ul>
+</li>
+<li>MMU(Memory Management Unit)<ul>
+<li>CPU에 코드 실행시, 가상 주소 메모리 접근이 필요할 때, 해당 주소를 물리 주소값으로 변환해주는 하드웨어 장치</li>
+</ul>
+</li>
+<li>메인 메모리에 실제 각 프로세스의 데이터가 조각으로 씌여 있다.</li>
+</ul>
+<hr>
+<h3 id="가상-메모리와-MMU"><a href="#가상-메모리와-MMU" class="headerlink" title="가상 메모리와 MMU"></a>가상 메모리와 MMU</h3><ul>
+<li>CPU는 가상 메모리를 다루고,실제 해당 주소 접근시 MMU하드웨어 장치를 통해 물리 메모리 접근<ul>
+<li>하드웨어 장치를 이용해야 주소 변환이 빠르기 때문에 별도 장치를 둠</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/81396741-e8fcf000-9160-11ea-9160-0b61c3758891.png" alt="image-20200225005343513"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Develop/" rel="tag"># Develop</a>
+              <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/05/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4,%EC%93%B0%EB%A0%88%EB%93%9C/" rel="prev" title="프로세스,쓰레드">
+      <i class="fa fa-chevron-left"></i> 프로세스,쓰레드
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#가상메모리-Virtual-Memory-System"><span class="nav-number">1.</span> <span class="nav-text">가상메모리(Virtual Memory System)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#폰노이만-구조-현-컴퓨터-구조"><span class="nav-number">1.1.</span> <span class="nav-text">폰노이만 구조(현 컴퓨터 구조)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#폰노이만-구조는-CPU-메모리-프로그램으로-구성"><span class="nav-number">1.2.</span> <span class="nav-text">폰노이만 구조는 CPU, 메모리, 프로그램으로 구성</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#컴퓨터-주요-구성-요소-3가지가-핵심"><span class="nav-number">1.3.</span> <span class="nav-text">컴퓨터 주요 구성 요소(3가지가 핵심)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상-메모리가-필요한-이유"><span class="nav-number">1.4.</span> <span class="nav-text">가상 메모리가 필요한 이유</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상-메모리"><span class="nav-number">1.5.</span> <span class="nav-text">가상 메모리</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상-메모리와-MMU"><span class="nav-number">1.6.</span> <span class="nav-text">가상 메모리와 MMU</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hong been Park</p>
+  <div class="site-description" itemprop="description">불타는 열정보단 지속적인 열정</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hong been Park</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
