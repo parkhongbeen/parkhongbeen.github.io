@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/04/python_string/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -165,7 +165,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/12/04/python_string/" class="post-title-link" itemprop="url">python_string</a>
+            <a href="/2020/05/11/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" class="post-title-link" itemprop="url">운영체제</a>
         </h1>
 
         <div class="post-meta">
@@ -174,23 +174,21 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-12-04 19:00:00" itemprop="dateCreated datePublished" datetime="2020-12-04T19:00:00+09:00">2020-12-04</time>
+              <time title="Created: 2020-05-11 19:47:17 / Modified: 19:49:12" itemprop="dateCreated datePublished" datetime="2020-05-11T19:47:17+09:00">2020-05-11</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-08 19:31:11" itemprop="dateModified" datetime="2020-05-08T19:31:11+09:00">2020-05-08</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">운영체제</span></a>
                 </span>
             </span>
 
@@ -205,140 +203,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://user-images.githubusercontent.com/53684676/70052968-cc8be300-1617-11ea-9fba-d37cc5f16605.jpg" alt="문자열"></h2><blockquote>
-<p>파이썬3에서는 문자열에서 기본적으로 유니코드를 사용하며, 불변하다</p>
-</blockquote>
-<h3 id="문자열-표현"><a href="#문자열-표현" class="headerlink" title="문자열 표현"></a>문자열 표현</h3><p><strong>작은 따옴표 또는 큰 따옴표</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'패스트캠퍼스'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'패스트캠퍼스'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"패스트캠퍼스"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string">'패스트캠퍼스'</span></span></pre></td></tr></table></figure>
-
-<p>작은 따옴표 또는 큰 따옴표를 사용했을 때, 사용하지 않은 인용 부호는 문자열 내부에서 사용 가능하다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'패스트캠퍼스 "웹 프로그래밍 스쿨"'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'패스트캠퍼스 "웹 프로그래밍 스쿨"'</span></span></pre></td></tr></table></figure>
-
-<p><strong>세 개의 작은 따옴표 또는 큰 따옴표</strong></p>
-<p>여러줄에 걸친 문자열을 나타낼 때 사용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'''소환사 여러분.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span>7.1 패치를 소개합니다.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span>앞으로 있을 여러 번의 패치에 대해서는 차차...</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span>하지만 그렇다고 이번 패치가 하향....</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span>정의의 전장에서 승리를 기원합니다.'''</span></span></pre></td></tr></table></figure>
-
-<h3 id="문자열-더하기"><a href="#문자열-더하기" class="headerlink" title="문자열 더하기"></a>문자열 더하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>notice = <span class="string">''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>notice += <span class="string">'공지사항'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>notice += <span class="string">'(패치노트)'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>notice += <span class="string">': 7.1 패치노트'</span></span></pre></td></tr></table></figure>
-
-<h3 id="형변환"><a href="#형변환" class="headerlink" title="형변환"></a>형변환</h3><p>내장함수 str을 사용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>str(<span class="number">147</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'147'</span></span></pre></td></tr></table></figure>
-
-<p>문자열을 제외한 객체를 <code>print</code> 함수로 호출하면, 내부적으로 <code>str</code> 함수를 사용한 결과를 나타내준다.</p>
-<h3 id="이스케이프-문자"><a href="#이스케이프-문자" class="headerlink" title="이스케이프 문자"></a>이스케이프 문자</h3><p>특수문자,또는 특별한  역할을 하는 의미를 나타내는 문자를 뜻한다.</p>
-<table>
-<thead>
-<tr>
-<th align="center">이스케이프 문자</th>
-<th align="center">설명</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">\a</td>
-<td align="center">비프음 발생</td>
-</tr>
-<tr>
-<td align="center">\t</td>
-<td align="center">탭(tab)</td>
-</tr>
-<tr>
-<td align="center">\n</td>
-<td align="center">줄바꿈</td>
-</tr>
-<tr>
-<td align="center">\</td>
-<td align="center">(역슬래시)입력</td>
-</tr>
-<tr>
-<td align="center">&#39;</td>
-<td align="center">작은따옴표(‘)입력</td>
-</tr>
-<tr>
-<td align="center">&quot;</td>
-<td align="center">큰따옴표(“)입력</td>
-</tr>
-</tbody></table>
-<h3 id="인덱스-연산"><a href="#인덱스-연산" class="headerlink" title="인덱스 연산"></a>인덱스 연산</h3><p>문자열에서 문자를 추출하기 위해 대괄호와 오프셋을 지정할 수 있다.가장 왼쪽은 0이며,가장 오른쪽은 -1로 시작한다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux = <span class="string">'빛으로 강타해요!'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux[<span class="number">0</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="string">'빛'</span></span></pre></td></tr></table></figure>
-
-<p>문자열은 불변이므로 인덱싱한 부분에 새 값을 대입할 수 없다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux[<span class="number">0</span>] = <span class="string">'손'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">TypeError: <span class="string">'str'</span> object does <span class="keyword">not</span> support item assignment</span></pre></td></tr></table></figure>
-
-<h3 id="슬라이스-연산"><a href="#슬라이스-연산" class="headerlink" title="슬라이스 연산"></a>슬라이스 연산</h3><p><strong><code>[start:end:step]</code></strong> 형식을 사용한다.</p>
-<ul>
-<li><pre><code>[:]
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - 처음부터 끝까지</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">-</span></pre></td></tr></table></figure>
-[start:]
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - start오프셋부터 마지막까지</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">-</span></pre></td></tr></table></figure>
-[:end]
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - 처음부터 end오프셋까지</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">-</span></pre></td></tr></table></figure>
-[start:end]
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - start오프셋부터 end오프셋까지</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">-</span></pre></td></tr></table></figure>
-[start:end:step]
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - start오프셋부터 end오프셋까지, step만큼씩 뛰어넘은 부분</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">### 길이</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">내장함수 &#96;&#96;len&#96;&#96; 을 사용</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">### 문자열 나누기(split)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">문자열의 내장함수 split을 사용</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">split함수에 인자로 주어진 구분자를 기준으로 하나의 문자열을 리스트 형태로 반환해준다.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;python</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; girlsday &#x3D; &quot;민아,유라,소진,혜리&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; girlsday.split(&#39;,&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">[&#39;민아&#39;, &#39;유라&#39;, &#39;소진&#39;, &#39;혜리&#39;]</span></pre></td></tr></table></figure>
-</code></pre></li>
+          <h2 id="운영체제란-OS-Operating-System"><a href="#운영체제란-OS-Operating-System" class="headerlink" title="운영체제란? OS(Operating System)"></a>운영체제란? OS(Operating System)</h2><hr>
+<p>주요 운영체제: 윈도우, 리눅스/UNIX, MacOS</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/81550658-89e6e780-93bb-11ea-84fc-d0ab3e262244.png" alt="image-20200216211643366"></p>
+<h3 id="운영체제는-사용자-인터페이스-제공-쉘-shell"><a href="#운영체제는-사용자-인터페이스-제공-쉘-shell" class="headerlink" title="운영체제는 사용자 인터페이스 제공: 쉘(shell)"></a>운영체제는 사용자 인터페이스 제공: 쉘(shell)</h3><p>사용자가 운영 체제 기능과 서비스를 조작할 수 있도록 인터페이스를 제공하는 프로그램</p>
+<h3 id="운영체제는-응용-프로그램-인터페이스-제공-시스템-콜-System-Call"><a href="#운영체제는-응용-프로그램-인터페이스-제공-시스템-콜-System-Call" class="headerlink" title="운영체제는 응용 프로그램 인터페이스 제공:시스템 콜(System Call)"></a>운영체제는 응용 프로그램 인터페이스 제공:시스템 콜(System Call)</h3><p>시스템 콜 또는 시스템 호출 인터페이스<br>운영체제가 각 기능을 사용할 수 있도록 시스템 콜이라는 명령 또는 함수를 제공 API내부에는 시스템콜을 호출하는 형태로 만들어지는 경우가 대부분</p>
+<h3 id="운영체제를-만든다면"><a href="#운영체제를-만든다면" class="headerlink" title="운영체제를 만든다면?"></a>운영체제를 만든다면?</h3><p>운영체제를 개발한다.(kernel)<br>시스템 콜을 개발<br>프로그래밍 언어별 시스템콜 기반,라이브러리 개발(API)<br>프로그래밍 언어 기반 Shell프로그램 개발<br>프로그래밍 언어 기반, 응용 프로그램 개발</p>
+<h3 id="사용자-모드와-커널-모드"><a href="#사용자-모드와-커널-모드" class="headerlink" title="사용자 모드와 커널 모드"></a>사용자 모드와 커널 모드</h3><p>함부로 응용 프로그램이 전체 컴퓨터 시스템을 헤치지 못함</p>
+<h3 id="시스템콜은-커널-모드로-실행"><a href="#시스템콜은-커널-모드로-실행" class="headerlink" title="시스템콜은 커널 모드로 실행"></a>시스템콜은 커널 모드로 실행</h3><p>커널 모드에서만 실행 가능한 기능들이 있음</p>
+<p>커널 모드로 실행하려면, 반드시 시스템 콜을 사용해야 함(거쳐야 함) / 시스템 콜은 운영체제 제공</p>
+<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><ul>
+<li>운영 체제는 <em>시스템 콜</em> 제공</li>
+<li>프로그래밍 언어별 운영체제 지원을 위해,운영체제 별 <em>API</em>제공</li>
+<li>응용 프로그램 개발시 운영체제 기능이 필요한 경우, 해당<em>API</em>를 사용해서 프로그램 작성</li>
+<li>응용 프로그램 실행시, 해당 API를 호출하면, 시스템 콜 호출,<em>커널 모드로 변경 후,</em> OS내부에서 해당 명령이 실행되고, 응용 프로그램에 결과 리턴</li>
 </ul>
-<p><strong>split</strong> 함수에 인자를 주지 않을 경우, 공백문자를 구분자로 사용한다.</p>
-<h3 id="문자열결합-join"><a href="#문자열결합-join" class="headerlink" title="문자열결합(join)"></a>문자열결합(join)</h3><p><strong>split</strong>함수와 반대의 역할을 한다.</p>
-<p>문자열 리스트를 하나의 문자열로 결합해주며,각 문자열을 결합해줄 구분자 문자열을 지정한 후 join함수를 사용해준다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>girlsday_list = girlsday.split(<span class="string">','</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>girlsday_str = <span class="string">', '</span>.join(girlsday_list)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(girlsday_str)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">민아, 유라, 소진, 혜리</span></pre></td></tr></table></figure>
-
-<h3 id="대소문자-다루기"><a href="#대소문자-다루기" class="headerlink" title="대소문자 다루기"></a>대소문자 다루기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux = <span class="string">'lux, the Lady of Luminosity'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.capitalize()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="string">'Lux, the lady of luminosity'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.title()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="string">'Lux, The Lady Of Luminosity'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.upper()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="string">'LUX, THE LADY OF LUMINOSITY'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.lower()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="string">'lux, the lady of luminosity'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.swapcase()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="string">'LUX, THE lADY OF lUMINOSITY'</span></span></pre></td></tr></table></figure>
-
-<h3 id="문자열-포맷"><a href="#문자열-포맷" class="headerlink" title="문자열 포맷"></a>문자열 포맷</h3><p><strong>옛 스타일( %)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">string % data</span></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>변환타입</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%s</td>
-<td>문자열</td>
-</tr>
-<tr>
-<td>%d</td>
-<td>10진수</td>
-</tr>
-<tr>
-<td>%x</td>
-<td>16진수</td>
-</tr>
-<tr>
-<td>%o</td>
-<td>8진수</td>
-</tr>
-<tr>
-<td>%f</td>
-<td>10진 부동소수점수</td>
-</tr>
-<tr>
-<td>%e</td>
-<td>지수로 나타낸 부동소수점수</td>
-</tr>
-<tr>
-<td>%g</td>
-<td>10진 부동소수점수 혹은 지수로 나타낸 부동소수점수</td>
-</tr>
-<tr>
-<td>%%</td>
-<td>리터럴 %</td>
-</tr>
-</tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'%s'</span> % <span class="number">42</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'42'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'%d x %d : %d'</span> % (<span class="number">3</span>, <span class="number">4</span>, <span class="number">12</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string">'3 x 4 : 12'</span></span></pre></td></tr></table></figure>
-
-<p><strong>새 스타일 ({}, format)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;&#125;.format(변수)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 기본형태</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;&#125; &#123;&#125; &#123;&#125;'</span>.format(d, f, s)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string">'37 3.14 Fastcampus'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 각 인자의 순서를 지정</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;1&#125; &#123;2&#125; &#123;0&#125;'</span>.format(d, f, s)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="string">'3.14 Fastcampus 37'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 각 인자에 이름을 지정</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;d&#125; &#123;f&#125; &#123;s&#125;'</span>.format(d=<span class="number">50</span>, f=<span class="number">1.432</span>, s=<span class="string">'WPS'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="string">'50 1.432 WPS'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 딕셔너리로부터 변수 할당</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;<span class="string">'d'</span>: d, <span class="string">'f'</span>: f, <span class="string">'s'</span>: s&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0[d]&#125; &#123;0[f]&#125; &#123;0[s]&#125; &#123;1&#125;'</span>.format(dict, <span class="string">'WPS'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="string">'37 3.14 Fastcampus WPS'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 타입 지정자 입력</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:d&#125; &#123;:f&#125; &#123;:s&#125;'</span>.format(d, f, s)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="string">'37 3.140000 Fastcampus'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 이름과 타입지정자를 모두 사용</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;digit:d&#125; &#123;float:f&#125; &#123;string:s&#125;'</span>.format(digit=<span class="number">700</span>, float=<span class="number">1.4323</span>, string=<span class="string">'Welcome'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"><span class="string">'700 1.432300 Welcome'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 필드길이 10, 우측정렬</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"><span class="string">'        37'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:&gt;10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line"><span class="string">'        37'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 필드길이 10, 좌측정렬</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:&lt;10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line"><span class="string">'37        '</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 필드길이 10, 가운데 정렬</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:^10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line"><span class="string">'    37    '</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 필드길이 10, 가운데 정렬, 빈 공간은 ~로 채움</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:~^10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line"><span class="string">'~~~~37~~~~'</span></span></pre></td></tr></table></figure>
-
-<p><code>f</code> 표현법</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="string">f'<span class="subst">&#123;변수 또는 표현식&#125;</span>'</span><span class="string">'</span></span></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 기본 형태</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">apple = <span class="string">'사과'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">banana = <span class="string">'바나나'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">train = <span class="string">'기차'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="string">f'<span class="subst">&#123;apple&#125;</span>는 맛있어 맛있으면 <span class="subst">&#123;banana&#125;</span> <span class="subst">&#123;banana&#125;</span>는 길어 길면 <span class="subst">&#123;train&#125;</span>'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 옵션 지정</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="string">f'''<span class="subst">&#123;apple:^<span class="number">10</span>&#125;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="subst">&#123;banana:^<span class="number">10</span>&#125;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="subst">&#123;train:^<span class="number">10</span>&#125;</span>'''</span></span></pre></td></tr></table></figure>
-
-
-
 
       
     </div>
@@ -835,6 +714,213 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/python_string/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/04/python_string/" class="post-title-link" itemprop="url">python_string</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-12-04 19:00:00" itemprop="dateCreated datePublished" datetime="2019-12-04T19:00:00+09:00">2019-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-11 19:03:03" itemprop="dateModified" datetime="2020-05-11T19:03:03+09:00">2020-05-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://user-images.githubusercontent.com/53684676/70052968-cc8be300-1617-11ea-9fba-d37cc5f16605.jpg" alt="문자열"></h2><blockquote>
+<p>파이썬3에서는 문자열에서 기본적으로 유니코드를 사용하며, 불변하다</p>
+</blockquote>
+<h3 id="문자열-표현"><a href="#문자열-표현" class="headerlink" title="문자열 표현"></a>문자열 표현</h3><p><strong>작은 따옴표 또는 큰 따옴표</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'패스트캠퍼스'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'패스트캠퍼스'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"패스트캠퍼스"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string">'패스트캠퍼스'</span></span></pre></td></tr></table></figure>
+
+<p>작은 따옴표 또는 큰 따옴표를 사용했을 때, 사용하지 않은 인용 부호는 문자열 내부에서 사용 가능하다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'패스트캠퍼스 "웹 프로그래밍 스쿨"'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'패스트캠퍼스 "웹 프로그래밍 스쿨"'</span></span></pre></td></tr></table></figure>
+
+<p><strong>세 개의 작은 따옴표 또는 큰 따옴표</strong></p>
+<p>여러줄에 걸친 문자열을 나타낼 때 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'''소환사 여러분.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span>7.1 패치를 소개합니다.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span>앞으로 있을 여러 번의 패치에 대해서는 차차...</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span>하지만 그렇다고 이번 패치가 하향....</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="meta">... </span>정의의 전장에서 승리를 기원합니다.'''</span></span></pre></td></tr></table></figure>
+
+<h3 id="문자열-더하기"><a href="#문자열-더하기" class="headerlink" title="문자열 더하기"></a>문자열 더하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>notice = <span class="string">''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>notice += <span class="string">'공지사항'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>notice += <span class="string">'(패치노트)'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>notice += <span class="string">': 7.1 패치노트'</span></span></pre></td></tr></table></figure>
+
+<h3 id="형변환"><a href="#형변환" class="headerlink" title="형변환"></a>형변환</h3><p>내장함수 str을 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>str(<span class="number">147</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'147'</span></span></pre></td></tr></table></figure>
+
+<p>문자열을 제외한 객체를 <code>print</code> 함수로 호출하면, 내부적으로 <code>str</code> 함수를 사용한 결과를 나타내준다.</p>
+<h3 id="이스케이프-문자"><a href="#이스케이프-문자" class="headerlink" title="이스케이프 문자"></a>이스케이프 문자</h3><p>특수문자,또는 특별한  역할을 하는 의미를 나타내는 문자를 뜻한다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">이스케이프 문자</th>
+<th align="center">설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\a</td>
+<td align="center">비프음 발생</td>
+</tr>
+<tr>
+<td align="center">\t</td>
+<td align="center">탭(tab)</td>
+</tr>
+<tr>
+<td align="center">\n</td>
+<td align="center">줄바꿈</td>
+</tr>
+<tr>
+<td align="center">\</td>
+<td align="center">(역슬래시)입력</td>
+</tr>
+<tr>
+<td align="center">&#39;</td>
+<td align="center">작은따옴표(‘)입력</td>
+</tr>
+<tr>
+<td align="center">&quot;</td>
+<td align="center">큰따옴표(“)입력</td>
+</tr>
+</tbody></table>
+<h3 id="인덱스-연산"><a href="#인덱스-연산" class="headerlink" title="인덱스 연산"></a>인덱스 연산</h3><p>문자열에서 문자를 추출하기 위해 대괄호와 오프셋을 지정할 수 있다.가장 왼쪽은 0이며,가장 오른쪽은 -1로 시작한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux = <span class="string">'빛으로 강타해요!'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux[<span class="number">0</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="string">'빛'</span></span></pre></td></tr></table></figure>
+
+<p>문자열은 불변이므로 인덱싱한 부분에 새 값을 대입할 수 없다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux[<span class="number">0</span>] = <span class="string">'손'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">TypeError: <span class="string">'str'</span> object does <span class="keyword">not</span> support item assignment</span></pre></td></tr></table></figure>
+
+<h3 id="슬라이스-연산"><a href="#슬라이스-연산" class="headerlink" title="슬라이스 연산"></a>슬라이스 연산</h3><p><strong><code>[start:end:step]</code></strong> 형식을 사용한다.</p>
+<ul>
+<li><pre><code>[:]
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - 처음부터 끝까지</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">-</span></pre></td></tr></table></figure>
+[start:]
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - start오프셋부터 마지막까지</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">-</span></pre></td></tr></table></figure>
+[:end]
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - 처음부터 end오프셋까지</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">-</span></pre></td></tr></table></figure>
+[start:end]
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - start오프셋부터 end오프셋까지</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">-</span></pre></td></tr></table></figure>
+[start:end:step]
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  - start오프셋부터 end오프셋까지, step만큼씩 뛰어넘은 부분</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">### 길이</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">내장함수 &#96;&#96;len&#96;&#96; 을 사용</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">### 문자열 나누기(split)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">문자열의 내장함수 split을 사용</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">split함수에 인자로 주어진 구분자를 기준으로 하나의 문자열을 리스트 형태로 반환해준다.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;python</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; girlsday &#x3D; &quot;민아,유라,소진,혜리&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; girlsday.split(&#39;,&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">[&#39;민아&#39;, &#39;유라&#39;, &#39;소진&#39;, &#39;혜리&#39;]</span></pre></td></tr></table></figure>
+</code></pre></li>
+</ul>
+<p><strong>split</strong> 함수에 인자를 주지 않을 경우, 공백문자를 구분자로 사용한다.</p>
+<h3 id="문자열결합-join"><a href="#문자열결합-join" class="headerlink" title="문자열결합(join)"></a>문자열결합(join)</h3><p><strong>split</strong>함수와 반대의 역할을 한다.</p>
+<p>문자열 리스트를 하나의 문자열로 결합해주며,각 문자열을 결합해줄 구분자 문자열을 지정한 후 join함수를 사용해준다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>girlsday_list = girlsday.split(<span class="string">','</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>girlsday_str = <span class="string">', '</span>.join(girlsday_list)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(girlsday_str)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">민아, 유라, 소진, 혜리</span></pre></td></tr></table></figure>
+
+<h3 id="대소문자-다루기"><a href="#대소문자-다루기" class="headerlink" title="대소문자 다루기"></a>대소문자 다루기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux = <span class="string">'lux, the Lady of Luminosity'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.capitalize()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="string">'Lux, the lady of luminosity'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.title()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="string">'Lux, The Lady Of Luminosity'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.upper()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="string">'LUX, THE LADY OF LUMINOSITY'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.lower()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="string">'lux, the lady of luminosity'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>lux.swapcase()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="string">'LUX, THE lADY OF lUMINOSITY'</span></span></pre></td></tr></table></figure>
+
+<h3 id="문자열-포맷"><a href="#문자열-포맷" class="headerlink" title="문자열 포맷"></a>문자열 포맷</h3><p><strong>옛 스타일( %)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">string % data</span></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>변환타입</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>문자열</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>10진수</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>16진수</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>8진수</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>10진 부동소수점수</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>지수로 나타낸 부동소수점수</td>
+</tr>
+<tr>
+<td>%g</td>
+<td>10진 부동소수점수 혹은 지수로 나타낸 부동소수점수</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>리터럴 %</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'%s'</span> % <span class="number">42</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="string">'42'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'%d x %d : %d'</span> % (<span class="number">3</span>, <span class="number">4</span>, <span class="number">12</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string">'3 x 4 : 12'</span></span></pre></td></tr></table></figure>
+
+<p><strong>새 스타일 ({}, format)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;&#125;.format(변수)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 기본형태</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;&#125; &#123;&#125; &#123;&#125;'</span>.format(d, f, s)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="string">'37 3.14 Fastcampus'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 각 인자의 순서를 지정</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;1&#125; &#123;2&#125; &#123;0&#125;'</span>.format(d, f, s)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="string">'3.14 Fastcampus 37'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 각 인자에 이름을 지정</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;d&#125; &#123;f&#125; &#123;s&#125;'</span>.format(d=<span class="number">50</span>, f=<span class="number">1.432</span>, s=<span class="string">'WPS'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="string">'50 1.432 WPS'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 딕셔너리로부터 변수 할당</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;<span class="string">'d'</span>: d, <span class="string">'f'</span>: f, <span class="string">'s'</span>: s&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;0[d]&#125; &#123;0[f]&#125; &#123;0[s]&#125; &#123;1&#125;'</span>.format(dict, <span class="string">'WPS'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="string">'37 3.14 Fastcampus WPS'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 타입 지정자 입력</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:d&#125; &#123;:f&#125; &#123;:s&#125;'</span>.format(d, f, s)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="string">'37 3.140000 Fastcampus'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 이름과 타입지정자를 모두 사용</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;digit:d&#125; &#123;float:f&#125; &#123;string:s&#125;'</span>.format(digit=<span class="number">700</span>, float=<span class="number">1.4323</span>, string=<span class="string">'Welcome'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"><span class="string">'700 1.432300 Welcome'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 필드길이 10, 우측정렬</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"><span class="string">'        37'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:&gt;10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line"><span class="string">'        37'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 필드길이 10, 좌측정렬</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:&lt;10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line"><span class="string">'37        '</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 필드길이 10, 가운데 정렬</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:^10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line"><span class="string">'    37    '</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 필드길이 10, 가운데 정렬, 빈 공간은 ~로 채움</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:~^10d&#125;'</span>.format(d)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line"><span class="string">'~~~~37~~~~'</span></span></pre></td></tr></table></figure>
+
+<p><code>f</code> 표현법</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="string">f'<span class="subst">&#123;변수 또는 표현식&#125;</span>'</span><span class="string">'</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 기본 형태</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">apple = <span class="string">'사과'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">banana = <span class="string">'바나나'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">train = <span class="string">'기차'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="string">f'<span class="subst">&#123;apple&#125;</span>는 맛있어 맛있으면 <span class="subst">&#123;banana&#125;</span> <span class="subst">&#123;banana&#125;</span>는 길어 길면 <span class="subst">&#123;train&#125;</span>'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 옵션 지정</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="string">f'''<span class="subst">&#123;apple:^<span class="number">10</span>&#125;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="subst">&#123;banana:^<span class="number">10</span>&#125;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="string"><span class="subst">&#123;train:^<span class="number">10</span>&#125;</span>'''</span></span></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
@@ -902,7 +988,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -913,7 +999,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
