@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="가상메모리(Virtual Memory System) 가상 메모리 또는 가상 기억 장치는 RAM을 관리하는 방법의 하나로, 각 프로그램에 실제 메모리 주소가 아닌 가상의 메모리 주소를 주는 방식을 말한다.   폰노이만 구조(현 컴퓨터 구조) 폰노이만이 제안한 구조 Memory에 프로그램과 데이터가 저장 하나씩 꺼내어 CPU:Arithmetic Logic Un">
-<meta name="keywords" content="Develop,Computer Science">
+  <meta name="description" content="교착상태와 기아상태교착상태란? 무한 대기 상태: 두개 이상의 작업이 서로 상대방의 작업이 끝나기만을 기다리고 있기 때문에, 다음 단계로 진행하지 못하는 상태   1번차: a, b가 필요 2번차: b, c가 필요 3번차: c, d가 필요 4번차: a, d가 필요    교착상태 발생 조건 다음 네 가지 조건이 모두 성립될 때, 교착상태 발생 가능성이 있음">
+<meta name="keywords" content="Develop,CS,동기화,교착상태,기아상태">
 <meta property="og:type" content="article">
-<meta property="og:title" content="가상메모리">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;08&#x2F;%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC&#x2F;index.html">
+<meta property="og:title" content="교착상태,기아상태">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;12&#x2F;%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-%EA%B8%B0%EC%95%84%EC%83%81%ED%83%9C&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
-<meta property="og:description" content="가상메모리(Virtual Memory System) 가상 메모리 또는 가상 기억 장치는 RAM을 관리하는 방법의 하나로, 각 프로그램에 실제 메모리 주소가 아닌 가상의 메모리 주소를 주는 방식을 말한다.   폰노이만 구조(현 컴퓨터 구조) 폰노이만이 제안한 구조 Memory에 프로그램과 데이터가 저장 하나씩 꺼내어 CPU:Arithmetic Logic Un">
+<meta property="og:description" content="교착상태와 기아상태교착상태란? 무한 대기 상태: 두개 이상의 작업이 서로 상대방의 작업이 끝나기만을 기다리고 있기 때문에, 다음 단계로 진행하지 못하는 상태   1번차: a, b가 필요 2번차: b, c가 필요 3번차: c, d가 필요 4번차: a, d가 필요    교착상태 발생 조건 다음 네 가지 조건이 모두 성립될 때, 교착상태 발생 가능성이 있음">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81396706-d8e51080-9160-11ea-8b81-8097615afdd7.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81396727-dedaf180-9160-11ea-8749-df6a6b147f6b.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81396741-e8fcf000-9160-11ea-9160-0b61c3758891.png">
-<meta property="og:updated_time" content="2020-05-08T11:01:06.595Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;media.vlpt.us&#x2F;images&#x2F;conatuseus&#x2F;post&#x2F;ea9e61f9-b6d7-4b2d-80c7-07358ce933b0&#x2F;image.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81653406-b4927800-946f-11ea-8c45-d945cac88bd8.png">
+<meta property="og:updated_time" content="2020-05-12T10:50:05.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81396706-d8e51080-9160-11ea-8b81-8097615afdd7.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;media.vlpt.us&#x2F;images&#x2F;conatuseus&#x2F;post&#x2F;ea9e61f9-b6d7-4b2d-80c7-07358ce933b0&#x2F;image.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/08/%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/">
+<link rel="canonical" href="http://yoursite.com/2020/05/12/%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-%EA%B8%B0%EC%95%84%EC%83%81%ED%83%9C/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>가상메모리 | hongbeen's blog</title>
+  <title>교착상태,기아상태 | hongbeen's blog</title>
   
 
 
@@ -157,7 +156,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/08/%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-%EA%B8%B0%EC%95%84%EC%83%81%ED%83%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -170,7 +169,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          가상메모리
+          교착상태,기아상태
         </h1>
 
         <div class="post-meta">
@@ -181,7 +180,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-08 19:15:48 / Modified: 20:01:06" itemprop="dateCreated datePublished" datetime="2020-05-08T19:15:48+09:00">2020-05-08</time>
+              <time title="Created: 2020-05-12 19:47:24 / Modified: 19:50:05" itemprop="dateCreated datePublished" datetime="2020-05-12T19:47:24+09:00">2020-05-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -208,102 +207,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="가상메모리-Virtual-Memory-System"><a href="#가상메모리-Virtual-Memory-System" class="headerlink" title="가상메모리(Virtual Memory System)"></a>가상메모리(Virtual Memory System)</h2><blockquote>
-<p><strong>가상 메모리</strong> 또는 <strong>가상 기억 장치</strong>는 <a href="https://ko.wikipedia.org/wiki/랜덤_액세스_메모리" target="_blank" rel="noopener">RAM</a>을 관리하는 방법의 하나로, 각 프로그램에 실제 메모리 주소가 아닌 가상의 메모리 주소를 주는 방식을 말한다.</p>
+        <h2 id="교착상태와-기아상태"><a href="#교착상태와-기아상태" class="headerlink" title="교착상태와 기아상태"></a>교착상태와 기아상태</h2><h3 id="교착상태란"><a href="#교착상태란" class="headerlink" title="교착상태란?"></a>교착상태란?</h3><ul>
+<li>무한 대기 상태: 두개 이상의 작업이 서로 상대방의 작업이 끝나기만을 기다리고 있기 때문에, 다음 단계로 진행하지 못하는 상태</li>
+</ul>
+<blockquote>
+<p>1번차: a, b가 필요</p>
+<p>2번차: b, c가 필요</p>
+<p>3번차: c, d가 필요</p>
+<p>4번차: a, d가 필요</p>
 </blockquote>
-<hr>
-<h3 id="폰노이만-구조-현-컴퓨터-구조"><a href="#폰노이만-구조-현-컴퓨터-구조" class="headerlink" title="폰노이만 구조(현 컴퓨터 구조)"></a>폰노이만 구조(현 컴퓨터 구조)</h3><ul>
-<li>폰노이만이 제안한 구조</li>
-<li>Memory에 프로그램과 데이터가 저장</li>
-<li>하나씩 꺼내어 CPU:Arithmetic Logic Unit으로 연산</li>
+<p><img src="https://media.vlpt.us/images/conatuseus/post/ea9e61f9-b6d7-4b2d-80c7-07358ce933b0/image.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/53684676/81653406-b4927800-946f-11ea-8c45-d945cac88bd8.png" alt="image-20200221140245245"></p>
+<h2 id="교착상태-발생-조건"><a href="#교착상태-발생-조건" class="headerlink" title="교착상태 발생 조건"></a>교착상태 발생 조건</h2><ul>
+<li>다음 네 가지 조건이 모두 성립될 때, 교착상태 발생 가능성이 있음</li>
 </ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/81396706-d8e51080-9160-11ea-8b81-8097615afdd7.png" alt="image-20200225003829369"></p>
-<h3 id="폰노이만-구조는-CPU-메모리-프로그램으로-구성"><a href="#폰노이만-구조는-CPU-메모리-프로그램으로-구성" class="headerlink" title="폰노이만 구조는 CPU, 메모리, 프로그램으로 구성"></a>폰노이만 구조는 CPU, 메모리, 프로그램으로 구성</h3><ul>
-<li><p>폰노이만 구조 이전: 컴퓨터들은 다른 작업을 하려고 할 때 스위치 설치, 전선 재배치하여 데이터 전송, 신호 처리</p>
-</li>
-<li><p>폰노이만 구조 이후: 소프트웨어만 교체하면 됨</p>
-<hr>
-</li>
+<ol>
+<li>상호배제: 한 순간에 한 프로세스만이 자원을 사용할 수 있다.즉, 한 프로세스에 의해 점유된 자원을 다른 프로세스들이 접근할 수 없다.</li>
+<li>점유대기: 프로세스가 할당된 자원을 가진 상태에서 다른 자원을 기다린다.</li>
+<li>비선점: 프로세스가 어떤 자원의 사용을 끝낼 때까지 그 자원을 뺏을 수 없다.</li>
+<li>순환대기: 각 프로세스는 순환적으로 다음프로세스가 요구하는 자원을 가지고 있다.</li>
+</ol>
+<h3 id="교착상태-해별방법"><a href="#교착상태-해별방법" class="headerlink" title="교착상태 해별방법"></a>교착상태 해별방법</h3><ol>
+<li><strong>예방</strong>으로 교착상태의 발생 조건 1~4 중에 하나를 시스템에서 허용하지 않는 것이다.</li>
+<li><strong>회피</strong>로 현재 자원 할당의 상태에 따라 안전하게 자원 할당을 결정하는 것이다.</li>
+<li><strong>발견</strong>으로, 교착상태가 발생하면 그것을 발견하고 회복하는 것이다.</li>
+</ol>
+<h3 id="기아상태란"><a href="#기아상태란" class="headerlink" title="기아상태란?"></a>기아상태란?</h3><ul>
+<li>특정 프로세스의 우선 순위가 낮아서 원하는 자원을 계속 할당 받지 못하는 상태</li>
 </ul>
-<h3 id="컴퓨터-주요-구성-요소-3가지가-핵심"><a href="#컴퓨터-주요-구성-요소-3가지가-핵심" class="headerlink" title="컴퓨터 주요 구성 요소(3가지가 핵심)"></a>컴퓨터 주요 구성 요소(3가지가 핵심)</h3><ul>
-<li>CPU(중앙처리장치, Central Processor Unit)<ul>
-<li>연산: ALU<ul>
-<li>산술연산: Arithmetic Operation</li>
-<li>논리연산: Login Operation</li>
-</ul>
-</li>
-<li>제어: Control Device<ul>
-<li>IO Device(입출력장치), Memory, ALU동작 제어</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Memory(<em>코드</em> 와 <em>데이터</em> 를 저장하는 장치)<ul>
-<li>프로그램과 프로그램수행에 필요한 데이터를 저장</li>
-<li>내부 기억장치(주기억장치)<ul>
-<li>CPU안에 레지스터, 캐쉬</li>
-<li>DRAM등 메모리(램, RAM, DDR4)</li>
-</ul>
-</li>
-<li>외부 기억장치(보고기억장치)<ul>
-<li>SSD, HDD</li>
+<h3 id="기아상태-해결-방안"><a href="#기아상태-해결-방안" class="headerlink" title="기아상태 해결 방안"></a>기아상태 해결 방안</h3><ul>
+<li>우선순위 변경<ul>
+<li>프로세스 우선순위를 수시로 변경해서, 각 프로레스가 높은 우선순위를 가질 기회주기</li>
+<li>오래 기다린 프로레스의 우선순위를 높여주기</li>
+<li>우선순위가 아닌, 요청 순서대로 처리하는 FIFO기반 요청큐 사용</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>IO Device(입출력 장치)<ul>
-<li>입력장치: 마우스, 키보드, 터치패스 등</li>
-<li>출력장치: 모니터, 프린터, 스피커 등</li>
+<h3 id="교착상태와-기아상태-1"><a href="#교착상태와-기아상태-1" class="headerlink" title="교착상태와 기아상태"></a>교착상태와 기아상태</h3><ul>
+<li>교착상태는 여러 프로세스가 동일 자원 점유를 요청할 때 발생</li>
+<li>기아상태는 여러 프로세스가 부족한 자원을 점유하기 위해 경쟁할 때, 특정 프로세스는 영원히 자원 할당이 안되는 경우를 주로 의미함</li>
 </ul>
-</li>
-<li>Bus(버스)<ul>
-<li>CPU, Memory, IO Devices를 연결해주는 장치</li>
-<li>개별적인 IO Devices들을 연결해주고 데이터를 송소신해주는 장치</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/81396727-dedaf180-9160-11ea-8749-df6a6b147f6b.png" alt="image-20200225004640343"></p>
-<hr>
-<h3 id="가상-메모리가-필요한-이유"><a href="#가상-메모리가-필요한-이유" class="headerlink" title="가상 메모리가 필요한 이유"></a>가상 메모리가 필요한 이유</h3><ul>
-<li>하나의 프로세스만 실행 가능한 시스템(배치 처리 시스템등)<ul>
-<li>프로그램을 메모리로 로드</li>
-<li>프로세스 실행</li>
-<li>프로세스 종료(메모리 해체)</li>
-</ul>
-</li>
-<li>여러 프로세스 동시 실행 시스템<ul>
-<li>메모리 용량 부족 이슈</li>
-<li>프로세스 메모리 영역간에 침범 이슈</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="가상-메모리"><a href="#가상-메모리" class="headerlink" title="가상 메모리"></a>가상 메모리</h3><ul>
-<li>가상 메모리: 메모리가 실제 메모리보다 많아보이게 하는 기술<ul>
-<li>실제 사용하는 메모리는 작다는 점에 착안해서 고안된 기술</li>
-<li>프로세스간 공간 분리로, 프로세스 이슈가 전체 시스템에 영향을 주지 않을 수 있음</li>
-</ul>
-</li>
-<li>가상 메모리 기본 아이디어<ul>
-<li>프로세스는 가상 주소를 사용하고, 실제 해당 주소에서 데이터를 읽고/사용할때만 물리 주소로 바꿔주면 된다.</li>
-<li>virtual address(가상 주소): 프로세스가 참조하는 주소</li>
-<li>physical address(물리 주소): 실제 메모리 주소</li>
-</ul>
-</li>
-<li>MMU(Memory Management Unit)<ul>
-<li>CPU에 코드 실행시, 가상 주소 메모리 접근이 필요할 때, 해당 주소를 물리 주소값으로 변환해주는 하드웨어 장치</li>
-</ul>
-</li>
-<li>메인 메모리에 실제 각 프로세스의 데이터가 조각으로 씌여 있다.</li>
-</ul>
-<hr>
-<h3 id="가상-메모리와-MMU"><a href="#가상-메모리와-MMU" class="headerlink" title="가상 메모리와 MMU"></a>가상 메모리와 MMU</h3><ul>
-<li>CPU는 가상 메모리를 다루고,실제 해당 주소 접근시 MMU하드웨어 장치를 통해 물리 메모리 접근<ul>
-<li>하드웨어 장치를 이용해야 주소 변환이 빠르기 때문에 별도 장치를 둠</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/81396741-e8fcf000-9160-11ea-9160-0b61c3758891.png" alt="image-20200225005343513"></p>
 
     </div>
 
@@ -314,7 +257,10 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Develop/" rel="tag"># Develop</a>
-              <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
+              <a href="/tags/CS/" rel="tag"># CS</a>
+              <a href="/tags/%EB%8F%99%EA%B8%B0%ED%99%94/" rel="tag"># 동기화</a>
+              <a href="/tags/%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C/" rel="tag"># 교착상태</a>
+              <a href="/tags/%EA%B8%B0%EC%95%84%EC%83%81%ED%83%9C/" rel="tag"># 기아상태</a>
           </div>
 
         
@@ -323,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/08/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4,%EC%93%B0%EB%A0%88%EB%93%9C/" rel="prev" title="프로세스,쓰레드질문">
-      <i class="fa fa-chevron-left"></i> 프로세스,쓰레드질문
+    <a href="/2020/05/12/%EB%8F%99%EA%B8%B0%ED%99%94/" rel="prev" title="동기화">
+      <i class="fa fa-chevron-left"></i> 동기화
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/08/%EC%8A%A4%EB%A0%88%EB%93%9C/" rel="next" title="스레드">
-      스레드 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -389,7 +332,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#가상메모리-Virtual-Memory-System"><span class="nav-number">1.</span> <span class="nav-text">가상메모리(Virtual Memory System)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#폰노이만-구조-현-컴퓨터-구조"><span class="nav-number">1.1.</span> <span class="nav-text">폰노이만 구조(현 컴퓨터 구조)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#폰노이만-구조는-CPU-메모리-프로그램으로-구성"><span class="nav-number">1.2.</span> <span class="nav-text">폰노이만 구조는 CPU, 메모리, 프로그램으로 구성</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#컴퓨터-주요-구성-요소-3가지가-핵심"><span class="nav-number">1.3.</span> <span class="nav-text">컴퓨터 주요 구성 요소(3가지가 핵심)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상-메모리가-필요한-이유"><span class="nav-number">1.4.</span> <span class="nav-text">가상 메모리가 필요한 이유</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상-메모리"><span class="nav-number">1.5.</span> <span class="nav-text">가상 메모리</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상-메모리와-MMU"><span class="nav-number">1.6.</span> <span class="nav-text">가상 메모리와 MMU</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#교착상태와-기아상태"><span class="nav-number">1.</span> <span class="nav-text">교착상태와 기아상태</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#교착상태란"><span class="nav-number">1.1.</span> <span class="nav-text">교착상태란?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#교착상태-발생-조건"><span class="nav-number">2.</span> <span class="nav-text">교착상태 발생 조건</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#교착상태-해별방법"><span class="nav-number">2.1.</span> <span class="nav-text">교착상태 해별방법</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#기아상태란"><span class="nav-number">2.2.</span> <span class="nav-text">기아상태란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#기아상태-해결-방안"><span class="nav-number">2.3.</span> <span class="nav-text">기아상태 해결 방안</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#교착상태와-기아상태-1"><span class="nav-number">2.4.</span> <span class="nav-text">교착상태와 기아상태</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
