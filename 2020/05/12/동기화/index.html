@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="운영체제란? OS(Operating System) 운영체제(Operating System)는 컴퓨터 시스템의 자원들을 효율적으로 관리하며, 사용자가 컴퓨터를 편리하고, 효과적으로 사용할 수 있도록 환경을 제공하는 여러 프로그램의 모임입니다. 운영체제는 컴퓨터 사용자와 컴퓨터 하드웨어 간의 인터페이스로서 동작하는 시스템 소프트웨어의 일종으로, 다른 응용프로그">
-<meta name="keywords" content="Develop,운영체제,Operating System">
+  <meta name="description" content="동기화 이슈동기화 이슈 동기화: 작업들 사이에 실행 시기를 맞추는 것 여러 스레드가 동일한 자원접근시 동기화 이슈 발생 동일 자원을 여러 스레드가 동시 수정시, 각 스레드 결과에 영향을 줌     동기화 이슈 해결 방안 Mutal exclusion(상호 배제) 쓰레드는 프로세스 모든 데이터를 접근할 수 있으므로 여러 스레드가 변경하는 공유 변수에 대해 Ex">
+<meta name="keywords" content="Develop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="운영체제">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;11&#x2F;%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C&#x2F;index.html">
+<meta property="og:title" content="동기화">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;12&#x2F;%EB%8F%99%EA%B8%B0%ED%99%94&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
-<meta property="og:description" content="운영체제란? OS(Operating System) 운영체제(Operating System)는 컴퓨터 시스템의 자원들을 효율적으로 관리하며, 사용자가 컴퓨터를 편리하고, 효과적으로 사용할 수 있도록 환경을 제공하는 여러 프로그램의 모임입니다. 운영체제는 컴퓨터 사용자와 컴퓨터 하드웨어 간의 인터페이스로서 동작하는 시스템 소프트웨어의 일종으로, 다른 응용프로그">
+<meta property="og:description" content="동기화 이슈동기화 이슈 동기화: 작업들 사이에 실행 시기를 맞추는 것 여러 스레드가 동일한 자원접근시 동기화 이슈 발생 동일 자원을 여러 스레드가 동시 수정시, 각 스레드 결과에 영향을 줌     동기화 이슈 해결 방안 Mutal exclusion(상호 배제) 쓰레드는 프로세스 모든 데이터를 접근할 수 있으므로 여러 스레드가 변경하는 공유 변수에 대해 Ex">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81550658-89e6e780-93bb-11ea-84fc-d0ab3e262244.png">
-<meta property="og:updated_time" content="2020-05-11T10:59:40.147Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81653406-b4927800-946f-11ea-8c45-d945cac88bd8.png">
+<meta property="og:updated_time" content="2020-05-12T07:44:21.865Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81550658-89e6e780-93bb-11ea-84fc-d0ab3e262244.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;81653406-b4927800-946f-11ea-8c45-d945cac88bd8.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/11/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/">
+<link rel="canonical" href="http://yoursite.com/2020/05/12/%EB%8F%99%EA%B8%B0%ED%99%94/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>운영체제 | hongbeen's blog</title>
+  <title>동기화 | hongbeen's blog</title>
   
 
 
@@ -155,7 +155,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/%EB%8F%99%EA%B8%B0%ED%99%94/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -168,7 +168,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          운영체제
+          동기화
         </h1>
 
         <div class="post-meta">
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-11 19:47:17 / Modified: 19:59:40" itemprop="dateCreated datePublished" datetime="2020-05-11T19:47:17+09:00">2020-05-11</time>
+              <time title="Created: 2020-05-12 16:41:59 / Modified: 16:44:21" itemprop="dateCreated datePublished" datetime="2020-05-12T16:41:59+09:00">2020-05-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,23 +206,69 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="운영체제란-OS-Operating-System"><a href="#운영체제란-OS-Operating-System" class="headerlink" title="운영체제란? OS(Operating System)"></a>운영체제란? OS(Operating System)</h2><blockquote>
-<p>운영체제(Operating System)는 <strong>컴퓨터 시스템의 자원들을 효율적으로 관리</strong>하며, 사용자가 컴퓨터를 편리하고, 효과적으로 사용할 수 있도록 환경을 제공하는 여러 프로그램의 모임입니다. 운영체제는 컴퓨터 사용자와 컴퓨터 하드웨어 간의 인터페이스로서 동작하는 시스템 소프트웨어의 일종으로, 다른 응용프로그램이 유용한 작업을 할 수 있도록 환경을 제공해 줍니다.</p>
-</blockquote>
+        <h2 id="동기화-이슈"><a href="#동기화-이슈" class="headerlink" title="동기화 이슈"></a>동기화 이슈</h2><h3 id="동기화-이슈-1"><a href="#동기화-이슈-1" class="headerlink" title="동기화 이슈"></a>동기화 이슈</h3><ul>
+<li>동기화: 작업들 사이에 실행 시기를 맞추는 것</li>
+<li>여러 스레드가 동일한 자원접근시 동기화 이슈 발생<ul>
+<li>동일 자원을 여러 스레드가 동시 수정시, 각 스레드 결과에 영향을 줌</li>
+</ul>
+</li>
+</ul>
 <hr>
-<p>주요 운영체제: 윈도우, 리눅스, UNIX 등</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/81550658-89e6e780-93bb-11ea-84fc-d0ab3e262244.png" alt="image-20200216211643366"></p>
-<h3 id="운영체제는-사용자-인터페이스-제공-쉘-shell"><a href="#운영체제는-사용자-인터페이스-제공-쉘-shell" class="headerlink" title="운영체제는 사용자 인터페이스 제공: 쉘(shell)"></a>운영체제는 사용자 인터페이스 제공: 쉘(shell)</h3><p>사용자가 운영 체제 기능과 서비스를 조작할 수 있도록 인터페이스를 제공하는 프로그램</p>
-<h3 id="운영체제는-응용-프로그램-인터페이스-제공-시스템-콜-System-Call"><a href="#운영체제는-응용-프로그램-인터페이스-제공-시스템-콜-System-Call" class="headerlink" title="운영체제는 응용 프로그램 인터페이스 제공:시스템 콜(System Call)"></a>운영체제는 응용 프로그램 인터페이스 제공:시스템 콜(System Call)</h3><p>시스템 콜 또는 시스템 호출 인터페이스<br>운영체제가 각 기능을 사용할 수 있도록 시스템 콜이라는 명령 또는 함수를 제공 API내부에는 시스템콜을 호출하는 형태로 만들어지는 경우가 대부분</p>
-<h3 id="운영체제를-만든다면"><a href="#운영체제를-만든다면" class="headerlink" title="운영체제를 만든다면?"></a>운영체제를 만든다면?</h3><p>운영체제를 개발한다.(kernel)<br>시스템 콜을 개발<br>프로그래밍 언어별 시스템콜 기반,라이브러리 개발(API)<br>프로그래밍 언어 기반 Shell프로그램 개발<br>프로그래밍 언어 기반, 응용 프로그램 개발</p>
-<h3 id="사용자-모드와-커널-모드"><a href="#사용자-모드와-커널-모드" class="headerlink" title="사용자 모드와 커널 모드"></a>사용자 모드와 커널 모드</h3><p>함부로 응용 프로그램이 전체 컴퓨터 시스템을 헤치지 못함</p>
-<h3 id="시스템콜은-커널-모드로-실행"><a href="#시스템콜은-커널-모드로-실행" class="headerlink" title="시스템콜은 커널 모드로 실행"></a>시스템콜은 커널 모드로 실행</h3><p>커널 모드에서만 실행 가능한 기능들이 있음</p>
-<p>커널 모드로 실행하려면, 반드시 시스템 콜을 사용해야 함(거쳐야 함) / 시스템 콜은 운영체제 제공</p>
-<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><ul>
-<li>운영 체제는 <em>시스템 콜</em> 제공</li>
-<li>프로그래밍 언어별 운영체제 지원을 위해,운영체제 별 <em>API</em>제공</li>
-<li>응용 프로그램 개발시 운영체제 기능이 필요한 경우, 해당<em>API</em>를 사용해서 프로그램 작성</li>
-<li>응용 프로그램 실행시, 해당 API를 호출하면, 시스템 콜 호출,<em>커널 모드로 변경 후,</em> OS내부에서 해당 명령이 실행되고, 응용 프로그램에 결과 리턴</li>
+<h3 id="동기화-이슈-해결-방안"><a href="#동기화-이슈-해결-방안" class="headerlink" title="동기화 이슈 해결 방안"></a>동기화 이슈 해결 방안</h3><ul>
+<li>Mutal exclusion(상호 배제)</li>
+<li>쓰레드는 프로세스 모든 데이터를 접근할 수 있으므로<ul>
+<li>여러 스레드가 변경하는 공유 변수에 대해 Exclusive Access필요</li>
+<li>어느 한 스레드가 공유 변수를 갱신하는 동안 다른 스레드가 동시 접근하지 못하도록 막기</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Mutual-exclusion-상호-배제"><a href="#Mutual-exclusion-상호-배제" class="headerlink" title="Mutual exclusion(상호 배제)"></a>Mutual exclusion(상호 배제)</h3><ul>
+<li>임계 자원(critical resource)</li>
+<li>임계 영역(critical section)</li>
+</ul>
+<hr>
+<h3 id="Mutex와-세마포어-Semaphore"><a href="#Mutex와-세마포어-Semaphore" class="headerlink" title="Mutex와 세마포어(Semaphore)"></a>Mutex와 세마포어(Semaphore)</h3><ul>
+<li>Crutucal Section에 대한 접근을 막기 위해 LOCKING메커니즘이 필요<ul>
+<li>Mutex(binary semaphore): 임계구역에 하나의 스레드만 들어갈 수 있음</li>
+<li>Semaphore: 임계구역에 여러 스레드가 들어갈 수 있음, counter를 두어서 동시에 리소스에 접근할 수 있는 허용 가능한 스레드 수를 제어</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="교착상태와-기아상태"><a href="#교착상태와-기아상태" class="headerlink" title="교착상태와 기아상태"></a>교착상태와 기아상태</h2><h3 id="교착상태란"><a href="#교착상태란" class="headerlink" title="교착상태란?"></a>교착상태란?</h3><ul>
+<li>무한 대기 상태: 두개 이상의 작업이 서로 상대방의 작업이 끝나기만을 기다리고 있기 때문에, 다음 단계로 진행하지 못하는 상태</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/81653406-b4927800-946f-11ea-8c45-d945cac88bd8.png" alt="image-20200221140245245"></p>
+<hr>
+<h2 id="교착상태-발생-조건"><a href="#교착상태-발생-조건" class="headerlink" title="교착상태 발생 조건"></a>교착상태 발생 조건</h2><ul>
+<li>다음 네 가지 조건이 모두 성립될 때, 교착상태 발생 가능성이 있음</li>
+</ul>
+<ol>
+<li>상호배제: 프로세스들이 필요로 하는 자원에 대해 배타적인 통제권을 요구한다.</li>
+<li>점유대기: 프로세스가 할당된 자원을 가진 상태에서 다른 자원을 기다린다.</li>
+<li>비선점: 프로세스가 어떤 자원의 사용을 끝낼 때까지 그 자원을 뺏을 수 없다.</li>
+<li>순환대기: 각 프로세스는 순환적으로 다음프로세스가 요구하는 자원을 가지고 있다.</li>
+</ol>
+<hr>
+<h3 id="기아상태란"><a href="#기아상태란" class="headerlink" title="기아상태란?"></a>기아상태란?</h3><ul>
+<li><p>특정 프로세스의 우선 순위가 낮아서 원하는 자원을 계속 할당 받지 못하는 상태</p>
+</li>
+<li><p>교착상태와 기아상태</p>
+<ul>
+<li>교착상태는 여러 프로세스가 동일 자원 점유를 요청할 때 발생</li>
+<li>기아상태는 여러 프로세스가 부족한 자원을 점유하기 위해 경쟁할 때,특정 프로레스는 영원히 자원 할당이 안되는 경우를 주로 의미함</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="기아상태-해결-방안"><a href="#기아상태-해결-방안" class="headerlink" title="기아상태 해결 방안"></a>기아상태 해결 방안</h3><ul>
+<li>우선순위 변경<ul>
+<li>프로세스 우선순위를 수시로 변경해서, 각 프로레스가 높은 우선순위를 가질 기회주기</li>
+<li>오래 기다린 프로레스의 우선순위를 높여주기</li>
+<li>우선순위가 아닌, 요청 순서대로 처리하는 FIFO기반 요청큐 사용</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -234,8 +280,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Develop/" rel="tag"># Develop</a>
-              <a href="/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" rel="tag"># 운영체제</a>
-              <a href="/tags/Operating-System/" rel="tag"># Operating System</a>
           </div>
 
         
@@ -244,13 +288,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/10/%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC-%EB%B0%94%EC%9D%B4%ED%8A%B8/" rel="prev" title="바이너리,바이트">
-      <i class="fa fa-chevron-left"></i> 바이너리,바이트
+    <a href="/2020/05/11/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" rel="prev" title="운영체제">
+      <i class="fa fa-chevron-left"></i> 운영체제
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/12/%EB%8F%99%EA%B8%B0%ED%99%94/" rel="next" title="동기화">
-      동기화 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -310,7 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#운영체제란-OS-Operating-System"><span class="nav-number">1.</span> <span class="nav-text">운영체제란? OS(Operating System)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#운영체제는-사용자-인터페이스-제공-쉘-shell"><span class="nav-number">1.1.</span> <span class="nav-text">운영체제는 사용자 인터페이스 제공: 쉘(shell)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#운영체제는-응용-프로그램-인터페이스-제공-시스템-콜-System-Call"><span class="nav-number">1.2.</span> <span class="nav-text">운영체제는 응용 프로그램 인터페이스 제공:시스템 콜(System Call)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#운영체제를-만든다면"><span class="nav-number">1.3.</span> <span class="nav-text">운영체제를 만든다면?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#사용자-모드와-커널-모드"><span class="nav-number">1.4.</span> <span class="nav-text">사용자 모드와 커널 모드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#시스템콜은-커널-모드로-실행"><span class="nav-number">1.5.</span> <span class="nav-text">시스템콜은 커널 모드로 실행</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#정리"><span class="nav-number">2.</span> <span class="nav-text">정리</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#동기화-이슈"><span class="nav-number">1.</span> <span class="nav-text">동기화 이슈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#동기화-이슈-1"><span class="nav-number">1.1.</span> <span class="nav-text">동기화 이슈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#동기화-이슈-해결-방안"><span class="nav-number">1.2.</span> <span class="nav-text">동기화 이슈 해결 방안</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mutual-exclusion-상호-배제"><span class="nav-number">1.3.</span> <span class="nav-text">Mutual exclusion(상호 배제)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mutex와-세마포어-Semaphore"><span class="nav-number">1.4.</span> <span class="nav-text">Mutex와 세마포어(Semaphore)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#교착상태와-기아상태"><span class="nav-number">2.</span> <span class="nav-text">교착상태와 기아상태</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#교착상태란"><span class="nav-number">2.1.</span> <span class="nav-text">교착상태란?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#교착상태-발생-조건"><span class="nav-number">3.</span> <span class="nav-text">교착상태 발생 조건</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#기아상태란"><span class="nav-number">3.1.</span> <span class="nav-text">기아상태란?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#기아상태-해결-방안"><span class="nav-number">3.2.</span> <span class="nav-text">기아상태 해결 방안</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
