@@ -20,20 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="해시 데이터를 다루는 기법중에 하나로 검색과 저장이 아주 빠름  해시가 아주 빠르게 진행될 수 있는 이유는 데이터를 검색할 때 사용할 key와 실제 데이터의 값(value)이 한 쌍으로 존재하고, key값이 배열의 인덱스로 변환되기 때문에 검색과 저장의 평균적인 시간 복잡도가 O(1)에 수렴하게 됩니다. ex) hello라는 문자열을 정수형 key값으로 바">
-<meta name="keywords" content="Develop,CS,백준,알고리즘,자료구조,10930,hash">
+  <meta name="description" content="좌표 정렬하기python의 기본 정렬 라이브러리는 기본적으로 튜플의 인덱스 순서대로 오름차순 정렬한다는 것에 대해서 정리하려고 합니다. 백준알고리즘의 11650문제를 풀며 위의 내용에 대해서 정리하려고 합니다.   1) 좌표를 입력받은 뒤 x좌료, y좌표 순서대로 차례대로 오름차순 정렬합니다. 2) 파이썬의 기본 정렬 라이브러리는 기본적으로 튜플의 인덱스">
+<meta name="keywords" content="Develop,CS,Python,백준,알고리즘,좌표 정렬하기">
 <meta property="og:type" content="article">
-<meta property="og:title" content="백준SHA-256">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;29&#x2F;%EB%B0%B1%EC%A4%80SHA-256&#x2F;index.html">
+<meta property="og:title" content="백준좌표정렬하기">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;01&#x2F;%EB%B0%B1%EC%A4%80%EC%A2%8C%ED%91%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
-<meta property="og:description" content="해시 데이터를 다루는 기법중에 하나로 검색과 저장이 아주 빠름  해시가 아주 빠르게 진행될 수 있는 이유는 데이터를 검색할 때 사용할 key와 실제 데이터의 값(value)이 한 쌍으로 존재하고, key값이 배열의 인덱스로 변환되기 때문에 검색과 저장의 평균적인 시간 복잡도가 O(1)에 수렴하게 됩니다. ex) hello라는 문자열을 정수형 key값으로 바">
+<meta property="og:description" content="좌표 정렬하기python의 기본 정렬 라이브러리는 기본적으로 튜플의 인덱스 순서대로 오름차순 정렬한다는 것에 대해서 정리하려고 합니다. 백준알고리즘의 11650문제를 풀며 위의 내용에 대해서 정리하려고 합니다.   1) 좌표를 입력받은 뒤 x좌료, y좌표 순서대로 차례대로 오름차순 정렬합니다. 2) 파이썬의 기본 정렬 라이브러리는 기본적으로 튜플의 인덱스">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83247160-1bd55980-a1de-11ea-9f6b-702982b95c56.png">
-<meta property="og:updated_time" content="2020-05-29T10:04:26.563Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83393759-49b2dc00-a432-11ea-8661-6294d5a3b666.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83393775-52a3ad80-a432-11ea-9be8-86f1f1906d1f.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83394232-32282300-a433-11ea-983d-1b8b99f29c5d.png">
+<meta property="og:updated_time" content="2020-06-01T09:15:14.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83247160-1bd55980-a1de-11ea-9f6b-702982b95c56.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83393759-49b2dc00-a432-11ea-8661-6294d5a3b666.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/29/%EB%B0%B1%EC%A4%80SHA-256/">
+<link rel="canonical" href="http://yoursite.com/2020/06/01/%EB%B0%B1%EC%A4%80%EC%A2%8C%ED%91%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/">
 
 
 <script id="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>백준SHA-256 | hongbeen's blog</title>
+  <title>백준좌표정렬하기 | hongbeen's blog</title>
   
 
 
@@ -155,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/29/%EB%B0%B1%EC%A4%80SHA-256/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/%EB%B0%B1%EC%A4%80%EC%A2%8C%ED%91%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -168,7 +170,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          백준SHA-256
+          백준좌표정렬하기
         </h1>
 
         <div class="post-meta">
@@ -179,7 +181,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-29 19:01:26 / Modified: 19:04:26" itemprop="dateCreated datePublished" datetime="2020-05-29T19:01:26+09:00">2020-05-29</time>
+              <time title="Created: 2020-06-01 18:13:54 / Modified: 18:15:14" itemprop="dateCreated datePublished" datetime="2020-06-01T18:13:54+09:00">2020-06-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -210,18 +212,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="해시"><a href="#해시" class="headerlink" title="해시"></a>해시</h2><blockquote>
-<p>데이터를 다루는 기법중에 하나로 검색과 저장이 아주 빠름</p>
-</blockquote>
-<p>해시가 아주 빠르게 진행될 수 있는 이유는 데이터를 검색할 때 사용할 key와 실제 데이터의 값(value)이 한 쌍으로 존재하고, key값이 배열의 인덱스로 변환되기 때문에 검색과 저장의 평균적인 시간 복잡도가 O(1)에 수렴하게 됩니다.</p>
-<p><strong>ex)</strong> hello라는 문자열을 정수형 key값으로 바꾼다면, h+e+l+l+o -&gt; 104+101+108+108+111=532라는 해시코드로 변환 할 수 있습니다.</p>
-<p>백준알고리즘의 <a href="https://www.acmicpc.net/problem/10930" target="_blank" rel="noopener">10930</a>문제를 풀다가 hash에 대한 개념이 부족하여 간단하게 정리 후 알고리즘을 풀어봤습니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83247160-1bd55980-a1de-11ea-9f6b-702982b95c56.png" alt="문제"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib  <span class="comment"># 라이브러리를 import </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">s = input()     <span class="comment"># 입력받을 input</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">s_encode = s.encode()  <span class="comment"># 문자열의 바이트객체로 변환</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">result = hashlib.sha256(s_encode).hexdigest() <span class="comment">#해시객체로 변환</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">print(result)</span></pre></td></tr></table></figure>
+        <h2 id="좌표-정렬하기"><a href="#좌표-정렬하기" class="headerlink" title="좌표 정렬하기"></a>좌표 정렬하기</h2><p>python의 기본 정렬 라이브러리는 기본적으로 <strong>튜플의 인덱스 순서대로 오름차순 정렬한다는 것</strong>에 대해서 정리하려고 합니다.</p>
+<p>백준알고리즘의 <a href="https://www.acmicpc.net/problem/11650" target="_blank" rel="noopener">11650</a>문제를 풀며 위의 내용에 대해서 정리하려고 합니다.</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/83393759-49b2dc00-a432-11ea-8661-6294d5a3b666.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/53684676/83393775-52a3ad80-a432-11ea-9be8-86f1f1906d1f.png" alt="image"></p>
+<p>1) 좌표를 입력받은 뒤 x좌료, y좌표 순서대로 차례대로 오름차순 정렬합니다.</p>
+<p>2) 파이썬의 기본 정렬 라이브러리는 기본적으로 튜플의 인덱스 순서대로 오름차순 정열합니다.</p>
+<p>3) 단순히 기본 정렬 라이브러리를 이용하면 됩니다.</p>
+<p>풀이는 이렇습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">n = int(input())</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">arr = []</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  x, y = map(int, input().split(<span class="string">' '</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  arr.append((x, y))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">arr = sorted(arr)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> arr:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  print(i[<span class="number">0</span>], i[<span class="number">1</span>])</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 문제에 나와있는 입력값을 넣어주면...</span></span></pre></td></tr></table></figure>
 
-
-
-<p>배운점: hashlib 사용법</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/83394232-32282300-a433-11ea-983d-1b8b99f29c5d.png" alt="image"></p>
+<p>이렇게 문제가 잘 풀리는 것을 볼 수 있습니다.</p>
+<p><strong>배운점</strong> : python의 기본 정렬에 대해서 한번 더 되짚었음</p>
 
     </div>
 
@@ -233,11 +236,10 @@
           <div class="post-tags">
               <a href="/tags/Develop/" rel="tag"># Develop</a>
               <a href="/tags/CS/" rel="tag"># CS</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
               <a href="/tags/%EB%B0%B1%EC%A4%80/" rel="tag"># 백준</a>
               <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" rel="tag"># 알고리즘</a>
-              <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="tag"># 자료구조</a>
-              <a href="/tags/10930/" rel="tag"># 10930</a>
-              <a href="/tags/hash/" rel="tag"># hash</a>
+              <a href="/tags/%EC%A2%8C%ED%91%9C-%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/" rel="tag"># 좌표 정렬하기</a>
           </div>
 
         
@@ -246,13 +248,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/28/%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/" rel="prev" title="반복문,조건문">
-      <i class="fa fa-chevron-left"></i> 반복문,조건문
+    <a href="/2020/06/01/numpy%EB%AA%A8/" rel="prev" title="numpy모듈">
+      <i class="fa fa-chevron-left"></i> numpy모듈
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/" rel="next" title="OSI7계층">
-      OSI7계층 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -312,7 +311,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#해시"><span class="nav-number">1.</span> <span class="nav-text">해시</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#좌표-정렬하기"><span class="nav-number">1.</span> <span class="nav-text">좌표 정렬하기</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

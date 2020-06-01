@@ -151,6 +151,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/%EB%B0%B1%EC%A4%80%EC%A2%8C%ED%91%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/01/%EB%B0%B1%EC%A4%80%EC%A2%8C%ED%91%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/" class="post-title-link" itemprop="url">백준좌표정렬하기</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-01 18:13:54 / Modified: 18:15:14" itemprop="dateCreated datePublished" datetime="2020-06-01T18:13:54+09:00">2020-06-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" itemprop="url" rel="index"><span itemprop="name">자료구조</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EB%B0%B1%EC%A4%80%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" itemprop="url" rel="index"><span itemprop="name">백준알고리즘</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="좌표-정렬하기"><a href="#좌표-정렬하기" class="headerlink" title="좌표 정렬하기"></a>좌표 정렬하기</h2><p>python의 기본 정렬 라이브러리는 기본적으로 <strong>튜플의 인덱스 순서대로 오름차순 정렬한다는 것</strong>에 대해서 정리하려고 합니다.</p>
+<p>백준알고리즘의 <a href="https://www.acmicpc.net/problem/11650" target="_blank" rel="noopener">11650</a>문제를 풀며 위의 내용에 대해서 정리하려고 합니다.</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/83393759-49b2dc00-a432-11ea-8661-6294d5a3b666.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/53684676/83393775-52a3ad80-a432-11ea-9be8-86f1f1906d1f.png" alt="image"></p>
+<p>1) 좌표를 입력받은 뒤 x좌료, y좌표 순서대로 차례대로 오름차순 정렬합니다.</p>
+<p>2) 파이썬의 기본 정렬 라이브러리는 기본적으로 튜플의 인덱스 순서대로 오름차순 정열합니다.</p>
+<p>3) 단순히 기본 정렬 라이브러리를 이용하면 됩니다.</p>
+<p>풀이는 이렇습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">n = int(input())</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">arr = []</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  x, y = map(int, input().split(<span class="string">' '</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  arr.append((x, y))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">arr = sorted(arr)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> arr:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  print(i[<span class="number">0</span>], i[<span class="number">1</span>])</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 문제에 나와있는 입력값을 넣어주면...</span></span></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/53684676/83394232-32282300-a433-11ea-983d-1b8b99f29c5d.png" alt="image"></p>
+<p>이렇게 문제가 잘 풀리는 것을 볼 수 있습니다.</p>
+<p><strong>배운점</strong> : python의 기본 정렬에 대해서 한번 더 되짚었음</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/numpy%EB%AA%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -959,95 +1047,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/%EB%8F%99%EA%B8%B0%ED%99%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/12/%EB%8F%99%EA%B8%B0%ED%99%94/" class="post-title-link" itemprop="url">동기화</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-05-12 16:41:59 / Modified: 20:56:06" itemprop="dateCreated datePublished" datetime="2020-05-12T16:41:59+09:00">2020-05-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">운영체제</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="동기화"><a href="#동기화" class="headerlink" title="동기화"></a>동기화</h2><ul>
-<li>동기화: 작업들 사이에 실행 시기를 맞추는 것</li>
-<li>ex) 1,2,3,4 번의 작업이 있음 -&gt; 3,4번 작업이 시작되려면 1,2번이 완료되어야함 -&gt; 1번은 완료되고 2번은 아직 끝나지 않았을때 3,4번은 기다려야 함<h3 id="동기화-이슈"><a href="#동기화-이슈" class="headerlink" title="동기화 이슈"></a>동기화 이슈</h3></li>
-<li>여러 스레드가 동일한 자원접근시 동기화 이슈 발생<ul>
-<li>동일 자원을 여러 스레드가 동시 수정시, 각 스레드 결과에 영향을 줌</li>
-</ul>
-</li>
-</ul>
-<h3 id="동기화-이슈-해결-방안"><a href="#동기화-이슈-해결-방안" class="headerlink" title="동기화 이슈 해결 방안"></a>동기화 이슈 해결 방안</h3><ul>
-<li>Mutual exclusion(상호 배제)</li>
-<li>쓰레드는 프로세스 모든 데이터를 접근할 수 있으므로, 여러 스레드가 변경하는 공유 변수에 대해 Exclusive Access필요</li>
-<li>어느 한 스레드가 공유 변수를 갱신하는 동안 다른 스레드가 동시 접근하지 못하도록 막기</li>
-</ul>
-<hr>
-<h3 id="Mutex-Mutual-exclusion-상호-배제"><a href="#Mutex-Mutual-exclusion-상호-배제" class="headerlink" title="Mutex (Mutual exclusion / 상호 배제)"></a>Mutex (<em>Mut</em>ual <em>ex</em>clusion / 상호 배제)</h3><p>일종의 Locking매커니즘. lock을 가지고 있을 경우에만 공유 데이터에 접근 가능하다.<code>일부 음식점들은 공용 화장실 관리 차원에서 화장실을 잠궈두고 다닌다.손님들이 화장실에 가려면 주인에게 열쇠를 받은 후 가야한다.물론 다음 손님이 화장실에 가려면 앞 손님이 열쇠를 반납해야 갈 수 있다.이렇게 열쇠가 있는-lock을 가지고 있는 경우에만 공유자원(화장실)에 접근할 수 있다.이게 바로 Mutex라고 보면 된다.</code>유의할 점은 Lock에 대한 소유권이 있다는 점이다.열쇠를 획득한 사람만 반납할 수 있다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">lock.acquire()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100000</span>):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  g_count += <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  lock.release()</span></pre></td></tr></table></figure>
-
-<h3 id="세마포어-Semaphore"><a href="#세마포어-Semaphore" class="headerlink" title="세마포어(Semaphore)"></a>세마포어(Semaphore)</h3><p>세마포어는 동시에 리소스에 접근할 수 있는 ‘허용가능한 Counter의 갯수’를 가지고 있는 Counter로 보면 된다.<code>예를 들면 101병실에 방문객용 의자가 3개 있다고 치자. 간호사는 이 병실에 방문자가 5명만 들어갈 수 있도록 허용하고 나머지 방문객들은 밖에서 대기하도록 한다. Counter갯수만큼 공유자원(병실)에 접근할 수 있다.이 세마포어 Counter의 갯수에 따라 1개의 경우 Binary Semaphore,2개 이상의 경우 Counting Semaphore라고 부른다.Binary Semaphore의 경우 개념적으로 Mutex와 같다고 볼 수 있다.</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1118,7 +1117,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1129,7 +1128,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
