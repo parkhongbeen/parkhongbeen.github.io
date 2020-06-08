@@ -177,6 +177,146 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/08/%EB%A9%80%ED%8B%B0%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1-%EC%8A%A4%EB%A0%88%EB%94%A9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/08/%EB%A9%80%ED%8B%B0%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1-%EC%8A%A4%EB%A0%88%EB%94%A9/" class="post-title-link" itemprop="url">멀티프로세싱,스레딩</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-08 20:31:01 / Modified: 20:43:20" itemprop="dateCreated datePublished" datetime="2020-06-08T20:31:01+09:00">2020-06-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">운영체제</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/08/%EB%A9%80%ED%8B%B0%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1-%EC%8A%A4%EB%A0%88%EB%94%A9/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/08/멀티프로세싱-스레딩/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="멀티프로세싱-스레딩-태스킹-프로그래밍"><a href="#멀티프로세싱-스레딩-태스킹-프로그래밍" class="headerlink" title="멀티프로세싱,스레딩,태스킹,프로그래밍"></a>멀티프로세싱,스레딩,태스킹,프로그래밍</h2><h3 id="멀티-프로세싱-Multi-processing"><a href="#멀티-프로세싱-Multi-processing" class="headerlink" title="멀티 프로세싱(Multi-processing)"></a>멀티 프로세싱(Multi-processing)</h3><blockquote>
+<p>두개 이상, 다수의 프로세서가 협력적으로 작업을 동시에 처리하는 것</p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/53684676/84022957-323f9a00-a9c2-11ea-8e6e-0d70f848a633.png" alt="image"></p>
+<p>그림을 보면 아시겠지만, 각 각 프로세서 하나의 작업만을 처리하는 것이 아니라 다수의 작업을 처리하며, 하나의 작업이 하나의 프로세서로 처리되는 것이 아니라 다수의 프로세서에 의해 처리됩니다.</p>
+<h4 id="멀티-프로세싱-장점"><a href="#멀티-프로세싱-장점" class="headerlink" title="멀티 프로세싱 장점"></a>멀티 프로세싱 장점</h4><ul>
+<li>여러 개의 자식 프로세스 중 하나의 문제가 발생하면 그 자식 프로세스만 죽는 것</li>
+</ul>
+<h4 id="멀티-프로세싱-단점"><a href="#멀티-프로세싱-단점" class="headerlink" title="멀티 프로세싱 단점"></a>멀티 프로세싱 단점</h4><ul>
+<li>Context Switching <em>오버헤드(어떤 처리를 하기 위해 들어가는 간접적인 처리 시간,메모리 등을 말함)</em><ul>
+<li>Context Switcing과정에서 캐쉬 메모리 초기화 등 무거운 작업이 진행되고 많은 시간이 소모되는 등의 오버헤드가 발생하게 된다.</li>
+<li>프로세스는 각 각의 독립된 메모리 영역을 할당받았기 때문에 프로세스 사이에서 공유하는 메모리가 없어, Context Switching이 발생하면 캐쉬에 있는 모든 데이터를 전부 리셋하고 다시 캐쉬정보를 불러와야 한다.</li>
+</ul>
+</li>
+<li>하나의 프로그램에 속하는 프로세스들 사이의 변수를 공유할 수 없다.</li>
+</ul>
+<h3 id="멀티-스레딩-Multi-threading"><a href="#멀티-스레딩-Multi-threading" class="headerlink" title="멀티 스레딩(Multi threading)"></a>멀티 스레딩(Multi threading)</h3><blockquote>
+<p>하나의 응용프로그램을 여러 개의 스레드로 구성하고 각 스레드로 하여금 하나의 작업을 처리하도록 하는 것</p>
+</blockquote>
+<p>하나의 프로세스내에는 여러개의 스레드가 존재하게 됩니다.  웹 서버는 대표적인 멀티 스레드 응용프로그램입니다. 윈도우, 리눅스 등 많은 운영체제들이 멀티 스레딩을 기본으로 멀티프로세싱을 지원합니다.</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/84022995-42f01000-a9c2-11ea-8491-96a9e6029c52.png" alt=""></p>
+<h4 id="멀티-스레딩-장점"><a href="#멀티-스레딩-장점" class="headerlink" title="멀티 스레딩 장점"></a>멀티 스레딩 장점</h4><ul>
+<li>시스템 자원 소모 감소(자원의 효율성 증대)<ul>
+<li>시스템콜이 줄어들어 자원을 효율적으로 관리할 수 있음</li>
+</ul>
+</li>
+<li>시스템 처리량 증가(처리 비용 감소)<ul>
+<li>스레드 간 데이터를 주고받는 것이 간단해지고 시스템 자원 소모가 줄어듬</li>
+<li>스레드 사이의 작업량이 작아 Context Switching이 빠름</li>
+</ul>
+</li>
+<li>스레드는 프로세스 내의 Stack영역을 제외한 모든 메모리를 공유하기 때문에 부담이 적음</li>
+</ul>
+<h4 id="멀티-스레딩-단점"><a href="#멀티-스레딩-단점" class="headerlink" title="멀티 스레딩 단점"></a>멀티 스레딩 단점</h4><ul>
+<li>설계 / 디버깅이 까다로움</li>
+<li>단일 프로세스 시스템의 경우 효과를 기대하기 어려움</li>
+<li>자원을 공유하므로 동기화문제 발생(이러한 문제를 대비하기 위해 <a href="[https://parkhongbeen.github.io/2020/05/20/CriticalSection-%EC%9E%84%EA%B3%84%EC%98%81%EC%97%AD/](https://parkhongbeen.github.io/2020/05/20/CriticalSection-임계영역/)">Critical Section기법</a>을 사용)</li>
+<li>하나의 스레드에 문제가 발생하면 전체 프로세스가 영향을 받음</li>
+</ul>
+<h3 id="멀티스레드-vs-멀티프로세스"><a href="#멀티스레드-vs-멀티프로세스" class="headerlink" title="멀티스레드 vs 멀티프로세스"></a>멀티스레드 vs 멀티프로세스</h3><h4 id="멀티프로세스-대신-멀티-스레드를-사용하는-이유"><a href="#멀티프로세스-대신-멀티-스레드를-사용하는-이유" class="headerlink" title="멀티프로세스 대신 멀티 스레드를 사용하는 이유"></a>멀티프로세스 대신 멀티 스레드를 사용하는 이유</h4><ul>
+<li>프로그램을 여러 개 키는 것보다 하나의 프로그램 안에서 여러 작업을 해결하는 것</li>
+</ul>
+<h4 id="멀티-프로세스로-할-수-있는-작업을-멀티-쓰레딩으로-하는-이유"><a href="#멀티-프로세스로-할-수-있는-작업을-멀티-쓰레딩으로-하는-이유" class="headerlink" title="멀티 프로세스로 할 수 있는 작업을 멀티 쓰레딩으로 하는 이유"></a>멀티 프로세스로 할 수 있는 작업을 멀티 쓰레딩으로 하는 이유</h4><ul>
+<li>프로세스간의 Context Switcing시 오버헤드가 큼</li>
+<li>스레드는 프로세스내의 메모리를 공유하기 때문에 스레드 간 데이터를 주고 받는 것이 간단해지고 시스템 자원소모가 줄어듬</li>
+<li>프로세스를 생성하여 자원을 할당하는 시스템콜이 줄어들어 자원을 효율적으로 관리할 수 있음</li>
+</ul>
+<h3 id="멀티-태스킹"><a href="#멀티-태스킹" class="headerlink" title="멀티 태스킹"></a>멀티 태스킹</h3><blockquote>
+<p> 다수의 Task를 운영체제의 스케줄링에 의해 번갈아 가면서 수행하는 것”</p>
+</blockquote>
+<p>프로세스가 각 각의 Task를 조금씩 자주 번갈아가면서 처리하기 때문에 사용자는 마치 동시에 여러 Task가 수행하는 <strong>것처럼</strong> 보이게 됩니다. 멀티태스킹은 일정하게 정해진 시간동안 번갈아가면서 각 각의 Task를 처리하는 것입니다.</p>
+<h3 id="멀티-프로그래밍"><a href="#멀티-프로그래밍" class="headerlink" title="멀티 프로그래밍"></a>멀티 프로그래밍</h3><blockquote>
+<p>특정 프로세스가 작업을 처리할 때 낭비되는 시간동안 다른 프로세스를 처리하도록 하는 것</p>
+</blockquote>
+<p>예를 들어, A라는 프로세스를 처리중에 있을때 입출력 이벤트가 발생했는데 프로세스가 입출력 이벤트에 대한 응답을 위해 무작정 대기하고 있다면 프로세스의 자원을 낭비하는 결과를 초래합니다. 프로세서, CPU는 한번에 하나의 프로세스만을 처리하도록 되어있기 때문에 A프로세스에 대한 입출력 이벤트에 대한 응답을 대기하는 동안 아무일도 하지 않습니다. 멀티프로그래밍은 이렇게 낭비되는 시간동안 프로세스가 다른 프로세스를 수행할 수 있도록 하는 것 입니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%8A%A4%EC%9C%84%EC%B9%AD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1148,110 +1288,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/" class="post-title-link" itemprop="url">OSI7계층</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-05-31 18:55:58 / Modified: 18:56:52" itemprop="dateCreated datePublished" datetime="2020-05-31T18:55:58+09:00">2020-05-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/31/OSI7계층/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="OSI-7-Layer-계층"><a href="#OSI-7-Layer-계층" class="headerlink" title="OSI 7 Layer(계층)"></a>OSI 7 Layer(계층)</h2><ul>
-<li>다양한 컴퓨터간 데이터 전송을 지원할 수 있는 추상 모델을 표준화한 것 / 국제표준화기구에서 OSI 모델 제정</li>
-<li><strong>OSI 7 layer</strong> 또는 <strong>OSI계층</strong>으로 불리움</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/83349463-10199c80-a370-11ea-9e15-7b7045f57d02.png" alt="image-20200531184042164"></p>
-<p><strong>OSI 7계층은 컴퓨터간 통신 과정을 추상화한 모델</strong>로, </p>
-<p>1계층, <strong>물리(Physical)</strong> 계층은 시스템 간 물리적 연결과 전기 신호 변환 및 제어를 담당하고, </p>
-<p>2계층, <strong>데이터 링크(Data Link)</strong> 계층은 네트워크 기기간 데이터 전송을 담당하고, </p>
-<p>3계층, <strong>네트워크(Network)</strong> 계층은 다른 네트워크와의 통신 경로 설정을 담당하고, </p>
-<p>4계층, <strong>전송(Transport)</strong> 계층은 신뢰할 수 있는 통신을 구현하고, </p>
-<p>5계층, <strong>세션(Session)</strong> 계층은 통신 방식을 결정하고, </p>
-<p>6계층, <strong>표현(Presentation)</strong> 계층은 데이터 변환, </p>
-<p>7계층, <strong>응용(Application)</strong> 계층은 응용 프로그램에 대한 서비스 제공을 담당합니다.</p>
-<h3 id="캡슐화와-역캡슐화"><a href="#캡슐화와-역캡슐화" class="headerlink" title="캡슐화와 역캡슐화"></a>캡슐화와 역캡슐화</h3><ul>
-<li>송신측: <strong>캡슐화</strong>, 수신측:<strong>역캡슐화</strong></li>
-<li>헤더(header): 데이터 송신시, 필요한 정보를 데이터에 추가</li>
-<li>바디(body): 실제 데이터</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/83349476-1a3b9b00-a370-11ea-858a-fbcb56351efd.png" alt="image-20200531185246441"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1322,7 +1358,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1333,7 +1369,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
