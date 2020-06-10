@@ -177,6 +177,167 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/10/JWT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/10/JWT/" class="post-title-link" itemprop="url">JWT</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-10 17:06:19 / Modified: 17:13:00" itemprop="dateCreated datePublished" datetime="2020-06-10T17:06:19+09:00">2020-06-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/10/JWT/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/10/JWT/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="사용자-인증의-여러-방식들"><a href="#사용자-인증의-여러-방식들" class="headerlink" title="사용자 인증의 여러 방식들"></a>사용자 인증의 여러 방식들</h2><h3 id="1-쿠키와-세션"><a href="#1-쿠키와-세션" class="headerlink" title="1) 쿠키와 세션"></a>1) <a href="[https://parkhongbeen.github.io/2020/06/09/%EC%BF%A0%ED%82%A4%EC%99%80%EC%84%B8%EC%85%98/](https://parkhongbeen.github.io/2020/06/09/쿠키와세션/)">쿠키와 세션</a></h3><p>HTTP는 Stateless, Connectionless 특징이 있기 때문에, 사용자 인증을 유지할 수 있는 기능이 필요했습니다. 그래서 클라이언트가 로그인 등으로 한 번 사용자 인증을 하면, 그 인증을 유지할 수 있도록 쿠키와 세션이라는 기술을 지금껏 사용해 왔습니다.</p>
+<p>그러나 쿠키는 브라우저에 사용자 정보가 기록되기 때문에 위변조의 가능성이 높아 보안이 취약하며, 세션 또한 서버의 메모리를 차지하고 있기 때문에 동접자가 많은 웹 사이트일 경우 서버 과부하의 원인이 되며, 또한 세션 정보가 중간에 탈취당할 수 있기 때문에 보안에 완벽하다고 할 수가 없습니다.</p>
+<p>쿠키와 세션의 문제점들을 보완하기 위해 토큰(Token)기반의 인증 방식이 도입되었습니다.토큰 기반의 인증방식의 핵심은 <strong>보호할 데이터를 토큰으로 치환하여 원본 데이터 대신 토큰을 사용하는 기술</strong>입니다.만약 토큰 전송과정에서 중간에 토큰이 탈취 당하더라도 데이터에 대한 정보가 암호화 되어있어 공격자가 본래 내용을 알 수 없게 됩니다.즉, 보안적으로 우수하다고 할 수 있습니다.</p>
+<h3 id="2-OAuth"><a href="#2-OAuth" class="headerlink" title="2) OAuth"></a>2) OAuth</h3><p>토큰 방식을 사용하는 웹 서비스는 우리가 여러 웹 서비스를 이용하면서 쉽게 찾아볼 수 있습니다.”페이스북으로 로그인”, “네이버아이디로 로그인”, “구글 계정으로 로그인” 등 다른 웹 서비스의 계정으로 사용자 인증을 대신하는 기술을 OAuth라고 합니다.</p>
+<p>OAuth는 토큰 기반의 사용자 인증 방식입니다. 구글,페이스북,네이버로부터 토큰을 발급 받아 구글,페이스북,네이버에 로그인 할 수 있도록 권한을 부여 받는 것입니다.여기서 권한이란 로그인 뿐만 아니라 API를 호출하는 권한도 의미합니다.</p>
+<p>그런데 여기서 발급받은 토큰은 아무 의미 없는 문자열 형태입니다.때문에 구글,페북,네이버 서버에서는 토큰과 연관된 정보를 탐색한 후에 어떤 기능을 수행하게 됩니다.이와 달리 아래의 JWT는 서버의 탐색이 필요없습니다.</p>
+<h2 id="JWT-Json-Web-Token"><a href="#JWT-Json-Web-Token" class="headerlink" title="JWT(Json Web Token)"></a>JWT(Json Web Token)</h2><p>(JWT <a href="https://jwt.io/introduction/" target="_blank" rel="noopener">공식문서</a>를 참고하시면 좋을 것 같습니다.)</p>
+<p>JWT는 이름에서 알 수 있듯이 Json으로 된 Token을 사용합니다. 즉, OAuth와 같이 Token기반의 인증 방식이라는 것입니다.</p>
+<p>그런데 <strong>JWT는 토큰 자체가 의미를 갖는 Claim기반의 토큰 방식</strong>입니다.Claim은 사용자에 대한 속성을 의미합니다. JWT는 OAuth처럼 아무 의미없는 문자열로 된 토큰이 아니라는 뜻입니다.</p>
+<p>Token을 생성하고 요청하는 프로세스는 다음과 같습니다.</p>
+<ul>
+<li>JSON 객체에 요구사항을 작성</li>
+<li>어떠한 암호화 방식을 사용해서 문자열로 인코딩</li>
+<li>HTTP header에 추가함으로써 사용자 인증을 요청</li>
+<li>서버에서는 Header에 추가된 Token을 디코딩하여 사용자를 인증</li>
+</ul>
+<h3 id="JWT-특징"><a href="#JWT-특징" class="headerlink" title="JWT 특징"></a>JWT 특징</h3><ul>
+<li>JWT는 그 자체가 암호화된 문자열 데이터입니다.</li>
+<li>토큰은 HTTP header에 추가되기 때문에 서버에 따로 보관할 필요가 없으므로 서버에 부화를 일으키지 않습니다.</li>
+<li>토큰을 생성할 때 암호화 과정을 거치므로 보안적으로 안전합니다.<ul>
+<li>그래도 누군가 탈취한다면 권한을 사용할 수 있기때문에 짧은 시간의 유효시간을 두는것을 권장함</li>
+</ul>
+</li>
+</ul>
+<h3 id="JWT의-데이터-무결성-HMAC"><a href="#JWT의-데이터-무결성-HMAC" class="headerlink" title="JWT의 데이터 무결성 - HMAC"></a>JWT의 데이터 무결성 - HMAC</h3><p>JWT는 토큰이 탈취 당하더라도 위변조의 위험을 벗어날 수 있도록 무결정을 보장하는 몇 가지 방법이 있습니다.</p>
+<p>그 방법 중 하나는 데이터를 암호화하고, 해싱하는 <strong>HMAC</strong>(Hash-based Message Authentication)기법을 사용하는 것입니다. <strong>해싱</strong>은 원문을 일정 길이의 byte로 변환하는데 그 결과가 유일하다는 특징이 있습니다. 즉, 원문이 조금이라도 바뀌면 해싱의 결과는 완전히 달라집니다. 그래서 토큰을 탈취해서 데이터를 수정하게 되면 해싱의 결과가 완전히 달리지므로 토큰이 위조되었다는 것을 알 수 있게 됩니다.</p>
+<h2 id="JWT-구조-및-생성"><a href="#JWT-구조-및-생성" class="headerlink" title="JWT 구조 및 생성"></a>JWT 구조 및 생성</h2><p>JWT 는 <code>.</code>을 구분자로 3가지 문자열로 되어있습니다.</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/84241275-3b537700-ab3a-11ea-9bec-c297631fdd06.png" alt="image"></p>
+<p>많은 프로그래밍 언어에서 JWT를 지원하는데, 각 언어의 라이브러리에서 자동으로 인코딩 및 해싱작업을 해줍니다.(조건은 헤더,내용,서명에 적절한 속성과 값들을 명시할 때)</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/84241669-c16fbd80-ab3a-11ea-839e-e06edaf7160f.png" alt="image">위 사진은 <a href="https://jwt.io/#debugger-io" target="_blank" rel="noopener">JWT공식홈페이지</a>에서 제공해주는 디버거 기능입니다. 사진을 보고 설명하겠습니다.</p>
+<h4 id="1-헤더-header"><a href="#1-헤더-header" class="headerlink" title="1) 헤더(header)"></a>1) 헤더(header)</h4><ul>
+<li>typ<ul>
+<li>토큰의 타입을 명시합니다</li>
+</ul>
+</li>
+<li>alg<ul>
+<li>해싱 알고리즘을 명시합니다</li>
+<li>이 알고리즘은 서버에서 토큰을 검증할 때 signature에서 사용됩니다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-내용-payload"><a href="#2-내용-payload" class="headerlink" title="2) 내용(payload)"></a>2) 내용(payload)</h4><p>내용에는 토큰에 대한 정보를 작성합니다. 정보는 속성, 값으로 표현되며 이를 claim이라고 합니다. claim은 다음과 같이 3가지로 작성할 수 있습니다.</p>
+<ul>
+<li>registered claim<ul>
+<li>미리 정의된 claim으로써, 토큰에 대한 정보를 작성합니다</li>
+<li>iss<ul>
+<li>토큰 발급자</li>
+</ul>
+</li>
+<li>sub<ul>
+<li>토큰 제목</li>
+</ul>
+</li>
+<li>aud<ul>
+<li>토큰 대상자</li>
+</ul>
+</li>
+<li>그 밖에 여러 claim들이 있으며, 더 많은 정보는 JWT공식문서를 참고해주세요.</li>
+</ul>
+</li>
+<li>public claim<ul>
+<li>공개적인 claim을 명시하는데, 충돌방지를 위해 URI형식으로 작성합니다.</li>
+</ul>
+</li>
+<li>private claim<ul>
+<li>서버와 클라이언트가 협의한 claim을 명시합니다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="서명-signature"><a href="#서명-signature" class="headerlink" title="서명(signature)"></a>서명(signature)</h4><p>서명에서는 헤더와 인코딩 값과 내용의 인코딩 값을 <code>.</code>으로 연결하여 합친 후 비밀키로 해싱합니다.<strong>일종의 암호화하는 작업이라고 생각하시면 됩니다.</strong></p>
+<p>위의 header, payload,signature의 각 값들을 <code>.</code>으로 합치면 하나의 JWT가 생성됩니다.이렇게 생성된 JWT를 HTTP header에 추가하여 서버에 요청을 하면 서버에서는 이를 디코딩하여 사용자 인증을 하게 됩니다.</p>
+<p>JWT는 자체적으로 정보를 갖고 있는 토큰이기 때문에 서버에 저장될 필요가 없습니다. 즉, 서버로부터 독립적이라고 할 수 있으며, <strong>서버의 부담을 덜어줄 수 있다는</strong> 장점이 있습니다.</p>
+<p>JWT는 브라우저의 쿠키, local storage, session storage에 저장할 수 있지만, HTTP Only 옵션의 쿠키에 저장하는것이 좋습니다.</p>
+<p>참고자료</p>
+<p><a href="https://victorydntmd.tistory.com/115" target="_blank" rel="noopener">https://victorydntmd.tistory.com/115</a></p>
+<p><a href="">https://velopert.com/2389</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/09/%EC%BF%A0%ED%82%A4%EC%99%80%EC%84%B8%EC%85%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1237,112 +1398,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/TCP-IP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/01/TCP-IP/" class="post-title-link" itemprop="url">TCP/IP</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-01 20:01:56" itemprop="dateCreated datePublished" datetime="2020-06-01T20:01:56+09:00">2020-06-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-02 18:32:41" itemprop="dateModified" datetime="2020-06-02T18:32:41+09:00">2020-06-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/06/01/TCP-IP/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/01/TCP-IP/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h2><blockquote>
-<p>인터넷상에서 데이터를 메세지의 형태로 보내기 위해 IP와 함께 사용하는 프로토콜</p>
-</blockquote>
-<p><strong>TCP</strong>는 데이터 전달을 관리하는 규칙입니다. 즉, 데이터를 작게 나눠서 한쪽에서 다른쪽으로 옮기고, 이를 다시 조립하여 원래의 데이터로 만드는 규칙입니다. 여기서 잘게 나누 데이터 단위를 패킷이라고 합니다.인터넷에서는 정보를 전달하는 단위를 뜻합니다.TCP는 패킷을 조립하고, 손실된 패킷을 확인하고,재전송하도록 요청하는 기능을 합니다.</p>
-<p><strong>IP</strong>는 인터넷상의 주소 규칙입니다. 집의 주소를 부여하는 규칙이 존재하듯이, 인터넷상에 연결된 모든 컴퓨터의 위치에도 규칙이 필요합니다.</p>
-<h2 id="TCP-IP-4계층"><a href="#TCP-IP-4계층" class="headerlink" title="TCP/IP 4계층"></a>TCP/IP 4계층</h2><p><strong>OSI(Open System Interconnections) 7계층</strong>은 시스템들의 연결을 위한 모델입니다.<strong>TCP/IP 4계층</strong>은 이를 웹 서비스에 맞게 단순화시킨 모델입니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83402512-dca74280-a441-11ea-827f-1b728881c993.png" alt="image"></p>
-<ul>
-<li>응용계층: HTTP, SMTP, FTP, Telnet등 네트워크를 사용하는 응용프로그램으로 이루어집니다.</li>
-<li>전송계층: TCP, UDP등 시스템을 연결하고 데이터를 전송하는 역할을 합니다.</li>
-<li>인터넷계층: ICMP, IGMP, IP등 데이터를 정의하고 데이터의 경로를 라우팅합니다.</li>
-<li>물리계층: ATM,Ethernet등 네트워크 하드웨어를 의미합니다.</li>
-</ul>
-<p><img src="https://miro.medium.com/max/1316/1*qK2A5ivG6Z9IABU6rgu85g.png" alt="img"></p>
-<p>TCP/IP 4계층을 통해 데이터를 통신하는 순서</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1413,7 +1468,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1424,7 +1479,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

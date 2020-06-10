@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="사용자 인증의 여러 방식들1) 쿠키와 세션HTTP는 Stateless, Connectionless 특징이 있기 때문에, 사용자 인증을 유지할 수 있는 기능이 필요했습니다. 그래서 클라이언트가 로그인 등으로 한 번 사용자 인증을 하면, 그 인증을 유지할 수 있도록 쿠키와 세션이라는 기술을 지금껏 사용해 왔습니다. 그러나 쿠키는 브라우저에 사용자 정보가 기록되">
+<meta name="keywords" content="Develop,CS,JWT,Token">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JWT">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;10&#x2F;JWT&#x2F;index.html">
+<meta property="og:site_name" content="hongbeen&#39;s blog">
+<meta property="og:description" content="사용자 인증의 여러 방식들1) 쿠키와 세션HTTP는 Stateless, Connectionless 특징이 있기 때문에, 사용자 인증을 유지할 수 있는 기능이 필요했습니다. 그래서 클라이언트가 로그인 등으로 한 번 사용자 인증을 하면, 그 인증을 유지할 수 있도록 쿠키와 세션이라는 기술을 지금껏 사용해 왔습니다. 그러나 쿠키는 브라우저에 사용자 정보가 기록되">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;84241275-3b537700-ab3a-11ea-9bec-c297631fdd06.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;84241669-c16fbd80-ab3a-11ea-839e-e06edaf7160f.png">
+<meta property="og:updated_time" content="2020-06-10T08:13:00.288Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;84241275-3b537700-ab3a-11ea-9bec-c297631fdd06.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/10/JWT/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>JWT | hongbeen's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hongbeen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Beginner Developer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/10/JWT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JWT
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-10 17:06:19 / Modified: 17:13:00" itemprop="dateCreated datePublished" datetime="2020-06-10T17:06:19+09:00">2020-06-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/10/JWT/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/10/JWT/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="사용자-인증의-여러-방식들"><a href="#사용자-인증의-여러-방식들" class="headerlink" title="사용자 인증의 여러 방식들"></a>사용자 인증의 여러 방식들</h2><h3 id="1-쿠키와-세션"><a href="#1-쿠키와-세션" class="headerlink" title="1) 쿠키와 세션"></a>1) <a href="[https://parkhongbeen.github.io/2020/06/09/%EC%BF%A0%ED%82%A4%EC%99%80%EC%84%B8%EC%85%98/](https://parkhongbeen.github.io/2020/06/09/쿠키와세션/)">쿠키와 세션</a></h3><p>HTTP는 Stateless, Connectionless 특징이 있기 때문에, 사용자 인증을 유지할 수 있는 기능이 필요했습니다. 그래서 클라이언트가 로그인 등으로 한 번 사용자 인증을 하면, 그 인증을 유지할 수 있도록 쿠키와 세션이라는 기술을 지금껏 사용해 왔습니다.</p>
+<p>그러나 쿠키는 브라우저에 사용자 정보가 기록되기 때문에 위변조의 가능성이 높아 보안이 취약하며, 세션 또한 서버의 메모리를 차지하고 있기 때문에 동접자가 많은 웹 사이트일 경우 서버 과부하의 원인이 되며, 또한 세션 정보가 중간에 탈취당할 수 있기 때문에 보안에 완벽하다고 할 수가 없습니다.</p>
+<p>쿠키와 세션의 문제점들을 보완하기 위해 토큰(Token)기반의 인증 방식이 도입되었습니다.토큰 기반의 인증방식의 핵심은 <strong>보호할 데이터를 토큰으로 치환하여 원본 데이터 대신 토큰을 사용하는 기술</strong>입니다.만약 토큰 전송과정에서 중간에 토큰이 탈취 당하더라도 데이터에 대한 정보가 암호화 되어있어 공격자가 본래 내용을 알 수 없게 됩니다.즉, 보안적으로 우수하다고 할 수 있습니다.</p>
+<h3 id="2-OAuth"><a href="#2-OAuth" class="headerlink" title="2) OAuth"></a>2) OAuth</h3><p>토큰 방식을 사용하는 웹 서비스는 우리가 여러 웹 서비스를 이용하면서 쉽게 찾아볼 수 있습니다.”페이스북으로 로그인”, “네이버아이디로 로그인”, “구글 계정으로 로그인” 등 다른 웹 서비스의 계정으로 사용자 인증을 대신하는 기술을 OAuth라고 합니다.</p>
+<p>OAuth는 토큰 기반의 사용자 인증 방식입니다. 구글,페이스북,네이버로부터 토큰을 발급 받아 구글,페이스북,네이버에 로그인 할 수 있도록 권한을 부여 받는 것입니다.여기서 권한이란 로그인 뿐만 아니라 API를 호출하는 권한도 의미합니다.</p>
+<p>그런데 여기서 발급받은 토큰은 아무 의미 없는 문자열 형태입니다.때문에 구글,페북,네이버 서버에서는 토큰과 연관된 정보를 탐색한 후에 어떤 기능을 수행하게 됩니다.이와 달리 아래의 JWT는 서버의 탐색이 필요없습니다.</p>
+<h2 id="JWT-Json-Web-Token"><a href="#JWT-Json-Web-Token" class="headerlink" title="JWT(Json Web Token)"></a>JWT(Json Web Token)</h2><p>(JWT <a href="https://jwt.io/introduction/" target="_blank" rel="noopener">공식문서</a>를 참고하시면 좋을 것 같습니다.)</p>
+<p>JWT는 이름에서 알 수 있듯이 Json으로 된 Token을 사용합니다. 즉, OAuth와 같이 Token기반의 인증 방식이라는 것입니다.</p>
+<p>그런데 <strong>JWT는 토큰 자체가 의미를 갖는 Claim기반의 토큰 방식</strong>입니다.Claim은 사용자에 대한 속성을 의미합니다. JWT는 OAuth처럼 아무 의미없는 문자열로 된 토큰이 아니라는 뜻입니다.</p>
+<p>Token을 생성하고 요청하는 프로세스는 다음과 같습니다.</p>
+<ul>
+<li>JSON 객체에 요구사항을 작성</li>
+<li>어떠한 암호화 방식을 사용해서 문자열로 인코딩</li>
+<li>HTTP header에 추가함으로써 사용자 인증을 요청</li>
+<li>서버에서는 Header에 추가된 Token을 디코딩하여 사용자를 인증</li>
+</ul>
+<h3 id="JWT-특징"><a href="#JWT-특징" class="headerlink" title="JWT 특징"></a>JWT 특징</h3><ul>
+<li>JWT는 그 자체가 암호화된 문자열 데이터입니다.</li>
+<li>토큰은 HTTP header에 추가되기 때문에 서버에 따로 보관할 필요가 없으므로 서버에 부화를 일으키지 않습니다.</li>
+<li>토큰을 생성할 때 암호화 과정을 거치므로 보안적으로 안전합니다.<ul>
+<li>그래도 누군가 탈취한다면 권한을 사용할 수 있기때문에 짧은 시간의 유효시간을 두는것을 권장함</li>
+</ul>
+</li>
+</ul>
+<h3 id="JWT의-데이터-무결성-HMAC"><a href="#JWT의-데이터-무결성-HMAC" class="headerlink" title="JWT의 데이터 무결성 - HMAC"></a>JWT의 데이터 무결성 - HMAC</h3><p>JWT는 토큰이 탈취 당하더라도 위변조의 위험을 벗어날 수 있도록 무결정을 보장하는 몇 가지 방법이 있습니다.</p>
+<p>그 방법 중 하나는 데이터를 암호화하고, 해싱하는 <strong>HMAC</strong>(Hash-based Message Authentication)기법을 사용하는 것입니다. <strong>해싱</strong>은 원문을 일정 길이의 byte로 변환하는데 그 결과가 유일하다는 특징이 있습니다. 즉, 원문이 조금이라도 바뀌면 해싱의 결과는 완전히 달라집니다. 그래서 토큰을 탈취해서 데이터를 수정하게 되면 해싱의 결과가 완전히 달리지므로 토큰이 위조되었다는 것을 알 수 있게 됩니다.</p>
+<h2 id="JWT-구조-및-생성"><a href="#JWT-구조-및-생성" class="headerlink" title="JWT 구조 및 생성"></a>JWT 구조 및 생성</h2><p>JWT 는 <code>.</code>을 구분자로 3가지 문자열로 되어있습니다.</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/84241275-3b537700-ab3a-11ea-9bec-c297631fdd06.png" alt="image"></p>
+<p>많은 프로그래밍 언어에서 JWT를 지원하는데, 각 언어의 라이브러리에서 자동으로 인코딩 및 해싱작업을 해줍니다.(조건은 헤더,내용,서명에 적절한 속성과 값들을 명시할 때)</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/84241669-c16fbd80-ab3a-11ea-839e-e06edaf7160f.png" alt="image">위 사진은 <a href="https://jwt.io/#debugger-io" target="_blank" rel="noopener">JWT공식홈페이지</a>에서 제공해주는 디버거 기능입니다. 사진을 보고 설명하겠습니다.</p>
+<h4 id="1-헤더-header"><a href="#1-헤더-header" class="headerlink" title="1) 헤더(header)"></a>1) 헤더(header)</h4><ul>
+<li>typ<ul>
+<li>토큰의 타입을 명시합니다</li>
+</ul>
+</li>
+<li>alg<ul>
+<li>해싱 알고리즘을 명시합니다</li>
+<li>이 알고리즘은 서버에서 토큰을 검증할 때 signature에서 사용됩니다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-내용-payload"><a href="#2-내용-payload" class="headerlink" title="2) 내용(payload)"></a>2) 내용(payload)</h4><p>내용에는 토큰에 대한 정보를 작성합니다. 정보는 속성, 값으로 표현되며 이를 claim이라고 합니다. claim은 다음과 같이 3가지로 작성할 수 있습니다.</p>
+<ul>
+<li>registered claim<ul>
+<li>미리 정의된 claim으로써, 토큰에 대한 정보를 작성합니다</li>
+<li>iss<ul>
+<li>토큰 발급자</li>
+</ul>
+</li>
+<li>sub<ul>
+<li>토큰 제목</li>
+</ul>
+</li>
+<li>aud<ul>
+<li>토큰 대상자</li>
+</ul>
+</li>
+<li>그 밖에 여러 claim들이 있으며, 더 많은 정보는 JWT공식문서를 참고해주세요.</li>
+</ul>
+</li>
+<li>public claim<ul>
+<li>공개적인 claim을 명시하는데, 충돌방지를 위해 URI형식으로 작성합니다.</li>
+</ul>
+</li>
+<li>private claim<ul>
+<li>서버와 클라이언트가 협의한 claim을 명시합니다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="서명-signature"><a href="#서명-signature" class="headerlink" title="서명(signature)"></a>서명(signature)</h4><p>서명에서는 헤더와 인코딩 값과 내용의 인코딩 값을 <code>.</code>으로 연결하여 합친 후 비밀키로 해싱합니다.<strong>일종의 암호화하는 작업이라고 생각하시면 됩니다.</strong></p>
+<p>위의 header, payload,signature의 각 값들을 <code>.</code>으로 합치면 하나의 JWT가 생성됩니다.이렇게 생성된 JWT를 HTTP header에 추가하여 서버에 요청을 하면 서버에서는 이를 디코딩하여 사용자 인증을 하게 됩니다.</p>
+<p>JWT는 자체적으로 정보를 갖고 있는 토큰이기 때문에 서버에 저장될 필요가 없습니다. 즉, 서버로부터 독립적이라고 할 수 있으며, <strong>서버의 부담을 덜어줄 수 있다는</strong> 장점이 있습니다.</p>
+<p>JWT는 브라우저의 쿠키, local storage, session storage에 저장할 수 있지만, HTTP Only 옵션의 쿠키에 저장하는것이 좋습니다.</p>
+<p>참고자료</p>
+<p><a href="https://victorydntmd.tistory.com/115" target="_blank" rel="noopener">https://victorydntmd.tistory.com/115</a></p>
+<p><a href="">https://velopert.com/2389</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Develop/" rel="tag"># Develop</a>
+              <a href="/tags/CS/" rel="tag"># CS</a>
+              <a href="/tags/JWT/" rel="tag"># JWT</a>
+              <a href="/tags/Token/" rel="tag"># Token</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/09/%EC%BF%A0%ED%82%A4%EC%99%80%EC%84%B8%EC%85%98/" rel="prev" title="쿠키와세션">
+      <i class="fa fa-chevron-left"></i> 쿠키와세션
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#사용자-인증의-여러-방식들"><span class="nav-number">1.</span> <span class="nav-text">사용자 인증의 여러 방식들</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-쿠키와-세션"><span class="nav-number">1.1.</span> <span class="nav-text">1) 쿠키와 세션</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-OAuth"><span class="nav-number">1.2.</span> <span class="nav-text">2) OAuth</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JWT-Json-Web-Token"><span class="nav-number">2.</span> <span class="nav-text">JWT(Json Web Token)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JWT-특징"><span class="nav-number">2.1.</span> <span class="nav-text">JWT 특징</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JWT의-데이터-무결성-HMAC"><span class="nav-number">2.2.</span> <span class="nav-text">JWT의 데이터 무결성 - HMAC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JWT-구조-및-생성"><span class="nav-number">3.</span> <span class="nav-text">JWT 구조 및 생성</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-헤더-header"><span class="nav-number">3.0.1.</span> <span class="nav-text">1) 헤더(header)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-내용-payload"><span class="nav-number">3.0.2.</span> <span class="nav-text">2) 내용(payload)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#서명-signature"><span class="nav-number">3.0.3.</span> <span class="nav-text">서명(signature)</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hong been Park</p>
+  <div class="site-description" itemprop="description">불타는 열정보단 지속적인 열정</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hong been Park</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hongbeen.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2020/06/10/JWT/";
+    this.page.identifier = "2020/06/10/JWT/";
+    this.page.title = "JWT";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hongbeen.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
