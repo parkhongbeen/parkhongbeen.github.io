@@ -23,13 +23,13 @@
   <meta name="description" content="웹브라우저를 실행시켜서 주소창에 특정 URL값을 입력시킨 후, 엔터를 눌렀을때, 페이지가 렌더링되는 과정을 웹통신 흐름에 중점을 두어 설명해주세요.  브라우저는 서버로부터 HTML, CSS, Javascript, 이미지파일 등을 응답받습니다. HTML,CSS파일은 렌더링 엔진의 HTML파서와 CSS파서에 의해 파싱되어 DOM,CSSOM 트리로 변환됩니다.">
 <meta name="keywords" content="Develop,CS,웹브라우저의 동작원리,CSSOM,rendertree,DOM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="웹브라우저의동작원리">
+<meta property="og:title" content="웹브라우저의 동작원리">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;03&#x2F;%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
 <meta property="og:description" content="웹브라우저를 실행시켜서 주소창에 특정 URL값을 입력시킨 후, 엔터를 눌렀을때, 페이지가 렌더링되는 과정을 웹통신 흐름에 중점을 두어 설명해주세요.  브라우저는 서버로부터 HTML, CSS, Javascript, 이미지파일 등을 응답받습니다. HTML,CSS파일은 렌더링 엔진의 HTML파서와 CSS파서에 의해 파싱되어 DOM,CSSOM 트리로 변환됩니다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83598151-f8c2f500-a5a3-11ea-9f5c-b6fb5a4c0682.png">
-<meta property="og:updated_time" content="2020-06-03T05:16:52.700Z">
+<meta property="og:updated_time" content="2020-06-10T09:43:23.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83598151-f8c2f500-a5a3-11ea-9f5c-b6fb5a4c0682.png">
 
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>웹브라우저의동작원리 | hongbeen's blog</title>
+  <title>웹브라우저의 동작원리 | hongbeen's blog</title>
   
 
 
@@ -194,7 +194,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          웹브라우저의동작원리
+          웹브라우저의 동작원리
         </h1>
 
         <div class="post-meta">
@@ -203,10 +203,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-03 14:10:56 / Modified: 14:16:52" itemprop="dateCreated datePublished" datetime="2020-06-03T14:10:56+09:00">2020-06-03</time>
+              <time title="Created: 2020-06-03 14:10:56" itemprop="dateCreated datePublished" datetime="2020-06-03T14:10:56+09:00">2020-06-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:43:23" itemprop="dateModified" datetime="2020-06-10T18:43:23+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -256,6 +262,8 @@
         <p>웹브라우저를 실행시켜서 주소창에 특정 URL값을 입력시킨 후, 엔터를 눌렀을때, 페이지가 렌더링되는 과정을 웹통신 흐름에 중점을 두어 설명해주세요.</p>
 <p><img src="https://user-images.githubusercontent.com/53684676/83598151-f8c2f500-a5a3-11ea-9f5c-b6fb5a4c0682.png" alt="image"></p>
 <p>브라우저는 서버로부터 HTML, CSS, Javascript, 이미지파일 등을 응답받습니다. HTML,CSS파일은 렌더링 엔진의 HTML파서와 CSS파서에 의해 파싱되어 DOM,CSSOM 트리로 변환됩니다.</p>
+<a id="more"></a>
+
 <p>자바스크립트는 렌더링 엔진이 아닌 자바스크립트엔진이 처리합니다.HTML파서는 script태그를 만나면 자바스크립트 코드를 실행하기 위해 DOM생성 프로세스를 중지하고 자바스크립트엔진으로 제어권한을 넘깁니다.제어 권한을 넘겨받은 자바스크립트 엔진은 script태그 내의 자바스크립트코드 또는 script태그의 src어트리뷰트에 정의된 자바스크립트 파일을 로드하고 파싱하여 실행합니다.이 때 자바엔진은 추상구문트리를 만듭니다. 자바스크립트의 실행이 완료되면 다시 HTML파서로 제어권한을 넘겨서 브라우저가 중지했던 시점부터 DOM생성을 재개합니다.</p>
 
     </div>
@@ -280,8 +288,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/06/03/TCP3-wayhandshake-4-wayhanshake/" rel="prev" title="TCP3-wayhandshake/4-wayhanshake">
-      <i class="fa fa-chevron-left"></i> TCP3-wayhandshake/4-wayhanshake
+    <a href="/2020/06/03/TCP3-wayhandshake-4-wayhanshake/" rel="prev" title="TCP3-wayhandshake 4-wayhanshake">
+      <i class="fa fa-chevron-left"></i> TCP3-wayhandshake 4-wayhanshake
     </a></div>
       <div class="post-nav-item">
     <a href="/2020/06/04/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80IPC/" rel="next" title="프로세스와IPC">
@@ -494,7 +502,7 @@
   var disqus_config = function() {
     this.page.url = "http://yoursite.com/2020/06/03/%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/";
     this.page.identifier = "2020/06/03/웹브라우저의동작원리/";
-    this.page.title = "웹브라우저의동작원리";
+    this.page.title = "웹브라우저의 동작원리";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

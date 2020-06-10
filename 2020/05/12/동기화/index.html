@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="hongbeen&#39;s blog">
 <meta property="og:description" content="동기화 동기화: 작업들 사이에 실행 시기를 맞추는 것 ex) 1,2,3,4 번의 작업이 있음 -&amp;gt; 3,4번 작업이 시작되려면 1,2번이 완료되어야함 -&amp;gt; 1번은 완료되고 2번은 아직 끝나지 않았을때 3,4번은 기다려야 함동기화 이슈 여러 스레드가 동일한 자원접근시 동기화 이슈 발생 동일 자원을 여러 스레드가 동시 수정시, 각 스레드 결과에 영향을">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-12T11:56:06.777Z">
+<meta property="og:updated_time" content="2020-06-10T09:50:40.994Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/05/12/%EB%8F%99%EA%B8%B0%ED%99%94/">
@@ -201,10 +201,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-12 16:41:59 / Modified: 20:56:06" itemprop="dateCreated datePublished" datetime="2020-05-12T16:41:59+09:00">2020-05-12</time>
+              <time title="Created: 2020-05-12 16:41:59" itemprop="dateCreated datePublished" datetime="2020-05-12T16:41:59+09:00">2020-05-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:50:40" itemprop="dateModified" datetime="2020-06-10T18:50:40+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -264,7 +270,8 @@
 <li>쓰레드는 프로세스 모든 데이터를 접근할 수 있으므로, 여러 스레드가 변경하는 공유 변수에 대해 Exclusive Access필요</li>
 <li>어느 한 스레드가 공유 변수를 갱신하는 동안 다른 스레드가 동시 접근하지 못하도록 막기</li>
 </ul>
-<hr>
+<a id="more"></a>
+
 <h3 id="Mutex-Mutual-exclusion-상호-배제"><a href="#Mutex-Mutual-exclusion-상호-배제" class="headerlink" title="Mutex (Mutual exclusion / 상호 배제)"></a>Mutex (<em>Mut</em>ual <em>ex</em>clusion / 상호 배제)</h3><p>일종의 Locking매커니즘. lock을 가지고 있을 경우에만 공유 데이터에 접근 가능하다.<code>일부 음식점들은 공용 화장실 관리 차원에서 화장실을 잠궈두고 다닌다.손님들이 화장실에 가려면 주인에게 열쇠를 받은 후 가야한다.물론 다음 손님이 화장실에 가려면 앞 손님이 열쇠를 반납해야 갈 수 있다.이렇게 열쇠가 있는-lock을 가지고 있는 경우에만 공유자원(화장실)에 접근할 수 있다.이게 바로 Mutex라고 보면 된다.</code>유의할 점은 Lock에 대한 소유권이 있다는 점이다.열쇠를 획득한 사람만 반납할 수 있다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">lock.acquire()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100000</span>):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  g_count += <span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  lock.release()</span></pre></td></tr></table></figure>
 
@@ -291,8 +298,8 @@
       <i class="fa fa-chevron-left"></i> 운영체제
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/12/%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-%EA%B8%B0%EC%95%84%EC%83%81%ED%83%9C/" rel="next" title="교착상태,기아상태">
-      교착상태,기아상태 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/12/%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-%EA%B8%B0%EC%95%84%EC%83%81%ED%83%9C/" rel="next" title="교착상태와 기아상태">
+      교착상태와 기아상태 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

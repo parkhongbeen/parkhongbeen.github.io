@@ -29,7 +29,7 @@
 <meta property="og:description" content="컨텍스트 스위칭 문맥교환, CPU에서 실행할 프로세스를 교체하는 기술입니다.현재 진행하는 Task의 상태를 저장하고 다음 진행할 Task의 상태 값을 읽어 적용하는 과정을 말합니다.  컨텍스트 스위칭의 순서컨텍스트 위칭은 크게 다음과 같은 두 동작으로 구분할 수 있다.  실행 중지할 프로세스 정보를 해당 프로세스의 PCB에 업데이트하여 메인 메모리에 저장">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83859315-b2fb5d80-a758-11ea-9071-ab0aaf45b22a.png">
-<meta property="og:updated_time" content="2020-06-05T09:33:50.457Z">
+<meta property="og:updated_time" content="2020-06-10T09:42:16.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83859315-b2fb5d80-a758-11ea-9071-ab0aaf45b22a.png">
 
@@ -203,10 +203,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-05 18:32:55 / Modified: 18:33:50" itemprop="dateCreated datePublished" datetime="2020-06-05T18:32:55+09:00">2020-06-05</time>
+              <time title="Created: 2020-06-05 18:32:55" itemprop="dateCreated datePublished" datetime="2020-06-05T18:32:55+09:00">2020-06-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:42:16" itemprop="dateModified" datetime="2020-06-10T18:42:16+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -262,6 +268,8 @@
 <li>다음 실행할 프로세스 정보를 메인 메모리에 있는 해당 PCB정보를 CPU에 넣고 실행</li>
 </ol>
 <p><img src="https://user-images.githubusercontent.com/53684676/83859315-b2fb5d80-a758-11ea-9071-ab0aaf45b22a.png" alt="img"></p>
+<a id="more"></a>
+
 <h3 id="왜-Context-Switching이-필요한가"><a href="#왜-Context-Switching이-필요한가" class="headerlink" title="왜 Context Switching이 필요한가?"></a>왜 Context Switching이 필요한가?</h3><p>컴퓨터가 매번 하나의 Task만 처리할 수 있다면?….</p>
 <ul>
 <li>해당 Task가 끝날때까지 다음 Task는 기다릴 수 밖에 없습니다.</li>

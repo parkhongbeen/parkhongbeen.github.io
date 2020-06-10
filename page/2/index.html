@@ -191,7 +191,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/01/TCP-IP/" class="post-title-link" itemprop="url">TCP/IP</a>
+            <a href="/2020/06/01/TCP-IP/" class="post-title-link" itemprop="url">TCP / IP</a>
         </h1>
 
         <div class="post-meta">
@@ -208,7 +208,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-02 18:32:41" itemprop="dateModified" datetime="2020-06-02T18:32:41+09:00">2020-06-02</time>
+                <time title="Modified: 2020-06-10 18:44:50" itemprop="dateModified" datetime="2020-06-10T18:44:50+09:00">2020-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,17 +254,14 @@
 </blockquote>
 <p><strong>TCP</strong>는 데이터 전달을 관리하는 규칙입니다. 즉, 데이터를 작게 나눠서 한쪽에서 다른쪽으로 옮기고, 이를 다시 조립하여 원래의 데이터로 만드는 규칙입니다. 여기서 잘게 나누 데이터 단위를 패킷이라고 합니다.인터넷에서는 정보를 전달하는 단위를 뜻합니다.TCP는 패킷을 조립하고, 손실된 패킷을 확인하고,재전송하도록 요청하는 기능을 합니다.</p>
 <p><strong>IP</strong>는 인터넷상의 주소 규칙입니다. 집의 주소를 부여하는 규칙이 존재하듯이, 인터넷상에 연결된 모든 컴퓨터의 위치에도 규칙이 필요합니다.</p>
-<h2 id="TCP-IP-4계층"><a href="#TCP-IP-4계층" class="headerlink" title="TCP/IP 4계층"></a>TCP/IP 4계층</h2><p><strong>OSI(Open System Interconnections) 7계층</strong>은 시스템들의 연결을 위한 모델입니다.<strong>TCP/IP 4계층</strong>은 이를 웹 서비스에 맞게 단순화시킨 모델입니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83402512-dca74280-a441-11ea-827f-1b728881c993.png" alt="image"></p>
-<ul>
-<li>응용계층: HTTP, SMTP, FTP, Telnet등 네트워크를 사용하는 응용프로그램으로 이루어집니다.</li>
-<li>전송계층: TCP, UDP등 시스템을 연결하고 데이터를 전송하는 역할을 합니다.</li>
-<li>인터넷계층: ICMP, IGMP, IP등 데이터를 정의하고 데이터의 경로를 라우팅합니다.</li>
-<li>물리계층: ATM,Ethernet등 네트워크 하드웨어를 의미합니다.</li>
-</ul>
-<p><img src="https://miro.medium.com/max/1316/1*qK2A5ivG6Z9IABU6rgu85g.png" alt="img"></p>
-<p>TCP/IP 4계층을 통해 데이터를 통신하는 순서</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/01/TCP-IP/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -306,10 +303,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-01 18:13:54 / Modified: 18:15:14" itemprop="dateCreated datePublished" datetime="2020-06-01T18:13:54+09:00">2020-06-01</time>
+              <time title="Created: 2020-06-01 18:13:54" itemprop="dateCreated datePublished" datetime="2020-06-01T18:13:54+09:00">2020-06-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:45:11" itemprop="dateModified" datetime="2020-06-10T18:45:11+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -356,17 +359,14 @@
           <h2 id="좌표-정렬하기"><a href="#좌표-정렬하기" class="headerlink" title="좌표 정렬하기"></a>좌표 정렬하기</h2><p>python의 기본 정렬 라이브러리는 기본적으로 <strong>튜플의 인덱스 순서대로 오름차순 정렬한다는 것</strong>에 대해서 정리하려고 합니다.</p>
 <p>백준알고리즘의 <a href="https://www.acmicpc.net/problem/11650" target="_blank" rel="noopener">11650</a>문제를 풀며 위의 내용에 대해서 정리하려고 합니다.</p>
 <p><img src="https://user-images.githubusercontent.com/53684676/83393759-49b2dc00-a432-11ea-8661-6294d5a3b666.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83393775-52a3ad80-a432-11ea-9be8-86f1f1906d1f.png" alt="image"></p>
-<p>1) 좌표를 입력받은 뒤 x좌료, y좌표 순서대로 차례대로 오름차순 정렬합니다.</p>
-<p>2) 파이썬의 기본 정렬 라이브러리는 기본적으로 튜플의 인덱스 순서대로 오름차순 정열합니다.</p>
-<p>3) 단순히 기본 정렬 라이브러리를 이용하면 됩니다.</p>
-<p>풀이는 이렇습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">n = int(input())</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">arr = []</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  x, y = map(int, input().split(<span class="string">' '</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  arr.append((x, y))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">arr = sorted(arr)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> arr:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  print(i[<span class="number">0</span>], i[<span class="number">1</span>])</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># 문제에 나와있는 입력값을 넣어주면...</span></span></pre></td></tr></table></figure>
-
-<p><img src="https://user-images.githubusercontent.com/53684676/83394232-32282300-a433-11ea-983d-1b8b99f29c5d.png" alt="image"></p>
-<p>이렇게 문제가 잘 풀리는 것을 볼 수 있습니다.</p>
-<p><strong>배운점</strong> : python의 기본 정렬에 대해서 한번 더 되짚었음</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/01/%EB%B0%B1%EC%A4%80%EC%A2%8C%ED%91%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -416,7 +416,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-03 14:21:51" itemprop="dateModified" datetime="2020-06-03T14:21:51+09:00">2020-06-03</time>
+                <time title="Modified: 2020-06-10 18:45:31" itemprop="dateModified" datetime="2020-06-10T18:45:31+09:00">2020-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -462,13 +462,14 @@
 </blockquote>
 <p>넘파이 배열은 임원의 차원을 가집니다. 넘파이 모듈의 <strong>array메서드</strong>를 사용하여 ‘시퀀스의 시퀀스(리스트 또는 튜플)’를 <strong>2차원 배열</strong>로 생성할 수 있습니다.</p>
 <p>아래는 numpy모듈의 간단한 사용 예제입니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83374604-173fb980-a407-11ea-9622-93355cd63164.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83374616-20c92180-a407-11ea-97bb-6a75ea34effd.png" alt="image"></p>
-<p><strong>ndim</strong>속성은 배열의 차원 수를 알려줍니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83374630-2888c600-a407-11ea-9d1e-c6e97155aa1f.png" alt="image"> <img src="https://user-images.githubusercontent.com/53684676/83375035-8bc72800-a408-11ea-8127-ec27bfc89b70.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83375040-92ee3600-a408-11ea-95ce-0f17621c5986.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83375479-f2007a80-a409-11ea-850d-10bb93ddca97.png" alt="image"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/01/numpy%EB%AA%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -501,7 +502,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/" class="post-title-link" itemprop="url">OSI7계층</a>
+            <a href="/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/" class="post-title-link" itemprop="url">OSI 7계층</a>
         </h1>
 
         <div class="post-meta">
@@ -510,10 +511,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-31 18:55:58 / Modified: 18:56:52" itemprop="dateCreated datePublished" datetime="2020-05-31T18:55:58+09:00">2020-05-31</time>
+              <time title="Created: 2020-05-31 18:55:58" itemprop="dateCreated datePublished" datetime="2020-05-31T18:55:58+09:00">2020-05-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:46:21" itemprop="dateModified" datetime="2020-06-10T18:46:21+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -558,21 +565,14 @@
 <li><strong>OSI 7 layer</strong> 또는 <strong>OSI계층</strong>으로 불리움</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/53684676/83349463-10199c80-a370-11ea-9e15-7b7045f57d02.png" alt="image-20200531184042164"></p>
-<p><strong>OSI 7계층은 컴퓨터간 통신 과정을 추상화한 모델</strong>로, </p>
-<p>1계층, <strong>물리(Physical)</strong> 계층은 시스템 간 물리적 연결과 전기 신호 변환 및 제어를 담당하고, </p>
-<p>2계층, <strong>데이터 링크(Data Link)</strong> 계층은 네트워크 기기간 데이터 전송을 담당하고, </p>
-<p>3계층, <strong>네트워크(Network)</strong> 계층은 다른 네트워크와의 통신 경로 설정을 담당하고, </p>
-<p>4계층, <strong>전송(Transport)</strong> 계층은 신뢰할 수 있는 통신을 구현하고, </p>
-<p>5계층, <strong>세션(Session)</strong> 계층은 통신 방식을 결정하고, </p>
-<p>6계층, <strong>표현(Presentation)</strong> 계층은 데이터 변환, </p>
-<p>7계층, <strong>응용(Application)</strong> 계층은 응용 프로그램에 대한 서비스 제공을 담당합니다.</p>
-<h3 id="캡슐화와-역캡슐화"><a href="#캡슐화와-역캡슐화" class="headerlink" title="캡슐화와 역캡슐화"></a>캡슐화와 역캡슐화</h3><ul>
-<li>송신측: <strong>캡슐화</strong>, 수신측:<strong>역캡슐화</strong></li>
-<li>헤더(header): 데이터 송신시, 필요한 정보를 데이터에 추가</li>
-<li>바디(body): 실제 데이터</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/83349476-1a3b9b00-a370-11ea-858a-fbcb56351efd.png" alt="image-20200531185246441"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -614,10 +614,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-29 19:01:26 / Modified: 19:04:26" itemprop="dateCreated datePublished" datetime="2020-05-29T19:01:26+09:00">2020-05-29</time>
+              <time title="Created: 2020-05-29 19:01:26" itemprop="dateCreated datePublished" datetime="2020-05-29T19:01:26+09:00">2020-05-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:47:45" itemprop="dateModified" datetime="2020-06-10T18:47:45+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -667,13 +673,14 @@
 <p>해시가 아주 빠르게 진행될 수 있는 이유는 데이터를 검색할 때 사용할 key와 실제 데이터의 값(value)이 한 쌍으로 존재하고, key값이 배열의 인덱스로 변환되기 때문에 검색과 저장의 평균적인 시간 복잡도가 O(1)에 수렴하게 됩니다.</p>
 <p><strong>ex)</strong> hello라는 문자열을 정수형 key값으로 바꾼다면, h+e+l+l+o -&gt; 104+101+108+108+111=532라는 해시코드로 변환 할 수 있습니다.</p>
 <p>백준알고리즘의 <a href="https://www.acmicpc.net/problem/10930" target="_blank" rel="noopener">10930</a>문제를 풀다가 hash에 대한 개념이 부족하여 간단하게 정리 후 알고리즘을 풀어봤습니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/83247160-1bd55980-a1de-11ea-9f6b-702982b95c56.png" alt="문제"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib  <span class="comment"># 라이브러리를 import </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">s = input()     <span class="comment"># 입력받을 input</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">s_encode = s.encode()  <span class="comment"># 문자열의 바이트객체로 변환</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">result = hashlib.sha256(s_encode).hexdigest() <span class="comment">#해시객체로 변환</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">print(result)</span></pre></td></tr></table></figure>
-
-
-
-<p>배운점: hashlib 사용법</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/29/%EB%B0%B1%EC%A4%80SHA-256/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -706,7 +713,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/28/%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/" class="post-title-link" itemprop="url">반복문,조건문</a>
+            <a href="/2020/05/28/%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/" class="post-title-link" itemprop="url">반복문, 조건문</a>
         </h1>
 
         <div class="post-meta">
@@ -723,7 +730,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-29 19:05:58" itemprop="dateModified" datetime="2020-05-29T19:05:58+09:00">2020-05-29</time>
+                <time title="Modified: 2020-06-10 18:48:15" itemprop="dateModified" datetime="2020-06-10T18:48:15+09:00">2020-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -769,33 +776,14 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> state :</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">else</span> :</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span></pre></td></tr></table></figure>
 
 <p>이 방식을 다르게 쓰면 다음과 같습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> state : <span class="keyword">return</span> <span class="literal">True</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="literal">False</span></span></pre></td></tr></table></figure>
-
-<p>if 문 등을 통해서 이미 return을 했다면, <code>elif</code>나 <code>else</code> 를 굳이 사용하지 않아도 됩니다.</p>
-<p>함수를 설계하며 가장 중요한 점은 <code>return</code> 을 하는 순간 <em>함수의 생명은 끝</em>이라는 것입니다.이런 return의 특징 때문에 함수 종료를 위해 return을 사용하는 경우도 있습니다.굳이 이미 끝난 함수의 반복문이나 남은 프로세스를 <code>break</code> 등으로 끊지 않아도 탈출할 수 있다는 것입니다.</p>
-<p>그 다음은 3항 연산자를 사용하는 방법이 있습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="literal">True</span> <span class="keyword">if</span> state <span class="keyword">else</span> <span class="literal">False</span></span></pre></td></tr></table></figure>
-
-<p>조건문이 참일 때는 앞의 항을 선택하고, 거짓이면 뒤의 항을 선택합니다.같은 함수의 표현식이지만 간결한 정도가 다른 것을 알 수 있습니다.</p>
-<p>조건문도 여러가지 트릭을 사용하면 쉽게 풀 수 있는 문제가 많습니다.다음 문제를 풀어보며 왜 clean code가 필요한지 살펴봅시다.</p>
-<p>파이썬의 비교연산은 연속으로 할 수 있습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">print(<span class="number">1</span> &lt; <span class="number">2</span> <span class="keyword">and</span> <span class="number">2</span> &lt;<span class="number">3</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">print(<span class="number">1</span> &lt; <span class="number">2</span> &lt; <span class="number">3</span>)</span></pre></td></tr></table></figure>
-
-<h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><p>N by N, 즉 2중 반복문을 돌릴 때의 코드는 다음과 같습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">for</span> J <span class="keyword">in</span> range(N):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">pass</span></span></pre></td></tr></table></figure>
-
-<p>코드의 indent가 적당히 존재하는 경우, 가독성이 뛰어나지만 indent가 3, 4, 5개 늘어나는 순간부터 가독성은 매우 떨어집니다.이런 경우, 시간에 엄청 큰 영향은 받지 않고 다음과 같은 과정을 거칠 수 있습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ij <span class="keyword">in</span> range(N*N):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  i, J = ij//N, ij%N</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">pass</span></span></pre></td></tr></table></figure>
-
-<p>i, j가 늘어나고 줄어드는 주기를 사용하면 위의 방식처럼 사용할 수 있습니다.많이 사용하는 트릭은 아니지만 알아두면 좋습니다.</p>
-<p>또한 반복문과 조건문이 있을 때는 가독성이 떨어지기 쉽습니다.예를 들면 다음과 같은 상황이 있습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> state :</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    process()</span></pre></td></tr></table></figure>
-
-<p>이렇게 반복문과 조건문이 함께가 되는 경우, indent가 계속 늘어날 수 있습니다.이런 경우에는 조금 바꿔 생각하면 다음과 같이 작성할 수 있습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> state : <span class="keyword">continue</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    process()</span></pre></td></tr></table></figure>
-
-<p><em>조건문이 참일 때 실행하라</em> 가 아닌 <em>조건문이 거짓이면 넘어가라</em>라고 바꾼 것입니다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/28/%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -828,7 +816,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/" class="post-title-link" itemprop="url">프로세스와스케쥴러의이해</a>
+            <a href="/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/" class="post-title-link" itemprop="url">프로세스와 스케쥴러의이해</a>
         </h1>
 
         <div class="post-meta">
@@ -837,10 +825,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-26 17:07:28 / Modified: 17:08:07" itemprop="dateCreated datePublished" datetime="2020-05-26T17:07:28+09:00">2020-05-26</time>
+              <time title="Created: 2020-05-26 17:07:28" itemprop="dateCreated datePublished" datetime="2020-05-26T17:07:28+09:00">2020-05-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:48:38" itemprop="dateModified" datetime="2020-06-10T18:48:38+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -887,24 +881,14 @@
 <p>응용 프로그램 != 프로세스</p>
 <p>응용 프로그램은 여러 프로세스로 구성 가능</p>
 <h2 id="프로세스-스케쥴링"><a href="#프로세스-스케쥴링" class="headerlink" title="프로세스 스케쥴링"></a>프로세스 스케쥴링</h2><h3 id="배치-처리-시스템"><a href="#배치-처리-시스템" class="headerlink" title="배치 처리 시스템"></a>배치 처리 시스템</h3><p>여러 프로그램을 순차적으로 실행시킬 수 있도록  / 어떤 프로그램은 실행이 너무 오래 걸려서, 다른 프로그램이 실행하는데 시간을 많이 기다려야 함</p>
-<h3 id="시분한-시스템"><a href="#시분한-시스템" class="headerlink" title="시분한 시스템"></a>시분한 시스템</h3><p>다중 사용자 지원을 위해 컴퓨터 응답 시간을 최소화하는 시스템</p>
-<h3 id="멀티-태스킹"><a href="#멀티-태스킹" class="headerlink" title="멀티 태스킹"></a>멀티 태스킹</h3><p>단일 CPU에서, 여러 응용 프로그램이 동시에 실행되는 것처럼 보이도록 하는 시스템 / ex)10 ~ 20ms단위로도 실행 응용 프로그램이 바뀜</p>
-<h3 id="멀티-프로그래밍"><a href="#멀티-프로그래밍" class="headerlink" title="멀티 프로그래밍"></a>멀티 프로그래밍</h3><p>최대한 CPU를 많이 활용하도록 하는 시스템</p>
-<p>응용 프로그램은 CPU 외 다양한 하드웨어 사용</p>
-<h3 id="멀티-프로그래밍과-Wait"><a href="#멀티-프로그래밍과-Wait" class="headerlink" title="멀티 프로그래밍과 Wait"></a>멀티 프로그래밍과 Wait</h3><p>멀티 프로그래밍: CPU 활용도를 극대화 하는 스케쥴링 알고리즘</p>
-<p>Wait: 간단히 저장매체로부터 파일 읽기를 기다리는 시간으로 가정</p>
-<h3 id="프로세스-상태"><a href="#프로세스-상태" class="headerlink" title="프로세스 상태"></a>프로세스 상태</h3><ul>
-<li>runnig state: 현재 CPU에서 실행 상태</li>
-<li>ready state: CPU에서 실행 가능 상태(실행 대기 상태)</li>
-<li>block state: 특정 이벤트 발생 대기 상태</li>
-</ul>
-<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><ul>
-<li>시분할 시스템: 다중 사용자 지원, 컴퓨터 응답시간을 최소화하는 시스템</li>
-<li>멀티 태스킹: 단일 CPU에서 여러 응용 프로그램을 동시에 실행하는 것처럼 보이게 하는 시스템</li>
-<li>멀티 프로그래밍: 최대한 CPU를 일정 시간당 많이 활용하는 시스템</li>
-<li>멀티 프로세싱: 여러 CPU에서 하나의 응용 프로그램을 병렬로 실행해서,실행속도를 높이는 기법</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -954,7 +938,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-03 14:21:29" itemprop="dateModified" datetime="2020-06-03T14:21:29+09:00">2020-06-03</time>
+                <time title="Modified: 2020-06-10 18:49:08" itemprop="dateModified" datetime="2020-06-10T18:49:08+09:00">2020-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -998,11 +982,14 @@
           <h2 id="Django-form-Login"><a href="#Django-form-Login" class="headerlink" title="Django form Login"></a>Django form Login</h2><h3 id="1-로그인-예외처리"><a href="#1-로그인-예외처리" class="headerlink" title="1. 로그인 예외처리"></a>1. 로그인 예외처리</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;form.py&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginForm</span><span class="params">(forms.Form)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    username = forms.CharField(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        error_messages=&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">            <span class="string">'required'</span>: <span class="string">'아이디를 입력해주세요.'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        max_length=<span class="number">32</span>, label=<span class="string">"사용자이름"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    password = forms.CharField(</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        error_messages=&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            <span class="string">'required'</span>: <span class="string">'비밀번호를 입력해주세요.'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        widget=forms.PasswordInput, label=<span class="string">'비밀번호'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    )</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean</span><span class="params">(self)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        cleaned_data = super().clean()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        username = cleaned_data.get(<span class="string">'username'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        password = cleaned_data.get(<span class="string">'password'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> username <span class="keyword">and</span> password:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">try</span>:																					<span class="comment">#1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">                user = User.objects.get(username=username)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> check_password(password, user.password):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">                    self.add_error(<span class="string">'password'</span>, <span class="string">'비밀번호를 틀렸습니다.'</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">                <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">                    self.user_id = user.id</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">except</span> Exception:															<span class="comment">#2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">                self.add_error(<span class="string">'username'</span>, <span class="string">'존재하지 않는 아이디입니다.'</span>)</span></pre></td></tr></table></figure>
 
 <p>1) 예외가 발생할 수 있는 문장입니다.</p>
-<p>2) 예외가 발생한 경우, form의 error필드에 데이터를 삽입할 수 있습니다.</p>
-<h3 id="2-404페이지로-redirect"><a href="#2-404페이지로-redirect" class="headerlink" title="2. 404페이지로 redirect"></a>2. 404페이지로 redirect</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> Http404</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  board = Board.objects.get(pk=pk)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span> Board.DoesNotExist:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">raise</span> Http404(<span class="string">'페이지를 찾을 수 없습니다.'</span>)     <span class="comment">#1</span></span></pre></td></tr></table></figure>
-
-<p>1) raise Http404(‘보여줄 메시지’)를 사용하여 404페이지로 redirect 시킬 수 있습니다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/22/django-login-%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1035,7 +1022,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/20/CriticalSection-%EC%9E%84%EA%B3%84%EC%98%81%EC%97%AD/" class="post-title-link" itemprop="url">CriticalSection/임계영역</a>
+            <a href="/2020/05/20/CriticalSection-%EC%9E%84%EA%B3%84%EC%98%81%EC%97%AD/" class="post-title-link" itemprop="url">CriticalSection / 임계영역</a>
         </h1>
 
         <div class="post-meta">
@@ -1044,10 +1031,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-20 17:57:53 / Modified: 17:58:40" itemprop="dateCreated datePublished" datetime="2020-05-20T17:57:53+09:00">2020-05-20</time>
+              <time title="Created: 2020-05-20 17:57:53" itemprop="dateCreated datePublished" datetime="2020-05-20T17:57:53+09:00">2020-05-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:49:28" itemprop="dateModified" datetime="2020-06-10T18:49:28+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -1090,12 +1083,14 @@
           <h2 id="임계영역-Critical-Section"><a href="#임계영역-Critical-Section" class="headerlink" title="임계영역(Critical Section)"></a>임계영역(Critical Section)</h2><h3 id="임계-영역-Critical-Section-과-크리티컬-섹션-임계-영역"><a href="#임계-영역-Critical-Section-과-크리티컬-섹션-임계-영역" class="headerlink" title="임계 영역(Critical Section)과 크리티컬 섹션(임계 영역)"></a>임계 영역(Critical Section)과 크리티컬 섹션(임계 영역)</h3><ul>
 <li>임계영역관 크리티컬 섹션은 똑같은 말이다.같은 말을 두번 반복하는 이유는 하나의 표현이 두 가지 의미로 사용되기 때문이다.</li>
 </ul>
-<h3 id="임계영역-Critical-Section-1"><a href="#임계영역-Critical-Section-1" class="headerlink" title="임계영역(Critical Section)"></a>임계영역(Critical Section)</h3><ul>
-<li>원래 임계영역이란 둘 이상의 쓰레드가 동시에 실행될 경우 생길 수 있고 동시 접근 문제를 발생시킬 수 있는 <strong>코드 블록</strong>을 임계 영역이라고 한다.</li>
-<li>동시 접근 문제가 발생한 메모리 공간(힙,데이터 영역)을 임계 영역이라고 하는게 아니라, 동시 접근 문제가 발생할 수 있는 우리가 짠 코드 블록을 임계영역이라고 한다.</li>
-<li>임계 영역에 대한 정의를 있는 그대로 표현하면, 임계영역이란 베타적 접근이 요구되는 공유 리소스에 접근하는 코드 블록을 의미한다.</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/20/CriticalSection-%EC%9E%84%EA%B3%84%EC%98%81%EC%97%AD/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1128,7 +1123,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/19/HTTP-HTTPS/" class="post-title-link" itemprop="url">HTTP,HTTPS</a>
+            <a href="/2020/05/19/HTTP-HTTPS/" class="post-title-link" itemprop="url">HTTP와 HTTPS</a>
         </h1>
 
         <div class="post-meta">
@@ -1145,7 +1140,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-02 14:32:15" itemprop="dateModified" datetime="2020-06-02T14:32:15+09:00">2020-06-02</time>
+                <time title="Modified: 2020-06-10 18:49:54" itemprop="dateModified" datetime="2020-06-10T18:49:54+09:00">2020-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1192,16 +1187,14 @@
 <p>인터넷에서 <strong>웹 서버와 사용자 컴퓨터에 설치된 웹 브라우저 사이에 문서를 전송하기 위한 통신규약</strong>이다.</p>
 <p>HTTP 서버는 기본 포트인 80번 포트에서 서비스 대기중이며, 클라이언트가 80포트를 사용해서 연결하면 서버는 요청에 응답하면서 자료를 전송한다. HTTP는 정보를 ‘텍스트’로 주고 받는데 단순 텍스트로 주고 받기 때문에 네트워크에서 전송 신호를 인터셉트하는 경우 데이터 유출이 발생할 수 있다.</p>
 <p>이런 보안상 문제를 해결해주는 프로토콜이 HTTPS이다.</p>
-<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><blockquote>
-<p>HTTP + S(Secure Socket)</p>
-</blockquote>
-<p>HTTPS는 사용 목적 등은 HTTP와 거의 동일하지만 데이터를 주고 받는 과정에서 ‘보안’요소가 추가된다.쉽게 말해 <strong>HTTPS를 사용하면 서버와 클라이언트 사이의 모든 통신 내용이 암호화 된다</strong>.</p>
-<p>웹 서버에 접속하는 사용자에게 모두 동일한 암호를 제공하는 것이 아니라 사용자마다 다른 암호를 제공해야 한다.</p>
-<p>HTTPS 사용시 암/복호화 관련 내용을 정리하면 다음과 같다.</p>
-<p>암/복호화를 시킬 수 있는 서로 다른 키 2개가 존재할 때 이 두개의 키는 서로 암/복호화 할 수 있다는 룰을 갖고 있다.</p>
-<p>예를 들어, A키로 암호화하면 반드시 B키로 복호화할 수 있고, B키로 암호화 하면 반드시 A키로 복호화할 수 있다는 것. 그 중에서 하나의 키는 모두에게 공개키로 공개키 저장소에 등록해 사용하고,남은 하나의 키를 개인키로 이용해 통신한다.클라이언트는 공개키를 얻어 데이터를 암호화해서 전송하고, 서버는 개인키를 이용해 복호화한다.만약 반대로 서버가 정보를 제공하는 경우에는 개인키로 암호화한 정보를 전송하기 때문에 공개키가 있는 사용자는 누구나 정보를 알 수 있다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/82294252-ced8d280-99e8-11ea-8d5c-772459d89796.png" alt="image-20200214152947932"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/19/HTTP-HTTPS/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -23,12 +23,12 @@
   <meta name="description" content="조건문과 반복문조건문과 반복문이 반복되면 가독성이 떨어지고, 실수할 상황이 발생합니다.이런 문제를 해결하기 위해 조건문과 반복문에서 할 수 있는 몇 가지 팁을 공유합니다. 조건문함수의 설계에서 조건문은 다음과 같은 방법으로 쓸 수 있습니다. 1def process():2  if state :3    return True4  else :5    return">
 <meta name="keywords" content="CS,Python,반복문,조건문,자료구조">
 <meta property="og:type" content="article">
-<meta property="og:title" content="반복문,조건문">
+<meta property="og:title" content="반복문, 조건문">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;28&#x2F;%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
 <meta property="og:description" content="조건문과 반복문조건문과 반복문이 반복되면 가독성이 떨어지고, 실수할 상황이 발생합니다.이런 문제를 해결하기 위해 조건문과 반복문에서 할 수 있는 몇 가지 팁을 공유합니다. 조건문함수의 설계에서 조건문은 다음과 같은 방법으로 쓸 수 있습니다. 1def process():2  if state :3    return True4  else :5    return">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-29T10:05:58.486Z">
+<meta property="og:updated_time" content="2020-06-10T09:48:15.126Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/05/28/%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/">
@@ -43,7 +43,7 @@
   };
 </script>
 
-  <title>반복문,조건문 | hongbeen's blog</title>
+  <title>반복문, 조건문 | hongbeen's blog</title>
   
 
 
@@ -192,7 +192,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          반복문,조건문
+          반복문, 조건문
         </h1>
 
         <div class="post-meta">
@@ -209,7 +209,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-29 19:05:58" itemprop="dateModified" datetime="2020-05-29T19:05:58+09:00">2020-05-29</time>
+                <time title="Modified: 2020-06-10 18:48:15" itemprop="dateModified" datetime="2020-06-10T18:48:15+09:00">2020-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,6 +262,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> state :</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">else</span> :</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span></pre></td></tr></table></figure>
 
 <p>이 방식을 다르게 쓰면 다음과 같습니다.</p>
+<a id="more"></a>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">()</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> state : <span class="keyword">return</span> <span class="literal">True</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> <span class="literal">False</span></span></pre></td></tr></table></figure>
 
 <p>if 문 등을 통해서 이미 return을 했다면, <code>elif</code>나 <code>else</code> 를 굳이 사용하지 않아도 됩니다.</p>
@@ -310,8 +312,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/" rel="prev" title="프로세스와스케쥴러의이해">
-      <i class="fa fa-chevron-left"></i> 프로세스와스케쥴러의이해
+    <a href="/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/" rel="prev" title="프로세스와 스케쥴러의이해">
+      <i class="fa fa-chevron-left"></i> 프로세스와 스케쥴러의이해
     </a></div>
       <div class="post-nav-item">
     <a href="/2020/05/29/%EB%B0%B1%EC%A4%80SHA-256/" rel="next" title="백준SHA-256">
@@ -525,7 +527,7 @@
   var disqus_config = function() {
     this.page.url = "http://yoursite.com/2020/05/28/%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/";
     this.page.identifier = "2020/05/28/반복문-조건문/";
-    this.page.title = "반복문,조건문";
+    this.page.title = "반복문, 조건문";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {

@@ -21,7 +21,7 @@
   </script>
 
   <meta name="description" content="해시 데이터를 다루는 기법중에 하나로 검색과 저장이 아주 빠름  해시가 아주 빠르게 진행될 수 있는 이유는 데이터를 검색할 때 사용할 key와 실제 데이터의 값(value)이 한 쌍으로 존재하고, key값이 배열의 인덱스로 변환되기 때문에 검색과 저장의 평균적인 시간 복잡도가 O(1)에 수렴하게 됩니다. ex) hello라는 문자열을 정수형 key값으로 바">
-<meta name="keywords" content="Develop,CS,자료구조,백준,알고리즘,10930,hash">
+<meta name="keywords" content="Develop,CS,자료구조,백준,10930,hash,알고리즘">
 <meta property="og:type" content="article">
 <meta property="og:title" content="백준SHA-256">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;29&#x2F;%EB%B0%B1%EC%A4%80SHA-256&#x2F;index.html">
@@ -29,7 +29,7 @@
 <meta property="og:description" content="해시 데이터를 다루는 기법중에 하나로 검색과 저장이 아주 빠름  해시가 아주 빠르게 진행될 수 있는 이유는 데이터를 검색할 때 사용할 key와 실제 데이터의 값(value)이 한 쌍으로 존재하고, key값이 배열의 인덱스로 변환되기 때문에 검색과 저장의 평균적인 시간 복잡도가 O(1)에 수렴하게 됩니다. ex) hello라는 문자열을 정수형 key값으로 바">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83247160-1bd55980-a1de-11ea-9f6b-702982b95c56.png">
-<meta property="og:updated_time" content="2020-05-29T10:04:26.563Z">
+<meta property="og:updated_time" content="2020-06-10T09:47:45.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83247160-1bd55980-a1de-11ea-9f6b-702982b95c56.png">
 
@@ -203,10 +203,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-29 19:01:26 / Modified: 19:04:26" itemprop="dateCreated datePublished" datetime="2020-05-29T19:01:26+09:00">2020-05-29</time>
+              <time title="Created: 2020-05-29 19:01:26" itemprop="dateCreated datePublished" datetime="2020-05-29T19:01:26+09:00">2020-05-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:47:45" itemprop="dateModified" datetime="2020-06-10T18:47:45+09:00">2020-06-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -263,6 +269,8 @@
 <p>해시가 아주 빠르게 진행될 수 있는 이유는 데이터를 검색할 때 사용할 key와 실제 데이터의 값(value)이 한 쌍으로 존재하고, key값이 배열의 인덱스로 변환되기 때문에 검색과 저장의 평균적인 시간 복잡도가 O(1)에 수렴하게 됩니다.</p>
 <p><strong>ex)</strong> hello라는 문자열을 정수형 key값으로 바꾼다면, h+e+l+l+o -&gt; 104+101+108+108+111=532라는 해시코드로 변환 할 수 있습니다.</p>
 <p>백준알고리즘의 <a href="https://www.acmicpc.net/problem/10930" target="_blank" rel="noopener">10930</a>문제를 풀다가 hash에 대한 개념이 부족하여 간단하게 정리 후 알고리즘을 풀어봤습니다.</p>
+<a id="more"></a>
+
 <p><img src="https://user-images.githubusercontent.com/53684676/83247160-1bd55980-a1de-11ea-9f6b-702982b95c56.png" alt="문제"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib  <span class="comment"># 라이브러리를 import </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">s = input()     <span class="comment"># 입력받을 input</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">s_encode = s.encode()  <span class="comment"># 문자열의 바이트객체로 변환</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">result = hashlib.sha256(s_encode).hexdigest() <span class="comment">#해시객체로 변환</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">print(result)</span></pre></td></tr></table></figure>
 
@@ -282,9 +290,9 @@
               <a href="/tags/CS/" rel="tag"># CS</a>
               <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="tag"># 자료구조</a>
               <a href="/tags/%EB%B0%B1%EC%A4%80/" rel="tag"># 백준</a>
-              <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" rel="tag"># 알고리즘</a>
               <a href="/tags/10930/" rel="tag"># 10930</a>
               <a href="/tags/hash/" rel="tag"># hash</a>
+              <a href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" rel="tag"># 알고리즘</a>
           </div>
 
         
@@ -293,12 +301,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/28/%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/" rel="prev" title="반복문,조건문">
-      <i class="fa fa-chevron-left"></i> 반복문,조건문
+    <a href="/2020/05/28/%EB%B0%98%EB%B3%B5%EB%AC%B8-%EC%A1%B0%EA%B1%B4%EB%AC%B8/" rel="prev" title="반복문, 조건문">
+      <i class="fa fa-chevron-left"></i> 반복문, 조건문
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/" rel="next" title="OSI7계층">
-      OSI7계층 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/31/OSI7%EA%B3%84%EC%B8%B5/" rel="next" title="OSI 7계층">
+      OSI 7계층 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
