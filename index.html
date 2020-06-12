@@ -177,6 +177,111 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/12/GET-POST/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/12/GET-POST/" class="post-title-link" itemprop="url">GET,POST</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-12 17:40:45 / Modified: 17:43:51" itemprop="dateCreated datePublished" datetime="2020-06-12T17:40:45+09:00">2020-06-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/12/GET-POST/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/12/GET-POST/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="GET-POST"><a href="#GET-POST" class="headerlink" title="GET, POST"></a>GET, POST</h2><p>사용자가 어떤 홈페이지로 이동하기 위해서 URL을 브랑줘 주소창에 작성하고 엔터를 누르면 원하느 페이지로 이동합니다. 사용자는 단순히 URL을 입력하였을 뿐이지만 서버 내부에서는 클라이언트의 요청에 응답하기 위해서 처리해주어야 합니다. 여기서 <strong>클라이언트가 서버로 요청을 보내는 방법</strong>인 HTTP Method에는 크게 두가지 방식이 있는데 그것이 GET, POST입니다.</p>
+<h3 id="GET-방식"><a href="#GET-방식" class="headerlink" title="GET 방식"></a>GET 방식</h3><p><strong>어떠한 정보를 가져와서 조회하기 위해서 사용되는 방식</strong>입니다.</p>
+<h4 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h4><ul>
+<li>URL에 변수(데이터)를 포함시켜 요청한다.</li>
+<li>데이터를 Header에 포함하여 전송한다.</li>
+<li>URL에 데이터가 노출되어 보안에 취약하다.</li>
+<li>전송하는 길이에 제한이 있다.</li>
+<li>캐싱할 수 있다.</li>
+</ul>
+<p>GET 방식은 간단한 데이터를 URL에 넣도록 설계된 방식으로 데이터를 보내는 양에 한계가 있습니다. URL의 길이가 정해져있기 때문에, 많은 양의 정보를 전달할 수 없으며 URL형식에 맞지 않는 파라미터 이름이나 값은 인코딩되어 전달해야 합니다.</p>
+<p>예를 들어 우리가 어떤 페이지에서 로그인하는 상황이라고 가정해보겠습니다. id, pw를 입력한 후 엔터를 눌렀다고 가정하겠습니다. 이럴때 요청을 GET방식으로 전송하는 경우에는 <code>www.example.com/login?id=hong&amp;pw=been</code> 과 같은 페이지가 있다고 가정을 합니다. 여기서 GET방식은 <code>?</code>를 통해 URL의 끝을 알리고, id라는 키(Key)에 대해선 hong이라는 값(Value)를, pw라는 키(Key)에 대해서는 been이라는 값(Value)을 전송하는 것을 볼 수 있습니다. 여러개의 Key와 Value를 보내는 경우에 <code>&amp;</code>를 사용하여 이어주는 GET방식은 최소한의 보안유지도 하지 않기 때문에 실제 웹 사이트에서 ID와 PW같은 중요한 정보를 GET방식으로 사용하면 개인정보가 노출되는 문제가 발생합니다. GET방식을 사용하여 데이터를 노출시키는 겅우는 개인정보가 포함되지 않는 상황에서 캐싱(한번 접근 후, 요청할 시 빠르게 접근하기 위해 레지스터에 데이터를 저장시켜 놓는 것)을 하여 속도를 높이거나 즐겨찾기를 편리하게 위해 사용되는 경우가 많습니다. 우리가 어떤 물건에 대해서 즐겨찾기를 추가하면 그 물건의 이름을 url에 추가하여 즐겨찾기를 생성할 수 있는 것입니다.</p>
+<h3 id="POST-방식"><a href="#POST-방식" class="headerlink" title="POST 방식"></a>POST 방식</h3><p><strong>데이터를 서버로 제출하여 추가 또는 수정하기 위해서 사용하는 방식</strong>입니다.</p>
+<h4 id="특징-1"><a href="#특징-1" class="headerlink" title="특징"></a>특징</h4><ul>
+<li>URL에 변수(데이터)를 노출하지 않고 요청한다.</li>
+<li>데이터를 Body에 포함시키다.</li>
+<li>URL에 데이터가 노출되지 않아서 기본 보안은 되어있다.</li>
+<li>전송하는 길이에 제한이 없다.</li>
+<li>캐싱할 수 없다.</li>
+</ul>
+<p>GET방식은 URL에 데이터를 붙여서 전송하는 반면에 POST방식은 Body에 데이터를 넣어서 전송합니다. 따라서 헤더필드 중 Body의 데이터를 설명하는 Content-Type이라는 헤더 필드가 들어가고 어떠한 데이터 타입인지를 명시해주어야 합니다. 데이터를 Body에 포함시키는 이점때문에 메세지 길이의 제한은 없지만 최대 요청을 받는 시간인 Time Out이 존재하므로 클라이언트에서 페이지를 요청하고 기다리는 시간이 존재합니다. 실제로 상황에 POST방식은 URL에 데이터가 노출되지 않으므로 즐겨찾기나 캐싱이 불가능하지만 쿼리스트링(문자열)데이터 뿐만 아니라, 라디오 버튼, 텍스트 박스와 같은 객체들의 값도 전송이 가능합니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/11/OAuth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1115,112 +1220,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/TCP3-wayhandshake-4-wayhanshake/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/03/TCP3-wayhandshake-4-wayhanshake/" class="post-title-link" itemprop="url">TCP3-wayhandshake 4-wayhanshake</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-03 13:39:40" itemprop="dateCreated datePublished" datetime="2020-06-03T13:39:40+09:00">2020-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-10 18:43:47" itemprop="dateModified" datetime="2020-06-10T18:43:47+09:00">2020-06-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/06/03/TCP3-wayhandshake-4-wayhanshake/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/03/TCP3-wayhandshake-4-wayhanshake/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="TCP-3-Way-Handshake-amp-4-Way-Handshake"><a href="#TCP-3-Way-Handshake-amp-4-Way-Handshake" class="headerlink" title="TCP 3 Way-Handshake &amp; 4 Way-Handshake"></a>TCP 3 Way-Handshake &amp; 4 Way-Handshake</h2><h3 id="TCP-3-way-Handshake란"><a href="#TCP-3-way-Handshake란" class="headerlink" title="TCP 3-way Handshake란?"></a>TCP 3-way Handshake란?</h3><blockquote>
-<p>TCP  통신을 위한 연결 설정 과정</p>
-</blockquote>
-<p><img src="https://user-images.githubusercontent.com/53684676/83596956-f57a3a00-a5a0-11ea-9d91-6d09643f6ff4.png" alt="image-20200310205155287"></p>
-<h4 id="STEP1"><a href="#STEP1" class="headerlink" title="STEP1"></a>STEP1</h4><p>클라이언트는 서버에 접속을 요청하는 SYN패킷을 보낸다.이 때 클라이언트는 SYN을 보내고 SYN/ACK응답을 기다리는 <strong>SYN_SENT</strong>상태가 되는 것이다.</p>
-<h4 id="STEP2"><a href="#STEP2" class="headerlink" title="STEP2"></a>STEP2</h4><p>서버는 SYN요청을 받고 클라이언트에게 요청을 수락한다는 ACK와 SYN flag가 설정된 패킷을 발송하고 클라이언트가 다시 ACK로 응답하기를 기다린다.이 때 서버는 <strong>SYN_RECEIVED(접수)</strong>상태가 된다.</p>
-<h4 id="STEP3"><a href="#STEP3" class="headerlink" title="STEP3"></a>STEP3</h4><p>클라이언트는 서버에게 ACK를 보내고 이후로부터는 연결이 이루어지고 데이터가 오가게 되는 것이다.이 때의 서버상태가 <strong>ESTABLISHED(설립)</strong>이다.</p>
-<p>위와 같은 방식을 통신하는것이 신뢰성있는 연결을 맺어준다는 TCP의 3-Way Handshake방식이다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/03/TCP3-wayhandshake-4-wayhanshake/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1291,7 +1290,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1302,7 +1301,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
