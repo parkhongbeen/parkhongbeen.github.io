@@ -202,7 +202,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-16 15:53:39 / Modified: 16:02:31" itemprop="dateCreated datePublished" datetime="2020-06-16T15:53:39+09:00">2020-06-16</time>
+              <time title="Created: 2020-06-16 15:53:39 / Modified: 17:39:45" itemprop="dateCreated datePublished" datetime="2020-06-16T15:53:39+09:00">2020-06-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,38 +259,14 @@
 <p>항상 정 가운데를 기준으로 분할을 하는 병합 정렬과 달리, 퀵 정렬은 흔히 <strong>피봇(pivot)</strong>이라고 불리는 임의의 기준 값을 사용합니다.</p>
 <p>pivot 값을 선택하는데는 여러가지 방법이 있지만 여기서는 간단한 설명을 위해 정 중앙에 위치한 <code>4</code>를 pivot으로 정하겠습니다. 다음과 같이 이 pivot값을 기준으로 pivot보다 작은 값의 그룹과 pivot보다 큰 값의 그룹으로 나눕니다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>] &lt; <span class="number">4</span>(p) &lt; [<span class="number">7</span>, <span class="number">5</span>, <span class="number">6</span>]</span></pre></td></tr></table></figure>
-
-<p>위와 같이 pivot값보다 작은 값들은 모두 왼편으로 몰고, 큰 값들은 모두 오른편으로 몰면 기준값은 정확히 정렬 된 위치에 놓이게 됩니다.</p>
-<p>또한 이런 방식으로 분할을 해 놓으면 앞으로 더 이상 왼편에 있는 값들과 오른편에 있는 값들 간에는 비교를 할 필요가 없습니다.</p>
-<p>따라서 반대편은 전혀 신경쓰지 않고 왼편이든 오른편이든 같은편 내의 값들 끼리만 비교 후 정렬을 할 수 있게 됩니다.</p>
-<p>먼저 왼편을 동일한 방식으로 정렬해보도록 하겠습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>] &lt;  <span class="number">2</span>(p) &lt; [<span class="number">3</span>]</span></pre></td></tr></table></figure>
-
-<p>오른편도 동일한 방식으로 정렬해보겠습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[] &lt; <span class="number">5</span>(p) &lt; [<span class="number">7</span>, <span class="number">6</span>]</span></pre></td></tr></table></figure>
-
-<p>오른편에 값이 두개가 있기 때문에 추가 정렬이 필요합니다. 왼편에는 값이 없지만 오른편에는 여전히 두 개 의 값이 있기 때문에, 동일한 방식의 정렬을 적용하겠습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="number">6</span>] &lt; <span class="number">7</span>(p) &lt; []</span></pre></td></tr></table></figure>
-
-<p>마지막으로 지금까지 좌우로 분할했던 값들을 모두 합쳐보면 다음과 같이 정렬된 배열을 얻을 수 있습니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span></pre></td></tr></table></figure>
-
-<h3 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h3><ul>
-<li>파이썬의 list.sort()함수처럼 프로그래밍 언어 차원에서 기본적으로 지원되는 내장 정렬 함수는 대부분의 퀵 정렬을 기본으로 합니다.</li>
-<li>일반적으로 원소의 개수가 적어질수록 나쁜 중간값이 선택될 확률이 높아지기 때문에, 원소의 개수에 따라 퀵 정렬에 다른 정렬을 혼합해서 쓰는 경우가 많습니다.</li>
-<li>병렬 정렬과 퀵 정렬은 분할 정복과 재귀 알고리즘을 사용한다는 측면에서는 유사해보이지만, 내부적으로 정렬을 하는 방식에는 큰 차이가 있습니다.</li>
-<li>병렬 정렬은 항상 정 중앙을 기준으로 단순 분할 후 병합 시점에서 값의 비교 연산이 발생하는 반면, 퀵 정렬은 분할 시점부터 비교 연산이 일어나기 때문에 그 이후 병합에 들어가는 비용이 매우 적거나 구현 방법에 따라서 아예 병합을 하지 않을 수도 있습니다.</li>
-</ul>
-<h3 id="복잡도"><a href="#복잡도" class="headerlink" title="복잡도"></a>복잡도</h3><ul>
-<li>퀵 정렬의 성능은 어떻게 pivot값을 선택 하느냐에 크게 달라질 수 있습니다. 이상적인 경우는 pivot값을 기준으로 동일한 개수의 작은 값들과 큰 값들이 분할되어 병합 정렬과 마찬가지로 O(NlogN)의 시간 복잡도를 가지게 됩니다.</li>
-<li>하지만 pivot값을 기준으로 분할했을 때 값들이 한 편으로 크게 치우치게 되면, 퀵 정렬의 성은은 저하되게 되며, 최악의 경우 한 편으로만 모든 값이 몰리게 되어 O(N^2)의 시간 복잡도를 보이게 됩니다.</li>
-<li>따라서 상용 코드에서는 중앙값(median)에 가까운 pivot값을 선택할 수 있는 섬세한 전략이 요구되며, 배열의 첫값과 중앙값 그리고 마지막값 중에 크기가 중간인 값을 사용하는 방법이 많이 사용됩니다.</li>
-<li>퀵 정렬의 곤간 복잡도는 구현 방법에 따라 달라질 수 있는데, 입력 배열이 차지하는 메모리만을 사용하는 in-place sorting방식으로 구현을 사용할 경우, O(1)의 공간 복잡도를 가진 코드의 구현이 가능합니다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quick_sort</span><span class="params">(arr)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> len(arr) &lt;= <span class="number">1</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> arr</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    pivot = arr[len(arr) // <span class="number">2</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    lesser_arr, equal_arr, greater_arr = [], [], []</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> arr:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> num &lt; pivot:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            lesser_arr.append(num)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">elif</span> num &gt; pivot:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            greater_arr.append(num)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            equal_arr.append(num)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> auick_sort(lesser_arr) + equal_arr + quick_sort(greater_arr)</span></pre></td></tr></table></figure>
-
-<p>먼저 리스트의 정 가운데 있는 값을 pivot값으로 선택하고, pivot값보다 작은 값, 동일한 값 그리고 큰 값을 담아둘 3개의 리스트를 생성합니다.그리고 반복문을 통해 각 값을 pivot과 비교 후에 해당 리스트에 추가시킵니다.그 다음 작은 값과 큰 값을 담고 있는 배열을 대상으로 퀵 정렬 함수를 재귀적으로 호출합니다. 마지막으로 재귀 호출의 결과를 다시 크기 순으로 합치면 정렬된 리스트를 얻을 수 있습니다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/16/Queck-Sort/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -334,7 +310,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-16 00:35:39 / Modified: 00:36:27" itemprop="dateCreated datePublished" datetime="2020-06-16T00:35:39+09:00">2020-06-16</time>
+              <time title="Created: 2020-06-16 00:35:39 / Modified: 17:40:03" itemprop="dateCreated datePublished" datetime="2020-06-16T00:35:39+09:00">2020-06-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -389,41 +365,14 @@
 <h3 id="O-n"><a href="#O-n" class="headerlink" title="O(n)"></a>O(n)</h3><p>입력 데이터의 크기에 비례해서 철회시간이 걸리는 알고리즘을 표현할때 사용, 데이터와 시간이 같이 증가함</p>
 <h3 id="O-n-2"><a href="#O-n-2" class="headerlink" title="O(n^2)"></a>O(n^2)</h3><p><img src="https://user-images.githubusercontent.com/53684676/81548683-9f0e4700-93b8-11ea-85fb-d8171151df0f.png" alt="image-20200511153059941"></p>
 <h3 id="O-nm"><a href="#O-nm" class="headerlink" title="O(nm)"></a>O(nm)</h3><p><img src="https://user-images.githubusercontent.com/53684676/81548707-a59cbe80-93b8-11ea-81b0-f5984228e794.png" alt="image-20200511153227320"></p>
-<h3 id="O-n-3"><a href="#O-n-3" class="headerlink" title="O(n^3)"></a>O(n^3)</h3><p><img src="https://user-images.githubusercontent.com/53684676/81548723-b0575380-93b8-11ea-8264-175518d50b23.png" alt="image-20200511153332622"></p>
-<h3 id="O-2-n"><a href="#O-2-n" class="headerlink" title="O(2^n)"></a>O(2^n)</h3><p><img src="https://user-images.githubusercontent.com/53684676/81548735-b64d3480-93b8-11ea-99a0-b8db2d34595d.png" alt="image-20200511153452671"></p>
-<p>피보나치수열 사용 / 처음엔1로 시작하여 늘어난 면이 2 &gt; 3 &gt; 5 &gt; 8</p>
-<h3 id="O-log-n-binary-search"><a href="#O-log-n-binary-search" class="headerlink" title="O(log n) / binary search"></a>O(log n) / binary search</h3><p>한번씩 찾을 때마다 검색해야하는 데이터의 양이 절반씩 떨어지는 알고리즘</p>
-<h3 id="O-Sqr-n"><a href="#O-Sqr-n" class="headerlink" title="O(Sqr+(n))"></a>O(Sqr+(n))</h3><p><img src="https://user-images.githubusercontent.com/53684676/81548753-be0cd900-93b8-11ea-8ba9-b6eff8063186.png" alt="image-20200511153924778"></p>
-<h3 id="Big-o-표기법-특징"><a href="#Big-o-표기법-특징" class="headerlink" title="Big-o 표기법 특징"></a>Big-o 표기법 특징</h3><ul>
-<li>영향력 없는 항 무시합니다.</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ex) O(N^2 + 2N + 1) -&gt; O(n^2)</span></pre></td></tr></table></figure>
-
-<ul>
-<li>Big-O표기법은 상수는 버리고 표현합니다</li>
-</ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/81548769-c49b5080-93b8-11ea-82c9-e2e93df514aa.png" alt="image-20200511154030743"></p>
-<h3 id="Big-o-표기법-성능비교"><a href="#Big-o-표기법-성능비교" class="headerlink" title="Big-o 표기법 성능비교"></a>Big-o 표기법 성능비교</h3><img width="631" alt="image-20200616002806287" src="https://user-images.githubusercontent.com/53684676/84676986-119ab580-af69-11ea-9197-fa4305f4fd44.png">
-
-<p>그래프에 나와 있는 시간 복잡도의 성능을 비교하면 다음과 같습니다.</p>
-<p><strong>faster O(1) &lt; O(log N) &lt; O(N) &lt; O(N log N) &lt; O(N^2) &lt; O(2^N) slower</strong></p>
-<h3 id="Big-o-표기법-예제"><a href="#Big-o-표기법-예제" class="headerlink" title="Big-o 표기법 예제"></a>Big-o 표기법 예제</h3><p>빅오 표기법의 예제는 어떤 것들이 있는지 정도만 외워두고 알고리즘 공부를 해보면서 이해해 나가면 좋을 것 같습니다.</p>
-<ol>
-<li>O(1): 스택에서 Push, Pop</li>
-<li>P(log N): 이진트리</li>
-<li>O(N): for문</li>
-<li>O(N log N): 퀵 정렬(quick sort), 병합정렬(merge sort), 힙 정렬(heap sort)</li>
-<li>O(N^2): 이중 for문, 삽입정렬(insert sort), 거품정렬(bubble sort), 선택정렬(selection sort)</li>
-<li>O(2^N): 피보나치 수열</li>
-</ol>
-<p>자료참고</p>
-<ul>
-<li><p><a href="https://www.youtube.com/watch?v=6Iq5iMCVsXA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=6Iq5iMCVsXA</a></p>
-</li>
-<li><p><a href="https://noahlogs.tistory.com/27" target="_blank" rel="noopener">https://noahlogs.tistory.com/27</a></p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/16/Bio-o%ED%91%9C%EA%B8%B0%EB%B2%95/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -465,10 +414,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-15 23:31:14 / Modified: 23:32:19" itemprop="dateCreated datePublished" datetime="2020-06-15T23:31:14+09:00">2020-06-15</time>
+              <time title="Created: 2020-06-15 23:31:14" itemprop="dateCreated datePublished" datetime="2020-06-15T23:31:14+09:00">2020-06-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-16 17:40:19" itemprop="dateModified" datetime="2020-06-16T17:40:19+09:00">2020-06-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -515,36 +470,14 @@
 <li>많은 지역변수를 사용한다.</li>
 <li>원하는 기능의 코드를 가져와서 복붙하면 오류가 발생한다.</li>
 </ul>
-<h3 id="언어"><a href="#언어" class="headerlink" title="언어"></a>언어</h3><p>C언어, 베이직</p>
-<h2 id="객체지향-Object-Oriented-Programming"><a href="#객체지향-Object-Oriented-Programming" class="headerlink" title="객체지향(Object Oriented Programming)"></a>객체지향(Object Oriented Programming)</h2><p><strong>객체지향</strong>은 절차지향 언어와 달리 실제 세계를 모델링하여 소프트웨어를 개발할 수 있습니다. 우리가 흔히 보는 의자 책상 등을 하나의 객체로 프로그래밍할 수 있다는 것입니다. 객체지향 프로그래밍에서는 데이터와 절차를 하나의 덩어리로 묶어서 생각해야 되고 마치 컴퓨터 부품을 하나씩 모아서 조립하는 것처럼 각 기능들을 불러와서 자신이 원하는 소프트웨어를 개발하는 것입니다.</p>
-<ol>
-<li><strong>캡슐화</strong><ul>
-<li>캡슐화란 관련된 데이터와 알고리즘(코드)이 하나의 묶음으로 정리된 것으로 이러한 기능을 이용하여 개발가 직접 개발하기 보다는 기존에 만들어져 있던 정형화된 코드들을 가져옵니다. 관련된 코드와 데이터가 묶여있고 오류가 없어 사용이 편리합니다. 또한 데이터를 감추고 외부 세계와의 상호작용은 메소드를 통하는 방법인데, 라이브러리로 만들어 업그레이드하면 쉽게 바꿀 수 있습니다.</li>
-</ul>
-</li>
-<li><strong>상속</strong><ul>
-<li>상속이란 이미 작성된 클래스들을 이어받아서 새로운 클래스를 생성하는 기법으로 위에서 말했던 기존의 자신이 필요로하는 코드들을 <strong>재활용</strong>하여 사용하는것을 말합니다. 이것이 <strong>절자지향과 비교되는 객체지향방법의 가장 큰 장점 중 하나로 볼 수 있습니다</strong>.</li>
-</ul>
-</li>
-<li><strong>다향성</strong><ul>
-<li>다향성이란 <strong>하나의 이름으로 많은 상황에 대처하는 기법</strong>을 말한다.개념적으로 동일한 작업을 하는 함수들에 똑같은 이음을 부여할 수 있고 코드가 더 간단해지는 효과를 볼 수 있다.</li>
-</ul>
-</li>
-</ol>
-<h3 id="장점-1"><a href="#장점-1" class="headerlink" title="장점"></a>장점</h3><ul>
-<li>신뢰성있는 소프트웨어를 쉽게 작성할 수 있다.</li>
-<li>재사용성 및 확장이 용이하다.</li>
-<li>유지보수에 유리하다</li>
-</ul>
-<h3 id="단점-1"><a href="#단점-1" class="headerlink" title="단점"></a>단점</h3><ul>
-<li>처리 속도가 절차지향보다 느리다.</li>
-<li>설계가 다소 어렵다</li>
-</ul>
-<h3 id="언어-1"><a href="#언어-1" class="headerlink" title="언어"></a>언어</h3><p>C++, Javascript, Python, JAVA 등</p>
-<h2 id="객체지향과-절차지향의-차이점"><a href="#객체지향과-절차지향의-차이점" class="headerlink" title="객체지향과 절차지향의 차이점"></a>객체지향과 절차지향의 차이점</h2><p>객체지향의 반대는 절차지향이 아니고 절차지향의 반대 역시 객체지향이 아닙니다. 위에서 설명한 것처럼 절차지향은 순차적으로 실행에 초점이 되어 있고 객체지향은 객체간의 관계조직에 초점을 두고 있습니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/79070178-e9939980-7d0e-11ea-85ab-61889a1be6cb.png" alt=""></p>
-<p>객체 지향 역시 순서도를 보면 절차지향적으로 프로그래밍이 실행되는걸 볼 수 있습니다. 다만 절차지향은 데이터에 초점을 두고 실행되지만, 객체지향은 기능을 중점으로 실행되는 것을 볼 수 있습니다.각 함수마다 하는 역할들이 나눠져 있기 때문입니다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/15/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5vs%EC%A0%88%EC%B0%A8%EC%A7%80%ED%96%A5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

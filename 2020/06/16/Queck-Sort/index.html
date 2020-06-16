@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="hongbeen&#39;s blog">
 <meta property="og:description" content="퀵 정렬(Quick Sort)이란? 교환 정렬의 일종이며 분할 정복법에 근거합니다. 축값을 기준으로 정렬하는데, 축값을 중심으로 축값보다 큰 값은 오른쪽 리스트에, 작은 값은 왼쪽리스트에 이동시킵니다. 오른쪽 리스트와 왼쪽 리스트 부분은 독립적인 단위로 정렬하여 오른쪽 리스트부분에 대한 새로운 분할 축값을 선택하여 두 부분을 분리하고, 왼쪽 리스트부분 역시">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-16T07:02:31.764Z">
+<meta property="og:updated_time" content="2020-06-16T08:39:45.678Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/06/16/Queck-Sort/">
@@ -203,7 +203,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-16 15:53:39 / Modified: 16:02:31" itemprop="dateCreated datePublished" datetime="2020-06-16T15:53:39+09:00">2020-06-16</time>
+              <time title="Created: 2020-06-16 15:53:39 / Modified: 17:39:45" itemprop="dateCreated datePublished" datetime="2020-06-16T15:53:39+09:00">2020-06-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,6 +267,8 @@
 <p>항상 정 가운데를 기준으로 분할을 하는 병합 정렬과 달리, 퀵 정렬은 흔히 <strong>피봇(pivot)</strong>이라고 불리는 임의의 기준 값을 사용합니다.</p>
 <p>pivot 값을 선택하는데는 여러가지 방법이 있지만 여기서는 간단한 설명을 위해 정 중앙에 위치한 <code>4</code>를 pivot으로 정하겠습니다. 다음과 같이 이 pivot값을 기준으로 pivot보다 작은 값의 그룹과 pivot보다 큰 값의 그룹으로 나눕니다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>] &lt; <span class="number">4</span>(p) &lt; [<span class="number">7</span>, <span class="number">5</span>, <span class="number">6</span>]</span></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <p>위와 같이 pivot값보다 작은 값들은 모두 왼편으로 몰고, 큰 값들은 모두 오른편으로 몰면 기준값은 정확히 정렬 된 위치에 놓이게 됩니다.</p>
 <p>또한 이런 방식으로 분할을 해 놓으면 앞으로 더 이상 왼편에 있는 값들과 오른편에 있는 값들 간에는 비교를 할 필요가 없습니다.</p>
