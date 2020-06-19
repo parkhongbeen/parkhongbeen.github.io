@@ -31,7 +31,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;85026764-0be4e000-b1b4-11ea-8e18-83e5b3221da4.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;85031034-25d4f180-b1b9-11ea-8317-ba0328dc3b93.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;85031931-35a10580-b1ba-11ea-9b07-c57331717137.png">
-<meta property="og:updated_time" content="2020-06-18T14:30:15.501Z">
+<meta property="og:updated_time" content="2020-06-18T14:32:05.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;85026764-0be4e000-b1b4-11ea-8e18-83e5b3221da4.png">
 
@@ -207,7 +207,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-18 23:22:51 / Modified: 23:30:15" itemprop="dateCreated datePublished" datetime="2020-06-18T23:22:51+09:00">2020-06-18</time>
+              <time title="Created: 2020-06-18 23:22:51 / Modified: 23:32:05" itemprop="dateCreated datePublished" datetime="2020-06-18T23:22:51+09:00">2020-06-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,12 +276,12 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">b = [<span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">b.append(<span class="number">13</span>) <span class="comment"># b에 13을 추가</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">b.append(<span class="number">14</span>) <span class="comment"># b에 14를 추가</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">print(b) <span class="comment"># [8, 9, 10, 11, 12, 13, 14]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">b.pop(<span class="number">0</span>) <span class="comment"># 8</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">b.pop(<span class="number">0</span>) <span class="comment"># 9</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">print(b) <span class="comment"># [10, 11, 12, 13, 14]</span></span></pre></td></tr></table></figure>
 
-<p>가볍게 생각한다면 “앞에서 하나 뺀다.”라는 쉬운 개념이지만 실제로는 아래와 비슷한 일이 일어 납니다.</p>
+<p>위의 코드를 봤을때 가볍게 생각한다면 “앞에서 하나 뺀다.”라는 쉬운 개념이지만 실제로는 아래와 비슷한 일이 일어 납니다.</p>
 <p><code>[8] - [9] - [10] - [11] - [12] - [13] - [14]</code></p>
 <p><code>[Null] - [9] - [10] - [11] - [12] - [13] - [14]</code></p>
 <p><code>[9] - [10] - [11] - [12] - [13] - [14] - [ ? ]</code></p>
 <p>앞에서 하나를 비우고 뒤에 있는 모든 데이터들을 한칸씩 앞으로 당기는 작업을 하므로, 가장 앞에 있는 데이터를 꺼내는데 걸리는 시간 복잡도는 O(1)이 아닌 O(N)이 되는 현상이 벌어집니다.</p>
-<p>실제로포 퍼포먼스가 떨어지기 때문에 <code>collections</code>의 <code>deque</code>를 사용해봅니다.</p>
+<p>실제로 퍼포먼스가 떨어지기 때문에 <code>collections</code>의 <code>deque</code>를 사용해봅니다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">c = deque()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">c.append(<span class="number">1</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">c.append(<span class="number">2</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">print(c) <span class="comment">#[1, 2]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">c.popleft() <span class="comment"># 1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">c.popleft() <span class="comment"># 2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">print(c) <span class="comment"># []</span></span></pre></td></tr></table></figure>
 
 <p>이렇게 한다면 퍼포먼스 차이가 말도 안될 정도로 차이가 납니다.</p>
@@ -326,7 +326,10 @@
     <a href="/2020/06/18/Ping/" rel="prev" title="Ping(Packet INternet Groper)">
       <i class="fa fa-chevron-left"></i> Ping(Packet INternet Groper)
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/19/Class-Instance/" rel="next" title="Class,Instance">
+      Class,Instance <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -407,18 +410,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-count">95</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
