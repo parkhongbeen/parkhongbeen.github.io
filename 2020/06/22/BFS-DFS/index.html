@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;5&#x2F;5d&#x2F;Breadth-First-Search-Algorithm.gif">
 <meta property="og:image" content="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;7&#x2F;7f&#x2F;Depth-First-Search.gif">
-<meta property="og:updated_time" content="2020-06-22T06:47:36.584Z">
+<meta property="og:updated_time" content="2020-06-23T12:39:33.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;upload.wikimedia.org&#x2F;wikipedia&#x2F;commons&#x2F;5&#x2F;5d&#x2F;Breadth-First-Search-Algorithm.gif">
 
@@ -204,10 +204,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-22 15:46:09 / Modified: 15:47:36" itemprop="dateCreated datePublished" datetime="2020-06-22T15:46:09+09:00">2020-06-22</time>
+              <time title="Created: 2020-06-22 15:46:09" itemprop="dateCreated datePublished" datetime="2020-06-22T15:46:09+09:00">2020-06-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-23 21:39:33" itemprop="dateModified" datetime="2020-06-23T21:39:33+09:00">2020-06-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -262,7 +268,7 @@
 <li><code>queue</code>를 이용하여 지금 위치에서 갈 수 있는 것들을 모두 큐에 넣는 방식입니다. 이 때, queue에 넣을 시점에 해당 노드를 방문했다고 체크해야합니다.</li>
 </ul>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Breadth-First-Search-Algorithm.gif" alt="image"></p>
-<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bfs</span><span class="params">(graph, start_node)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    visit = list()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    queue = list()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    queue.append(start_node) <span class="comment"># 시작노드를 큐에 넣어줌</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span> queue: <span class="comment"># 큐의 목록이 바닥날때까지 loop를 돌림</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        node = queue.pop(<span class="number">0</span>) <span class="comment"># 큐의 맨 앞 노드를 꺼내옴</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visit: <span class="comment"># 해당 노드가 아직 방문 리스트에 없다면</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            visit.append(node) <span class="comment"># 방문 리스트에 추가</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            queue.extexd(graph[node]) <span class="comment">#해당 노드의 자식노드들을 큐에 추가</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> visit</span></pre></td></tr></table></figure>
+<h3 id="코드"><a href="#코드" class="headerlink" title="코드"></a>코드</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bfs</span><span class="params">(graph, start_node)</span>:</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    visit = list()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    queue = list()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    queue.append(start_node) <span class="comment"># 시작노드를 큐에 넣어줌</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span> queue: <span class="comment"># 큐의 목록이 바닥날때까지 loop를 돌림</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        node = queue.pop(<span class="number">0</span>) <span class="comment"># 큐의 맨 앞 노드를 꺼내옴</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visit: <span class="comment"># 해당 노드가 아직 방문 리스트에 없다면</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            visit.append(node) <span class="comment"># 방문 리스트에 추가</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            queue.extend(graph[node]) <span class="comment">#해당 노드의 자식노드들을 큐에 추가</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> visit</span></pre></td></tr></table></figure>
 
 
 <a id="more"></a>
