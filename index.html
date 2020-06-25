@@ -202,7 +202,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-25 17:33:06 / Modified: 17:35:13" itemprop="dateCreated datePublished" datetime="2020-06-25T17:33:06+09:00">2020-06-25</time>
+              <time title="Created: 2020-06-25 17:33:06 / Modified: 17:37:02" itemprop="dateCreated datePublished" datetime="2020-06-25T17:33:06+09:00">2020-06-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,7 +264,7 @@
 <h4 id="positional-arguments와-keyword-arguments를-모두-받을-때"><a href="#positional-arguments와-keyword-arguments를-모두-받을-때" class="headerlink" title="positional arguments와 keyword arguments를 모두 받을 때"></a>positional arguments와 keyword arguments를 모두 받을 때</h4><p><img src="https://user-images.githubusercontent.com/53684676/85660171-42f54d00-b6f0-11ea-84b7-264987c473ff.png" alt="image"></p>
 <p>위에서 <code>args</code>는 임의이 갯수의 positional arguments를 받음을 의미하며, <code>**kwargs</code>는 임의의 갯수의 keyword arguments를 받음을 의미합니다. 이 때 <code>*args</code>,  <code>**kwargs</code> 형태로 가변인자를 받는걸 <strong>packing</strong>이라고 합니다.</p>
 <p>위의 예시에서 볼 수 있듯이, 임의의 갯수와 임의의 키값을 갖는 인자들을 전달하고 있습니다. positional형태로 전달되는 인자들은 <code>args</code>라는 <strong>tuple</strong>에 저장되며, keyword형태로 전달되는 인자들은 <code>kwargs</code>라는 <strong>dict</strong>에 저장됩니다.</p>
-<h4 id="컨테이너-타입의-데이터를-Unpacking할-때"><a href="#컨테이너-타입의-데이터를-Unpacking할-때" class="headerlink" title="컨테이너 타입의 데이터를 Unpacking할 때"></a>컨테이너 타입의 데이터를 Unpacking할 때</h4><p>이는 3번과 유사한 원리로, 종종 사용할만한 기능(연산)입니다. 가장 쉬운 예로, 다음과 같이 우리가 <em>list</em>나 <em>tuple</em>형태의 데이터를 가지고 있고 어떤 함수가 가변인자를 받는 경우에 사용할 수 있습니다.</p>
+<h3 id="4-컨테이너-타입의-데이터를-Unpacking할-때"><a href="#4-컨테이너-타입의-데이터를-Unpacking할-때" class="headerlink" title="4. 컨테이너 타입의 데이터를 Unpacking할 때"></a>4. 컨테이너 타입의 데이터를 Unpacking할 때</h3><p>이는 3번과 유사한 원리로, 종종 사용할만한 기능(연산)입니다. 가장 쉬운 예로, 다음과 같이 우리가 <em>list</em>나 <em>tuple</em>형태의 데이터를 가지고 있고 어떤 함수가 가변인자를 받는 경우에 사용할 수 있습니다.</p>
 <p><img src="https://user-images.githubusercontent.com/53684676/85678239-41815000-b703-11ea-80e7-d812c594eb55.png" alt="image"></p>
 <p><code>product()</code>함수가 가변인자를 받고 있기 때문에 우리는 리스트의 데이터를 모두 unpacking하여 함수에 전달해야 합니다. 이 경우 함수에 값을 전달할 때 <code>*primes</code>와 같이 전달하면 <code>primes</code>리스트의 모든 값들이 unpacking되어 <code>number</code>라는 리스트에 저장되빈다. 만약 이를 <code>primes</code>그대로 전달한다면 이 자체가 하나의 값으로 쓰여 <code>numbers</code>에는 <code>primes</code>라는 원소가 하나 존재하게 됩니다.</p>
 
