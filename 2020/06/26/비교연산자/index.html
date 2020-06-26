@@ -20,20 +20,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="컨텍스트 스위칭 문맥교환, CPU에서 실행할 프로세스를 교체하는 기술입니다.현재 진행하는 Task의 상태를 저장하고 다음 진행할 Task의 상태 값을 읽어 적용하는 과정을 말합니다.  컨텍스트 스위칭의 순서컨텍스트 위칭은 크게 다음과 같은 두 동작으로 구분할 수 있다.  실행 중지할 프로세스 정보를 해당 프로세스의 PCB에 업데이트하여 메인 메모리에 저장">
-<meta name="keywords" content="Develop,CS,컨텍스트 스위칭,Context Switching">
+  <meta name="description" content="비교연산자a &#x3D; 10, b &#x3D; 20 이라고 가정하겠습니다.    Operator Description Example    &#x3D;&#x3D; 값이 동일하다. (a &#x3D;&#x3D; b) &amp;gt; false   !&#x3D; 값이 동일하지 않다. (a !&#x3D; b) &amp;gt; true   &amp;gt; 왼쪽 값이 오른쪽 값보다 크다. (a &amp;gt; b) &amp;gt; false   &amp;lt; 왼쪽 값이 오른쪽">
+<meta name="keywords" content="Develop,python,연산자,비교연산자">
 <meta property="og:type" content="article">
-<meta property="og:title" content="컨텍스트스위칭">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;05&#x2F;%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%8A%A4%EC%9C%84%EC%B9%AD&#x2F;index.html">
+<meta property="og:title" content="비교연산자">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;26&#x2F;%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0%EC%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
-<meta property="og:description" content="컨텍스트 스위칭 문맥교환, CPU에서 실행할 프로세스를 교체하는 기술입니다.현재 진행하는 Task의 상태를 저장하고 다음 진행할 Task의 상태 값을 읽어 적용하는 과정을 말합니다.  컨텍스트 스위칭의 순서컨텍스트 위칭은 크게 다음과 같은 두 동작으로 구분할 수 있다.  실행 중지할 프로세스 정보를 해당 프로세스의 PCB에 업데이트하여 메인 메모리에 저장">
+<meta property="og:description" content="비교연산자a &#x3D; 10, b &#x3D; 20 이라고 가정하겠습니다.    Operator Description Example    &#x3D;&#x3D; 값이 동일하다. (a &#x3D;&#x3D; b) &amp;gt; false   !&#x3D; 값이 동일하지 않다. (a !&#x3D; b) &amp;gt; true   &amp;gt; 왼쪽 값이 오른쪽 값보다 크다. (a &amp;gt; b) &amp;gt; false   &amp;lt; 왼쪽 값이 오른쪽">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83859315-b2fb5d80-a758-11ea-9071-ab0aaf45b22a.png">
-<meta property="og:updated_time" content="2020-06-10T09:42:16.222Z">
+<meta property="og:updated_time" content="2020-06-26T07:39:25.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;83859315-b2fb5d80-a758-11ea-9071-ab0aaf45b22a.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/06/05/%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%8A%A4%EC%9C%84%EC%B9%AD/">
+<link rel="canonical" href="http://yoursite.com/2020/06/26/%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0%EC%9E%90/">
 
 
 <script id="page-configurations">
@@ -45,7 +43,7 @@
   };
 </script>
 
-  <title>컨텍스트스위칭 | hongbeen's blog</title>
+  <title>비교연산자 | hongbeen's blog</title>
   
 
 
@@ -181,7 +179,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%8A%A4%EC%9C%84%EC%B9%AD/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/26/%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0%EC%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -194,7 +192,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          컨텍스트스위칭
+          비교연산자
         </h1>
 
         <div class="post-meta">
@@ -203,27 +201,21 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-06-05 18:32:55" itemprop="dateCreated datePublished" datetime="2020-06-05T18:32:55+09:00">2020-06-05</time>
+              <time title="Created: 2020-06-26 16:35:06 / Modified: 16:39:25" itemprop="dateCreated datePublished" datetime="2020-06-26T16:35:06+09:00">2020-06-26</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-10 18:42:16" itemprop="dateModified" datetime="2020-06-10T18:42:16+09:00">2020-06-10</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">운영체제</span></a>
+                  <a href="/categories/python/%EC%97%B0%EC%82%B0%EC%9E%90/" itemprop="url" rel="index"><span itemprop="name">연산자</span></a>
                 </span>
             </span>
 
@@ -243,8 +235,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/06/05/%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%8A%A4%EC%9C%84%EC%B9%AD/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/05/컨텍스트스위칭/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/06/26/%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0%EC%9E%90/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/26/비교연산자/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -259,27 +251,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="컨텍스트-스위칭"><a href="#컨텍스트-스위칭" class="headerlink" title="컨텍스트 스위칭"></a>컨텍스트 스위칭</h2><blockquote>
-<p>문맥교환, CPU에서 실행할 프로세스를 교체하는 기술입니다.현재 진행하는 Task의 상태를 저장하고 다음 진행할 Task의 상태 값을 읽어 적용하는 과정을 말합니다.</p>
-</blockquote>
-<h3 id="컨텍스트-스위칭의-순서"><a href="#컨텍스트-스위칭의-순서" class="headerlink" title="컨텍스트 스위칭의 순서"></a>컨텍스트 스위칭의 순서</h3><p>컨텍스트 위칭은 크게 다음과 같은 두 동작으로 구분할 수 있다.</p>
-<ol>
-<li>실행 중지할 프로세스 정보를 해당 프로세스의 PCB에 업데이트하여 메인 메모리에 저장</li>
-<li>다음 실행할 프로세스 정보를 메인 메모리에 있는 해당 PCB정보를 CPU에 넣고 실행</li>
-</ol>
-<p><img src="https://user-images.githubusercontent.com/53684676/83859315-b2fb5d80-a758-11ea-9071-ab0aaf45b22a.png" alt="img"></p>
-<a id="more"></a>
-
-<h3 id="왜-Context-Switching이-필요한가"><a href="#왜-Context-Switching이-필요한가" class="headerlink" title="왜 Context Switching이 필요한가?"></a>왜 Context Switching이 필요한가?</h3><p>컴퓨터가 매번 하나의 Task만 처리할 수 있다면?….</p>
-<ul>
-<li>해당 Task가 끝날때까지 다음 Task는 기다릴 수 밖에 없습니다.</li>
-<li>또한 반응속도가 매우 느리고 사용하기 불편합니다.</li>
-</ul>
-<h3 id="그렇다면-다양한-사람들이-동시에-사용하는-것처럼-하기-위해선"><a href="#그렇다면-다양한-사람들이-동시에-사용하는-것처럼-하기-위해선" class="headerlink" title="그렇다면 다양한 사람들이 동시에 사용하는 것처럼 하기 위해선?"></a>그렇다면 다양한 사람들이 동시에 사용하는 것처럼 하기 위해선?</h3><ul>
-<li>Computer multitasking을 통해 빠른 반응속도로 응답할 수 있습니다.</li>
-<li>빠른 속도로 Task를 바꿔 가며 실행하기 때문에 사람의 눈으론 실시간처럼 보이게 되는 장점이 있습니다.</li>
-<li>CPU가 Task를 바꿔가며 실행하기 위해 Context Switching이 필요하게 되었습니다.</li>
-</ul>
+        <h2 id="비교연산자"><a href="#비교연산자" class="headerlink" title="비교연산자"></a>비교연산자</h2><p>a = 10, b = 20 이라고 가정하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th align="center">Description</th>
+<th align="center">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">==</td>
+<td align="center">값이 동일하다.</td>
+<td align="center">(a == b) &gt; false</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">값이 동일하지 않다.</td>
+<td align="center">(a != b) &gt; true</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">왼쪽 값이 오른쪽 값보다 크다.</td>
+<td align="center">(a &gt; b) &gt; false</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">왼쪽 값이 오른쪽 값보다 작다.</td>
+<td align="center">(a &lt; b) &gt; true</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">왼쪽 값이 오른쪽 값보다 크거나 동일하다.</td>
+<td align="center">(a &gt;= b) &gt; false</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">왼쪽 값이 오른쪽 값보다 작거나 동일하다.</td>
+<td align="center">(a &lt;= b) &gt; true</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -290,9 +301,9 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Develop/" rel="tag"># Develop</a>
-              <a href="/tags/CS/" rel="tag"># CS</a>
-              <a href="/tags/%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%8A%A4%EC%9C%84%EC%B9%AD/" rel="tag"># 컨텍스트 스위칭</a>
-              <a href="/tags/Context-Switching/" rel="tag"># Context Switching</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/%EC%97%B0%EC%82%B0%EC%9E%90/" rel="tag"># 연산자</a>
+              <a href="/tags/%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0%EC%9E%90/" rel="tag"># 비교연산자</a>
           </div>
 
         
@@ -301,13 +312,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/06/04/%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C/" rel="prev" title="프로토콜">
-      <i class="fa fa-chevron-left"></i> 프로토콜
+    <a href="/2020/06/26/%EC%82%B0%EC%88%A0%EC%97%B0%EC%82%B0%EC%9E%90/" rel="prev" title="산술연산자">
+      <i class="fa fa-chevron-left"></i> 산술연산자
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/06/08/%EB%A9%80%ED%8B%B0%ED%94%84%EB%A1%9C%EC%84%B8%EC%8B%B1-%EC%8A%A4%EB%A0%88%EB%94%A9/" rel="next" title="멀티프로세싱,스레딩">
-      멀티프로세싱,스레딩 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -374,7 +382,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#컨텍스트-스위칭"><span class="nav-number">1.</span> <span class="nav-text">컨텍스트 스위칭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#컨텍스트-스위칭의-순서"><span class="nav-number">1.1.</span> <span class="nav-text">컨텍스트 스위칭의 순서</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#왜-Context-Switching이-필요한가"><span class="nav-number">1.2.</span> <span class="nav-text">왜 Context Switching이 필요한가?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#그렇다면-다양한-사람들이-동시에-사용하는-것처럼-하기-위해선"><span class="nav-number">1.3.</span> <span class="nav-text">그렇다면 다양한 사람들이 동시에 사용하는 것처럼 하기 위해선?</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#비교연산자"><span class="nav-number">1.</span> <span class="nav-text">비교연산자</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -514,9 +522,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2020/06/05/%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%EC%8A%A4%EC%9C%84%EC%B9%AD/";
-    this.page.identifier = "2020/06/05/컨텍스트스위칭/";
-    this.page.title = "컨텍스트스위칭";
+    this.page.url = "http://yoursite.com/2020/06/26/%EB%B9%84%EA%B5%90%EC%97%B0%EC%82%B0%EC%9E%90/";
+    this.page.identifier = "2020/06/26/비교연산자/";
+    this.page.title = "비교연산자";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
