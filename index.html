@@ -177,6 +177,126 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/29/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/" class="post-title-link" itemprop="url">삽입정렬(Insert sort)</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-29 18:18:20" itemprop="dateCreated datePublished" datetime="2020-06-29T18:18:20+09:00">2020-06-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-30 02:22:50" itemprop="dateModified" datetime="2020-06-30T02:22:50+09:00">2020-06-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" itemprop="url" rel="index"><span itemprop="name">자료구조</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%A0%95%EB%A0%AC/" itemprop="url" rel="index"><span itemprop="name">정렬</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/29/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/29/삽입정렬/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="삽입-정렬-Insertion-Sort"><a href="#삽입-정렬-Insertion-Sort" class="headerlink" title="삽입 정렬(Insertion Sort)"></a>삽입 정렬(Insertion Sort)</h2><p>삽입 정렬은 현재 위치에서, 그 이하의 배열들을 비교하여 자신이 들어갈 위치를 찾아, 그 위치에 삽입하는 배열 알고리즘입니다.</p>
+<p>기본 로직은 아래와 같습니다.</p>
+<ol>
+<li><p>삽입 정렬은 두 번째 인덱스부터 시작합니다. 현재 인덱스는 별도의 변수에 저장해주고 비교 인덱스를 현재 인덱스 -1로 잡습니다.</p>
+</li>
+<li><p>별도로 저장해 둔 삽입을 위한 변수와 비교 인덱스의 배열 값을 비교합니다.</p>
+</li>
+<li><p>삽입 변수의 값이 더 작으면 현재 인덱스로 비교 인덱스의 값을 저장해주고, 비교 인덱스를 -1하여 비교를 반복합니다.</p>
+</li>
+<li><p>만약 삽입 변수가 더 크면, 비교 인덱스 +1에 삽입 변수를 저장합니다.</p>
+<p>이 정렬 알고리즘은 최악의 경우(역으로 정렬되어있을 경우)엔 n-1개, n-2개,…,1개씩 비교를 반복하여 시간복잡도는 O(n^2)입니다.이미 정렬되어 있는 경우에는 한번씩 밖에 비교를 하지 않아 시간 복답도는 O(n )입니다. 하지만 상한을 기준으로 하는 Big-O notation은 최악의 경우를 기준으로 평가하므로 삽입 정렬의 시간복잡도는 O(n^2)입니다.</p>
+</li>
+</ol>
+<p>이래를 돕기 위해 이미 정렬이 끝난 부분과 앞으로 처리될 대상 범위 사이에 세로선( | )을 넣어서 구분하겠습니다.</p>
+<p>| 2 4 5 1 3  // 시작</p>
+<p>2 | 4 5 1 3  // 맨 앞에 있는 2는 옮기지 않아도 됩니다.</p>
+<p>2 | 4 5 1 3  // 4의 위치를 맞춥니다. 2 바로 다음이므로 위치가 변하지 않습니다.</p>
+<p>2 4 | 5 1 3  // 대상 범위를 하나 줄입니다.</p>
+<p>2 4 | 5 1 3  // 5의 위치를 맞춥니다. 4바로 다음이므로 이번에도 위치가 그대로입니다.</p>
+<p>2 4 5 | 1 3  //  대상 범위를 하나 줄입니다.</p>
+<p>2 4 5 | 1 3  // 1의 위치를 맞춥니다.1은 2, 4, 5보다 작으므로 이 값들을 한 칸씩 오른쪽으로 옮긴 다음 비어 있는 공간에 1을 넣습니다.</p>
+<p>1 2 4 5 | 3  // 대상 범위를 하나 줄입니다.</p>
+<p>1 2 3 4 | 5  // 마지막으로 3의 위치를 맞춥니다.3은 4, 5보다 작으므로 4와 5를 한 칸씩 오른쪽으로 옮긴 다음 비어 있는 공간에 3을 넣습니다.</p>
+<p>1 2 3 4 5 |  // 대상 범위를 하나 줄입니다. 더는 자료가 없으므로 종료합니다.(최종결과)</p>
+<img width="1023" alt="스크린샷 2020-06-29 오후 6 16 47" src="https://user-images.githubusercontent.com/53684676/86024750-58f46c00-ba68-11ea-9754-6c1463b9a260.png">
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1222,103 +1342,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/25/hostname/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/25/hostname/" class="post-title-link" itemprop="url">hostname</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-06-25 12:25:19 / Modified: 12:25:44" itemprop="dateCreated datePublished" datetime="2020-06-25T12:25:19+09:00">2020-06-25</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/06/25/hostname/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/25/hostname/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="hostname"><a href="#hostname" class="headerlink" title="hostname"></a>hostname</h3><p>시스템의 호스트네임이란 인터넷에 접속된 수 많은 컴퓨터들이 자신을 구별하기 위해 가지고 있는 것이 IP주소인데, IP 대신 기억하기 쉽게 사용하는 것이 호스트네임이다.</p>
-<p>리눅스서버에서 호스트네임을 확인하는 방법은 <code>hostname</code>이란 명령어가 있는데 아래는 내 컴퓨터의 호스트명을 보여준 것이다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/85649274-ae81ef00-b6dd-11ea-9a63-4bded46c5d3b.png" alt="image"></p>
-<p>호스트명을 변경하는 파일은 <code>/etc/sysconfig/network</code>에서 변경만 해주고 네트워크환경을 적용하는 스크립트(/etc/rc.d/init.d/network)를 재실행 해주면 된다.</p>
-<p>이와 같은 방법으로 호스트명을 변경하면 서버를 재부팅한 후에도 지속적으로 적용이 된다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/25/hostname/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1389,7 +1412,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1400,7 +1423,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">119</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
