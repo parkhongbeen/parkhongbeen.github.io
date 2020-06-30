@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="이진 트리어떤 트리든 이진 트리로 표현이 가능하며, 구현이 단순한 편이라 가장 많이 쓰이는 트리입니다. 이진 트리의 가장 큰 특징은 최대 차수가 2입니다. 이진 트리에서는 왼쪽 서브트리와 오른쪽 서브트리를 구분하며 0개의 노드를 가질 수 있습니다. ![image-20200701001758403](&#x2F;Users&#x2F;hongbeen&#x2F;Library&#x2F;Applicatio">
+<meta name="keywords" content="Develop,CS,트리,자료구조,binary tree,이진트리">
+<meta property="og:type" content="article">
+<meta property="og:title" content="이진트리(Binary tree)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;01&#x2F;%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC&#x2F;index.html">
+<meta property="og:site_name" content="hongbeen&#39;s blog">
+<meta property="og:description" content="이진 트리어떤 트리든 이진 트리로 표현이 가능하며, 구현이 단순한 편이라 가장 많이 쓰이는 트리입니다. 이진 트리의 가장 큰 특징은 최대 차수가 2입니다. 이진 트리에서는 왼쪽 서브트리와 오른쪽 서브트리를 구분하며 0개의 노드를 가질 수 있습니다. ![image-20200701001758403](&#x2F;Users&#x2F;hongbeen&#x2F;Library&#x2F;Applicatio">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;86145001-5e69b900-bb31-11ea-90f7-6b6d6819b820.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;86145489-f23b8500-bb31-11ea-8564-e79cb8196042.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;86145513-f8c9fc80-bb31-11ea-93c2-217d9f6f9ae8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;86145543-ff587400-bb31-11ea-8da4-a3c02fcf3b6e.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;86146310-0764e380-bb33-11ea-9229-d39499148fa2.png">
+<meta property="og:updated_time" content="2020-06-30T15:40:17.591Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;86145001-5e69b900-bb31-11ea-90f7-6b6d6819b820.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/01/%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>이진트리(Binary tree) | hongbeen's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hongbeen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Beginner Developer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          이진트리(Binary tree)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-01 00:39:27 / Modified: 00:40:17" itemprop="dateCreated datePublished" datetime="2020-07-01T00:39:27+09:00">2020-07-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" itemprop="url" rel="index"><span itemprop="name">자료구조</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%ED%8A%B8%EB%A6%AC/" itemprop="url" rel="index"><span itemprop="name">트리</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/07/01/%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/07/01/이진트리/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="이진-트리"><a href="#이진-트리" class="headerlink" title="이진 트리"></a>이진 트리</h2><p>어떤 트리든 이진 트리로 표현이 가능하며, 구현이 단순한 편이라 가장 많이 쓰이는 트리입니다. 이진 트리의 가장 큰 특징은 최대 차수가 2입니다. 이진 트리에서는 왼쪽 서브트리와 오른쪽 서브트리를 구분하며 0개의 노드를 가질 수 있습니다.</p>
+<p>![image-20200701001758403](/Users/hongbeen/Library/Application Support/typora-user-images/image-20200701001758403.png)</p>
+<h3 id="이진-트리-순회"><a href="#이진-트리-순회" class="headerlink" title="이진 트리 순회"></a>이진 트리 순회</h3><ul>
+<li>전위 순회(preorder traverse): 뿌리(root)를 먼저 방문</li>
+<li>중위 순회(inorder traverse): 왼쪽 하위 트리를 방문 후 뿌리(root)를 방문</li>
+<li>후위 순회(postorder traverse): 하위 트리 모두 방문 후 뿌리(root)를 방문</li>
+<li>층별 순회(level order traverse): 위 쪽 node들부터 아래 방향으로 차레로 방문</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/86145001-5e69b900-bb31-11ea-90f7-6b6d6819b820.png" alt="image"></p>
+<p>전위순회: <code>0 - 1 - 3 - 7 - 8 - 4 - 9 - 10 - 2 - 5 - 11 - 6</code> / 뿌리 -&gt; 왼쪽자식 -&gt; 오른쪽자식 순 </p>
+<p>중위순회: <code>7 - 3 - 8 - 1 - 9 - 4 - 10 - 0 - 11 - 5 - 2 - 6</code> / 왼쪽자식 -&gt; 뿌리 -&gt; 오른쪽자식</p>
+<p>후위순회: <code>7 - 8 - 3 - 9 - 10 - 4 - 1 - 11 - 5 - 6 - 2 - 0</code> / 왼쪽자식 -&gt; 오른쪽자식 -&gt; 뿌리</p>
+<p>층별순회: <code>0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11</code> / 노드의 순서대로</p>
+<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><ul>
+<li><p>전위순회<img src="https://user-images.githubusercontent.com/53684676/86145489-f23b8500-bb31-11ea-8564-e79cb8196042.png" alt="image"></p>
+</li>
+<li><p>중위순회<img src="https://user-images.githubusercontent.com/53684676/86145513-f8c9fc80-bb31-11ea-93c2-217d9f6f9ae8.png" alt="image"></p>
+</li>
+<li><p>후위순회</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/86145543-ff587400-bb31-11ea-8da4-a3c02fcf3b6e.png" alt="image"></p>
+</li>
+<li><p>층별순회<img src="https://user-images.githubusercontent.com/53684676/86146310-0764e380-bb33-11ea-9229-d39499148fa2.png" alt="image"></p>
+</li>
+</ul>
+<p>참조: <a href="https://lee-seul.github.io/algorithm/python/2017/04/09/data-structure-04-tree.html" target="_blank" rel="noopener">블로그</a>, <a href="https://m.blog.naver.com/rlakk11/60159303809" target="_blank" rel="noopener">블로그</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Develop/" rel="tag"># Develop</a>
+              <a href="/tags/CS/" rel="tag"># CS</a>
+              <a href="/tags/%ED%8A%B8%EB%A6%AC/" rel="tag"># 트리</a>
+              <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" rel="tag"># 자료구조</a>
+              <a href="/tags/binary-tree/" rel="tag"># binary tree</a>
+              <a href="/tags/%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/" rel="tag"># 이진트리</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/30/Tree/" rel="prev" title="Tree">
+      <i class="fa fa-chevron-left"></i> Tree
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#이진-트리"><span class="nav-number">1.</span> <span class="nav-text">이진 트리</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#이진-트리-순회"><span class="nav-number">1.1.</span> <span class="nav-text">이진 트리 순회</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code"><span class="nav-number">1.2.</span> <span class="nav-text">code</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hong been Park</p>
+  <div class="site-description" itemprop="description">불타는 열정보단 지속적인 열정</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">130</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hong been Park</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hongbeen.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2020/07/01/%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/";
+    this.page.identifier = "2020/07/01/이진트리/";
+    this.page.title = "이진트리(Binary tree)";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hongbeen.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
