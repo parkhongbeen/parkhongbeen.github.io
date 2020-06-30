@@ -202,7 +202,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-01 00:39:27 / Modified: 00:41:50" itemprop="dateCreated datePublished" datetime="2020-07-01T00:39:27+09:00">2020-07-01</time>
+              <time title="Created: 2020-07-01 00:39:27 / Modified: 00:42:49" itemprop="dateCreated datePublished" datetime="2020-07-01T00:39:27+09:00">2020-07-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,24 +254,14 @@
 <li>후위 순회(postorder traverse): 하위 트리 모두 방문 후 뿌리(root)를 방문</li>
 <li>층별 순회(level order traverse): 위 쪽 node들부터 아래 방향으로 차레로 방문</li>
 </ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/86145001-5e69b900-bb31-11ea-90f7-6b6d6819b820.png" alt="image"></p>
-<p>전위순회: <code>0 - 1 - 3 - 7 - 8 - 4 - 9 - 10 - 2 - 5 - 11 - 6</code> / 뿌리 -&gt; 왼쪽자식 -&gt; 오른쪽자식 순 </p>
-<p>중위순회: <code>7 - 3 - 8 - 1 - 9 - 4 - 10 - 0 - 11 - 5 - 2 - 6</code> / 왼쪽자식 -&gt; 뿌리 -&gt; 오른쪽자식</p>
-<p>후위순회: <code>7 - 8 - 3 - 9 - 10 - 4 - 1 - 11 - 5 - 6 - 2 - 0</code> / 왼쪽자식 -&gt; 오른쪽자식 -&gt; 뿌리</p>
-<p>층별순회: <code>0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11</code> / 노드의 순서대로</p>
-<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><ul>
-<li><p>전위순회<img src="https://user-images.githubusercontent.com/53684676/86145489-f23b8500-bb31-11ea-8564-e79cb8196042.png" alt="image"></p>
-</li>
-<li><p>중위순회<img src="https://user-images.githubusercontent.com/53684676/86145513-f8c9fc80-bb31-11ea-93c2-217d9f6f9ae8.png" alt="image"></p>
-</li>
-<li><p>후위순회</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/86145543-ff587400-bb31-11ea-8da4-a3c02fcf3b6e.png" alt="image"></p>
-</li>
-<li><p>층별순회<img src="https://user-images.githubusercontent.com/53684676/86146310-0764e380-bb33-11ea-9229-d39499148fa2.png" alt="image"></p>
-</li>
-</ul>
-<p>참조: <a href="https://lee-seul.github.io/algorithm/python/2017/04/09/data-structure-04-tree.html" target="_blank" rel="noopener">블로그</a>, <a href="https://m.blog.naver.com/rlakk11/60159303809" target="_blank" rel="noopener">블로그</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/01/%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -313,10 +303,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-30 23:37:44 / Modified: 23:44:49" itemprop="dateCreated datePublished" datetime="2020-06-30T23:37:44+09:00">2020-06-30</time>
+              <time title="Created: 2020-06-30 23:37:44" itemprop="dateCreated datePublished" datetime="2020-06-30T23:37:44+09:00">2020-06-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-01 00:43:06" itemprop="dateModified" datetime="2020-07-01T00:43:06+09:00">2020-07-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -368,18 +364,14 @@
 <li>루트 노드와 0개 이상의 겹치지 않는 하위 나무 구조들의 집합으로 이루어짐</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/53684676/86138753-d0d69b00-bb29-11ea-84ec-32dc72a52ee8.png" alt="image-20200630233119811"></p>
-<p>트리는 전체적으로 node와 edge라는 것으로 표현됩니다. 위의 동그라미가 node이며 여기에 우리는 특정 정보를 저장할 수 있고, 선으로 연결되는 것을 edge라고 부르며 정보들간의 관계를 나타냅니다.</p>
-<h3 id="트리의-용어"><a href="#트리의-용어" class="headerlink" title="트리의 용어"></a>트리의 용어</h3><ul>
-<li>path: edge에 의해 연결된 node들의 집합</li>
-<li>root node: 최상위의 node</li>
-<li>parent(부모), children(자식), siblin(형제), grandparent(조부모), ancestor(조상): 기준이 되는 것의 바로 직계 상위 node를 부모, 바로 아래층의 node를 자식, 같은 부모를 둔 node들의 형제, 부모의 부모를 조부모, 직계 상위 노드들은 조상</li>
-<li>leaf(잎): 자식이 없는 node</li>
-<li>subtree: 큰 tree에 속한 작은 tree</li>
-<li>node의 degree: 하위 subtree의 개수</li>
-<li>node의 level: root node부터 최하위 node까지의 중첩되지 않은 path의 node개수</li>
-</ul>
-<p>출처: <a href="https://m.blog.naver.com/rlakk11/60159303809" target="_blank" rel="noopener">참고블로그</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/30/Tree/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
