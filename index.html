@@ -413,10 +413,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-30 22:17:50 / Modified: 22:20:32" itemprop="dateCreated datePublished" datetime="2020-06-30T22:17:50+09:00">2020-06-30</time>
+              <time title="Created: 2020-06-30 22:17:50" itemprop="dateCreated datePublished" datetime="2020-06-30T22:17:50+09:00">2020-06-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-01 00:44:59" itemprop="dateModified" datetime="2020-07-01T00:44:59+09:00">2020-07-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -454,13 +460,14 @@
       
           <h2 id="Print"><a href="#Print" class="headerlink" title="Print"></a>Print</h2><p>오늘은 간단하게 python의 print문에 대해서 정리하려고 합니다. print문에서 괄호안의 문자열은 <code>&quot;&quot;</code>쌍따옴표 또는 <code>&#39;&#39;</code>홑따옴표를 사용합니다. 사용하실 땐 홑따옴표 쌍따옴표 원하시는걸 사용하시되 짝만 맞도록 사용하시면 됩니다.</p>
 <p><img src="https://user-images.githubusercontent.com/53684676/86130424-180b5e80-bb1f-11ea-9d29-2ed216acc068.png" alt="image"></p>
-<h3 id="int-str"><a href="#int-str" class="headerlink" title="int,str"></a>int,str</h3><p><img src="https://user-images.githubusercontent.com/53684676/86130018-83086580-bb1e-11ea-93d9-8f76cc138607.png" alt="image"></p>
-<p>먼저 위의 print와 아래의 print의 차이는 int와 str이라는 점에서 차이가 있습니다.</p>
-<h3 id="sep옵션"><a href="#sep옵션" class="headerlink" title="sep옵션"></a>sep옵션</h3><p>print안에서는 <code>,</code>콤마로 구분지어 여러개를 나열할 수 있는데 sep옵션이 없을 경우엔 콤마 사이에 띄어쓰기(공백)이 들어가고 sep옵션을 사용해주면 사이에 sep=’?’물음표가 들어가게 됩니다. 아래의 그림을 보고 이해하시면 더 좋을 것 같습니다. </p>
-<p><img src="https://user-images.githubusercontent.com/53684676/86130112-afbc7d00-bb1e-11ea-865a-83cba6dab526.png" alt="image"></p>
-<h3 id="end옵션"><a href="#end옵션" class="headerlink" title="end옵션"></a>end옵션</h3><p>end옵션에는 마지막에 들어갈 무언가를 넣어주면 됩니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/86130062-93b8db80-bb1e-11ea-98a4-5635425fd0d6.png" alt="image"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/30/print/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -510,7 +517,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-30 03:05:11" itemprop="dateModified" datetime="2020-06-30T03:05:11+09:00">2020-06-30</time>
+                <time title="Modified: 2020-07-01 00:44:40" itemprop="dateModified" datetime="2020-07-01T00:44:40+09:00">2020-07-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -558,29 +565,19 @@
           <h2 id="삽입-정렬-Insertion-Sort"><a href="#삽입-정렬-Insertion-Sort" class="headerlink" title="삽입 정렬(Insertion Sort)"></a>삽입 정렬(Insertion Sort)</h2><p>삽입 정렬은 현재 위치에서, 그 이하의 배열들을 비교하여 자신이 들어갈 위치를 찾아, 그 위치에 삽입하는 배열 알고리즘입니다.</p>
 <p>기본 로직은 아래와 같습니다.</p>
 <ol>
-<li><p>삽입 정렬은 두 번째 인덱스부터 시작합니다. 현재 인덱스는 별도의 변수에 저장해주고 비교 인덱스를 현재 인덱스 -1로 잡습니다.</p>
-</li>
-<li><p>별도로 저장해 둔 삽입을 위한 변수와 비교 인덱스의 배열 값을 비교합니다.</p>
-</li>
-<li><p>삽입 변수의 값이 더 작으면 현재 인덱스로 비교 인덱스의 값을 저장해주고, 비교 인덱스를 -1하여 비교를 반복합니다.</p>
-</li>
-<li><p>만약 삽입 변수가 더 크면, 비교 인덱스 +1에 삽입 변수를 저장합니다.</p>
-<p>이 정렬 알고리즘은 최악의 경우(역으로 정렬되어있을 경우)엔 n-1개, n-2개,…,1개씩 비교를 반복하여 시간복잡도는 O(n^2)입니다.이미 정렬되어 있는 경우에는 한번씩 밖에 비교를 하지 않아 시간 복답도는 O(n )입니다. 하지만 상한을 기준으로 하는 Big-O notation은 최악의 경우를 기준으로 평가하므로 삽입 정렬의 시간복잡도는 O(n^2)입니다.</p>
-</li>
+<li>삽입 정렬은 두 번째 인덱스부터 시작합니다. 현재 인덱스는 별도의 변수에 저장해주고 비교 인덱스를 현재 인덱스 -1로 잡습니다.</li>
+<li>별도로 저장해 둔 삽입을 위한 변수와 비교 인덱스의 배열 값을 비교합니다.</li>
+<li>삽입 변수의 값이 더 작으면 현재 인덱스로 비교 인덱스의 값을 저장해주고, 비교 인덱스를 -1하여 비교를 반복합니다.</li>
+<li>만약 삽입 변수가 더 크면, 비교 인덱스 +1에 삽입 변수를 저장합니다.</li>
 </ol>
-<p>이래를 돕기 위해 이미 정렬이 끝난 부분과 앞으로 처리될 대상 범위 사이에 세로선( | )을 넣어서 구분하겠습니다.</p>
-<p><code>| 2 4 5 1 3  // 시작</code></p>
-<p><code>2 | 4 5 1 3  // 맨 앞에 있는 2는 옮기지 않아도 됩니다.</code></p>
-<p><code>2 | 4 5 1 3  // 4의 위치를 맞춥니다. 2 바로 다음이므로 위치가 변하지 않습니다.</code></p>
-<p><code>2 4 | 5 1 3  // 대상 범위를 하나 줄입니다.</code></p>
-<p><code>2 4 | 5 1 3  // 5의 위치를 맞춥니다. 4바로 다음이므로 이번에도 위치가 그대로입니다.</code></p>
-<p><code>2 4 5 | 1 3  //  대상 범위를 하나 줄입니다.</code></p>
-<p><code>2 4 5 | 1 3  // 1의 위치를 맞춥니다.1은 2, 4, 5보다 작으므로 이 값들을 한 칸씩 오른쪽으로 옮긴 다음 비어 있는 공간에 1을 넣습니다.</code></p>
-<p><code>1 2 4 5 | 3  // 대상 범위를 하나 줄입니다.</code></p>
-<p><code>1 2 3 4 | 5  // 마지막으로 3의 위치를 맞춥니다.3은 4, 5보다 작으므로 4와 5를 한 칸씩 오른쪽으로 옮긴 다음 비어 있는 공간에 3을 넣습니다.</code></p>
-<p><code>1 2 3 4 5 |  // 대상 범위를 하나 줄입니다. 더는 자료가 없으므로 종료합니다.(최종결과)</code></p>
-<img width="1023" alt="스크린샷 2020-06-29 오후 6 16 47" src="https://user-images.githubusercontent.com/53684676/86024750-58f46c00-ba68-11ea-9754-6c1463b9a260.png">
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/29/%EC%82%BD%EC%9E%85%EC%A0%95%EB%A0%AC/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -630,7 +627,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-30 03:06:08" itemprop="dateModified" datetime="2020-06-30T03:06:08+09:00">2020-06-30</time>
+                <time title="Modified: 2020-07-01 00:44:24" itemprop="dateModified" datetime="2020-07-01T00:44:24+09:00">2020-07-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -676,25 +673,14 @@
 
       
           <h2 id="선택정렬"><a href="#선택정렬" class="headerlink" title="선택정렬"></a>선택정렬</h2><p>선택 정렬은 이름에 맞게 현재 위치에 들어갈 값을 찾아 정렬하는 배열입니다. 현재 위치에 저장 될 값의 크기가 작냐, 크냐에 따라 최소 선택 정렬과 최대 선택 정렬로 구분 할 수 있습니다.최소 선택 정렬은 오름차순으로 정렬될 것이고, 최대 선택 정렬은 내림차순으로 정렬될 것입니다.</p>
-<p>기본 로직은 아래와 같습니다.</p>
-<ol>
-<li>정렬되지 않은 인데스의 맨 앞에서 부터, 이를 포함한 그 이후의 배열값 중 가장 작은 값을 찾아감(정렬되지 않은 인덱스의 맨 앞은, 초기 입력에서는 배열의 시작위치일 것입니다.)</li>
-<li>가장 작은 값을 찾으면, 그 값을 현재 인덱스의 값과 바꿔줌</li>
-<li>다음 인덱스에서 위 과정을 반복해줌</li>
-</ol>
-<p>이해를 돕기 위해 이미 정렬이 끝난 부분과 앞으로 처리될 대상 범위 사이에 세로선( | )을 넣어 구분하여 설명하겠습니다.</p>
-<p>| 2 4 5 1 3 시작, 전체리스트인 2, 4, 5, 1, 3을 대상으로 최솟값을 찾습니다.</p>
-<p>| <strong>1</strong> 4 5 <strong>2</strong> 3  // 최솟값 1을 대산의 가장 왼쪽 값인 2와 바꿉니다.</p>
-<p>1 | 4 5 2 3  // 1을 대상에서 제외하고 4, 5, 2, 3에서 최솟값을 찾습니다.</p>
-<p>1 | <strong>2</strong> 5 <strong>4</strong> 3  // 4, 5, 2, 3 중 최솟값인 2를 4와 바꿉니다.</p>
-<p>1 2 | 5 4 3  // 2를 대산에서 제외하고 5, 4, 3에서 최솟값을 찾습니다.</p>
-<p>1 2 | <strong>3</strong> 4 <strong>5</strong>  // 5, 4, 3중 최솟값인 3을 5와 바꿉니다.</p>
-<p>1 2 3 | 4 5  // 3을 대상에서 제외하고 4, 5에서 최솟값을 찾습니다.</p>
-<p>1 2 3 | <strong>4</strong> 5  // 최솟값 4를 4와 바꿉니다.(변화없음)</p>
-<p>1 2 3 4 | 5  // 4를 대상에서 제외합니다. 자료가 5하나만 남았으므로 종료합니다.</p>
-<p>1 2 3 4 5 |  //  최종결과입니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/85988552-2af03700-ba2a-11ea-8235-238d806fe875.png" alt="image"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/29/%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
