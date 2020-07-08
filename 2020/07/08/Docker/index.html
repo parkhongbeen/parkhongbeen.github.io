@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Docker란 무엇인가? 가상의 환경에서 미리 정해져있는 필요한 프로그램들의 리스트를 통째로 설치하고 실행한 뒤 가상의 환경을 종료시킴으로써 내 컴퓨터는 깔끔하게 아무 영향을 받지 않도록 도와주는 프로그램  Image, Docker engine, Containerimage는 가상환경에 대한 설정과 설치해야할 Dependencies(패키지를 실행하기 위해 필">
+<meta name="keywords" content="Docker,docker image,docker container">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;08&#x2F;Docker&#x2F;index.html">
+<meta property="og:site_name" content="hongbeen&#39;s blog">
+<meta property="og:description" content="Docker란 무엇인가? 가상의 환경에서 미리 정해져있는 필요한 프로그램들의 리스트를 통째로 설치하고 실행한 뒤 가상의 환경을 종료시킴으로써 내 컴퓨터는 깔끔하게 아무 영향을 받지 않도록 도와주는 프로그램  Image, Docker engine, Containerimage는 가상환경에 대한 설정과 설치해야할 Dependencies(패키지를 실행하기 위해 필">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072721-7d6c6200-7d1d-11ea-9d12-f0617f1a0897.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072743-99700380-7d1d-11ea-8212-d4767f5b349f.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072741-9543e600-7d1d-11ea-8219-67de6ec4855f.png">
+<meta property="og:updated_time" content="2020-07-08T10:03:11.208Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072721-7d6c6200-7d1d-11ea-9d12-f0617f1a0897.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/08/Docker/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Docker | hongbeen's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hongbeen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Beginner Developer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/Docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Docker
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-08 19:01:23 / Modified: 19:03:11" itemprop="dateCreated datePublished" datetime="2020-07-08T19:01:23+09:00">2020-07-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/07/08/Docker/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/07/08/Docker/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Docker란-무엇인가"><a href="#Docker란-무엇인가" class="headerlink" title="Docker란 무엇인가?"></a>Docker란 무엇인가?</h2><blockquote>
+<p>가상의 환경에서 미리 정해져있는 필요한 프로그램들의 리스트를 통째로 설치하고 실행한 뒤 가상의 환경을 종료시킴으로써 내 컴퓨터는 깔끔하게 아무 영향을 받지 않도록 도와주는 프로그램</p>
+</blockquote>
+<h3 id="Image-Docker-engine-Container"><a href="#Image-Docker-engine-Container" class="headerlink" title="Image, Docker engine, Container"></a>Image, Docker engine, Container</h3><p><strong>image</strong>는 가상환경에 대한 설정과 설치해야할 Dependencies(패키지를 실행하기 위해 필요한 패키지 목록), 수행할 작업등을 적어놓은 설정이고 <code>docker build</code>라는 명령어를 통해 생성할 수 있습니다.</p>
+<p><strong>docker engine</strong>은 image를 통해 container라는 실행 객체를 생성하고 실행합니다.</p>
+<p><strong>container</strong>는 철저하게 가상환경에서 docker engine을 통해 실행되기 때문에 내 컴퓨터의 설정과는 무관하게, 어떤 컴퓨터에서든 동일하게 프로그램을 실행할 수 있게 해주고, 내 컴퓨터의 데이터에는 아무런 영향을 끼치지 못 하게 합니다.</p>
+<p><code>$ docker build</code>를 통해 Image를 빌드하고</p>
+<p><code>$ docker run</code>을 통해 Image를 run하고 container가 실행됩니다.</p>
+<h3 id="Image-VS-Container"><a href="#Image-VS-Container" class="headerlink" title="Image VS Container"></a>Image VS Container</h3><p>좋은 질문답변글이 올라와 첨부합니다. 위 링크의 내용을 요약하면 image는 class같은 느낌이고 container는 class를 바탕으로 생성된 object같은 느낌이라고 합니다.</p>
+<p><strong>Dockerfile</strong>-&gt; (빌드) -&gt; <strong>이미지</strong> -&gt; (실행) -&gt; <strong>컨테이너</strong></p>
+<ul>
+<li>Dockerfile: 운영 체제가 원하는 방식으로 프로비저닝(사용자의 요구에 맞게 시스템자원을 할당, 배치, 배포해 두었다가 필요시 시스템을 즉시 사용할 수 있는 상태로 미리 준비해 두는 것)하고 모든 소프트웨어를 설치/구성하는 Docker지침 세트가 포함되어 있습니다.</li>
+<li>이미지: 컴파일 된 Docker 컨테이너를 실행할 때마다 Dockerfile을 다시 작성하는 시간을 절약합니다.</li>
+<li>컨테이너: 가상 운영 체제 자체가 실제 환경인 것처럼 ssh를 사용하여 원하는 명령을 실행할 수 있습니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/79072721-7d6c6200-7d1d-11ea-9d12-f0617f1a0897.png" alt="도커파일이미지컨테이너"></p>
+<p>즉, 같은 image라도 각 container별로 사용자가 프로그램을 진행시키는 방향에 따라 프로그램의 결과가 달라질 수 있다는 말입니다. 또한 image는 설정과 수행할 작업에 대한 정보들이라고 할 수 있고, container는 그 설정을 바탕으로 작업을 하고 있는 작업 영역이라고 볼 수 있습니다.</p>
+<h3 id="Docker를-통해-어떤-작업을-하는-걸까"><a href="#Docker를-통해-어떤-작업을-하는-걸까" class="headerlink" title="Docker를 통해 어떤 작업을 하는 걸까?"></a>Docker를 통해 어떤 작업을 하는 걸까?</h3><p>Docker는 수행하고자 하는 작업 혹은 프로그램에 필요한 패키지의 <strong>dependencies</strong>(패키지를 실행하기 위해 필요한 패키지목록)을 <strong>모두 담아 이미지</strong>를 만듭니다. 그리고 그 image를 run하면 <strong>내 컴퓨터에 필요한 dependencies가 없더라도 마치 있는 것처럼 프로그램이 동작</strong>하게 됩니다.</p>
+<p>docker engine을 이용해 image에 입력된 설정과 작업들을 바탕으로 container가 실행되게 되는 것입니다.</p>
+<h3 id="가상환경"><a href="#가상환경" class="headerlink" title="가상환경"></a>가상환경</h3><p><img src="https://user-images.githubusercontent.com/53684676/79072743-99700380-7d1d-11ea-8212-d4767f5b349f.png" alt="가상환경"></p>
+<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><p><img src="https://user-images.githubusercontent.com/53684676/79072741-9543e600-7d1d-11ea-8219-67de6ec4855f.png" alt="도커"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"># Docker</a>
+              <a href="/tags/docker-image/" rel="tag"># docker image</a>
+              <a href="/tags/docker-container/" rel="tag"># docker container</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/07/Greedy/" rel="prev" title="Greedy">
+      <i class="fa fa-chevron-left"></i> Greedy
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker란-무엇인가"><span class="nav-number">1.</span> <span class="nav-text">Docker란 무엇인가?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Docker-engine-Container"><span class="nav-number">1.1.</span> <span class="nav-text">Image, Docker engine, Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-VS-Container"><span class="nav-number">1.2.</span> <span class="nav-text">Image VS Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker를-통해-어떤-작업을-하는-걸까"><span class="nav-number">1.3.</span> <span class="nav-text">Docker를 통해 어떤 작업을 하는 걸까?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상환경"><span class="nav-number">1.4.</span> <span class="nav-text">가상환경</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker"><span class="nav-number">1.5.</span> <span class="nav-text">Docker</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hong been Park</p>
+  <div class="site-description" itemprop="description">불타는 열정보단 지속적인 열정</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">145</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hong been Park</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hongbeen.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2020/07/08/Docker/";
+    this.page.identifier = "2020/07/08/Docker/";
+    this.page.title = "Docker";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hongbeen.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
