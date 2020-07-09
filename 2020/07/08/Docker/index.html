@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Docker란 무엇인가? 가상의 환경에서 미리 정해져있는 필요한 프로그램들의 리스트를 통째로 설치하고 실행한 뒤 가상의 환경을 종료시킴으로써 내 컴퓨터는 깔끔하게 아무 영향을 받지 않도록 도와주는 프로그램  Image, Docker engine, Containerimage는 가상환경에 대한 설정과 설치해야할 Dependencies(패키지를 실행하기 위해 필">
+  <meta name="description" content="Docker란 무엇인가?  가상의 환경에서 미리 정해져있는 필요한 프로그램들의 리스트를 통째로 설치하고 실행한 뒤 가상의 환경을 종료시킴으로써 내 컴퓨터는 깔끔하게 아무 영향을 받지 않도록 도와주는 프로그램  Image, Docker engine, Containerimage는 가상환경에 대한 설정과 설치해야할 Dependencies(패키지를 실행하기 위해">
 <meta name="keywords" content="Docker,docker image,docker container">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;08&#x2F;Docker&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
-<meta property="og:description" content="Docker란 무엇인가? 가상의 환경에서 미리 정해져있는 필요한 프로그램들의 리스트를 통째로 설치하고 실행한 뒤 가상의 환경을 종료시킴으로써 내 컴퓨터는 깔끔하게 아무 영향을 받지 않도록 도와주는 프로그램  Image, Docker engine, Containerimage는 가상환경에 대한 설정과 설치해야할 Dependencies(패키지를 실행하기 위해 필">
+<meta property="og:description" content="Docker란 무엇인가?  가상의 환경에서 미리 정해져있는 필요한 프로그램들의 리스트를 통째로 설치하고 실행한 뒤 가상의 환경을 종료시킴으로써 내 컴퓨터는 깔끔하게 아무 영향을 받지 않도록 도와주는 프로그램  Image, Docker engine, Containerimage는 가상환경에 대한 설정과 설치해야할 Dependencies(패키지를 실행하기 위해">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072741-9543e600-7d1d-11ea-8219-67de6ec4855f.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072721-7d6c6200-7d1d-11ea-9d12-f0617f1a0897.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072743-99700380-7d1d-11ea-8212-d4767f5b349f.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072741-9543e600-7d1d-11ea-8219-67de6ec4855f.png">
-<meta property="og:updated_time" content="2020-07-08T10:04:25.370Z">
+<meta property="og:updated_time" content="2020-07-08T10:06:48.375Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072721-7d6c6200-7d1d-11ea-9d12-f0617f1a0897.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;79072741-9543e600-7d1d-11ea-8219-67de6ec4855f.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/07/08/Docker/">
 
@@ -207,7 +207,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-08 19:01:23 / Modified: 19:04:25" itemprop="dateCreated datePublished" datetime="2020-07-08T19:01:23+09:00">2020-07-08</time>
+              <time title="Created: 2020-07-08 19:01:23 / Modified: 19:06:48" itemprop="dateCreated datePublished" datetime="2020-07-08T19:01:23+09:00">2020-07-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,7 +251,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Docker란-무엇인가"><a href="#Docker란-무엇인가" class="headerlink" title="Docker란 무엇인가?"></a>Docker란 무엇인가?</h2><blockquote>
+        <h2 id="Docker란-무엇인가"><a href="#Docker란-무엇인가" class="headerlink" title="Docker란 무엇인가?"></a>Docker란 무엇인가?</h2><p><img src="https://user-images.githubusercontent.com/53684676/79072741-9543e600-7d1d-11ea-8219-67de6ec4855f.png" alt="도커"></p>
+<blockquote>
 <p>가상의 환경에서 미리 정해져있는 필요한 프로그램들의 리스트를 통째로 설치하고 실행한 뒤 가상의 환경을 종료시킴으로써 내 컴퓨터는 깔끔하게 아무 영향을 받지 않도록 도와주는 프로그램</p>
 </blockquote>
 <h3 id="Image-Docker-engine-Container"><a href="#Image-Docker-engine-Container" class="headerlink" title="Image, Docker engine, Container"></a>Image, Docker engine, Container</h3><p><strong>image</strong>는 가상환경에 대한 설정과 설치해야할 Dependencies(패키지를 실행하기 위해 필요한 패키지 목록), 수행할 작업등을 적어놓은 설정이고 <code>docker build</code>라는 명령어를 통해 생성할 수 있습니다.</p>
@@ -273,7 +274,6 @@
 <h3 id="Docker를-통해-어떤-작업을-하는-걸까"><a href="#Docker를-통해-어떤-작업을-하는-걸까" class="headerlink" title="Docker를 통해 어떤 작업을 하는 걸까?"></a>Docker를 통해 어떤 작업을 하는 걸까?</h3><p>Docker는 수행하고자 하는 작업 혹은 프로그램에 필요한 패키지의 <strong>dependencies</strong>(패키지를 실행하기 위해 필요한 패키지목록)을 <strong>모두 담아 이미지</strong>를 만듭니다. 그리고 그 image를 run하면 <strong>내 컴퓨터에 필요한 dependencies가 없더라도 마치 있는 것처럼 프로그램이 동작</strong>하게 됩니다.</p>
 <p>docker engine을 이용해 image에 입력된 설정과 작업들을 바탕으로 container가 실행되게 되는 것입니다.</p>
 <h3 id="가상환경"><a href="#가상환경" class="headerlink" title="가상환경"></a>가상환경</h3><p><img src="https://user-images.githubusercontent.com/53684676/79072743-99700380-7d1d-11ea-8212-d4767f5b349f.png" alt="가상환경"></p>
-<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><p><img src="https://user-images.githubusercontent.com/53684676/79072741-9543e600-7d1d-11ea-8219-67de6ec4855f.png" alt="도커"></p>
 
     </div>
 
@@ -364,7 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker란-무엇인가"><span class="nav-number">1.</span> <span class="nav-text">Docker란 무엇인가?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Docker-engine-Container"><span class="nav-number">1.1.</span> <span class="nav-text">Image, Docker engine, Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-VS-Container"><span class="nav-number">1.2.</span> <span class="nav-text">Image VS Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker를-통해-어떤-작업을-하는-걸까"><span class="nav-number">1.3.</span> <span class="nav-text">Docker를 통해 어떤 작업을 하는 걸까?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상환경"><span class="nav-number">1.4.</span> <span class="nav-text">가상환경</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker"><span class="nav-number">1.5.</span> <span class="nav-text">Docker</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker란-무엇인가"><span class="nav-number">1.</span> <span class="nav-text">Docker란 무엇인가?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Docker-engine-Container"><span class="nav-number">1.1.</span> <span class="nav-text">Image, Docker engine, Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-VS-Container"><span class="nav-number">1.2.</span> <span class="nav-text">Image VS Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker를-통해-어떤-작업을-하는-걸까"><span class="nav-number">1.3.</span> <span class="nav-text">Docker를 통해 어떤 작업을 하는 걸까?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#가상환경"><span class="nav-number">1.4.</span> <span class="nav-text">가상환경</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
