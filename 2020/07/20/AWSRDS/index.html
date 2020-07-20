@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="AWS RDS(Amazon Relational Database Service) 클라우드에서 관계형 데이터베이스를 더 쉽게 설치, 운영 및 확장할 수 있는 웹 서비스 데이터베이스를 안정적으로 관리해주고 규모가 커져쓸 때 쉽게 관리해주는 서비스  기능 백업, 소프트웨어 패치, 자동 장애 감지 및 복구를 관리함  MySQL, MariaDB, PostgreSQL,">
+<meta name="keywords" content="Develop,AWS,RDS,DB,database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS(RDS)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;20&#x2F;AWSRDS&#x2F;index.html">
+<meta property="og:site_name" content="hongbeen&#39;s blog">
+<meta property="og:description" content="AWS RDS(Amazon Relational Database Service) 클라우드에서 관계형 데이터베이스를 더 쉽게 설치, 운영 및 확장할 수 있는 웹 서비스 데이터베이스를 안정적으로 관리해주고 규모가 커져쓸 때 쉽게 관리해주는 서비스  기능 백업, 소프트웨어 패치, 자동 장애 감지 및 복구를 관리함  MySQL, MariaDB, PostgreSQL,">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;87926273-6a0b2880-cabc-11ea-8924-ff3b51f1282e.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;87926278-6b3c5580-cabc-11ea-9391-5890bef6f25e.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;87926283-6e374600-cabc-11ea-9f8c-c51a041a3366.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;87926288-7099a000-cabc-11ea-99e9-c6a31e70b395.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;87926300-755e5400-cabc-11ea-8044-bf10e20722a3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;87926306-77281780-cabc-11ea-95b5-294f6c98058e.png">
+<meta property="og:updated_time" content="2020-07-20T10:19:27.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;87926273-6a0b2880-cabc-11ea-8924-ff3b51f1282e.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/20/AWSRDS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>AWS(RDS) | hongbeen's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hongbeen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Beginner Developer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/AWSRDS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AWS(RDS)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-20 19:18:21 / Modified: 19:19:27" itemprop="dateCreated datePublished" datetime="2020-07-20T19:18:21+09:00">2020-07-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS/" itemprop="url" rel="index"><span itemprop="name">AWS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS/RDS/" itemprop="url" rel="index"><span itemprop="name">RDS</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/07/20/AWSRDS/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/07/20/AWSRDS/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="AWS-RDS-Amazon-Relational-Database-Service"><a href="#AWS-RDS-Amazon-Relational-Database-Service" class="headerlink" title="AWS RDS(Amazon Relational Database Service)"></a>AWS RDS<strong>(Amazon Relational Database Service)</strong></h2><ul>
+<li>클라우드에서 관계형 데이터베이스를 더 쉽게 설치, 운영 및 확장할 수 있는 웹 서비스</li>
+<li>데이터베이스를 안정적으로 관리해주고 규모가 커져쓸 때 쉽게 관리해주는 서비스</li>
+</ul>
+<h3 id="기능"><a href="#기능" class="headerlink" title="기능"></a>기능</h3><ul>
+<li><p>백업, 소프트웨어 패치, 자동 장애 감지 및 복구를 관리함</p>
+</li>
+<li><p>MySQL, MariaDB, PostgreSQL, Oracle 및 MS SQL 같은 DB제품을 사용할 수 있음</p>
+</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h3><ul>
+<li>쉽고 빠른 구성</li>
+<li>빠르고 예측 가능한 성능</li>
+<li>반복적인 관리작업 대신 수행</li>
+<li>쉽고 빠른 확장</li>
+<li>높은 비용 효율성</li>
+</ul>
+<h3 id="사용방법-생성하기"><a href="#사용방법-생성하기" class="headerlink" title="사용방법 - 생성하기"></a>사용방법 - 생성하기</h3><h4 id="1-AWS홈페이지-접속"><a href="#1-AWS홈페이지-접속" class="headerlink" title="1. AWS홈페이지 접속"></a>1. AWS홈페이지 접속</h4><p><a href="https://aws.amazon.com/ko/" target="_blank" rel="noopener">https://aws.amazon.com/ko/</a></p>
+<h4 id="2-로그인-후-RDS-서비스-선택"><a href="#2-로그인-후-RDS-서비스-선택" class="headerlink" title="2. 로그인 후 RDS 서비스 선택"></a>2. 로그인 후 RDS 서비스 선택</h4><p><img src="https://user-images.githubusercontent.com/53684676/87926273-6a0b2880-cabc-11ea-8924-ff3b51f1282e.png" alt="스크린샷 2020-07-20 오후 6 50 56"></p>
+<h4 id="3-데이터-베이스-생성-클릭"><a href="#3-데이터-베이스-생성-클릭" class="headerlink" title="3. 데이터 베이스 생성 클릭"></a>3. 데이터 베이스 생성 클릭</h4><p><img src="https://user-images.githubusercontent.com/53684676/87926278-6b3c5580-cabc-11ea-9391-5890bef6f25e.png" alt="스크린샷 2020-07-20 오후 6 52 23"></p>
+<h4 id="4-본인이-사용할-엔진-선택"><a href="#4-본인이-사용할-엔진-선택" class="headerlink" title="4. 본인이 사용할 엔진 선택"></a>4. 본인이 사용할 엔진 선택</h4><p><img src="https://user-images.githubusercontent.com/53684676/87926283-6e374600-cabc-11ea-9f8c-c51a041a3366.png" alt="스크린샷 2020-07-20 오후 6 54 36"></p>
+<p>여기서 부터 중요한 것은 AWS는 유료 서비스이므로 과금을 조심해야합니다.</p>
+<p>체험, 공부용으로 사용할 시에 <strong>AWS프리티어</strong>로 1년간 무료로 사용할 수 있으니 추천합니다. AWS RDS는 프리티어로 1년간 20Gib스토리지를 사용할 수 있습니다.</p>
+<p>사진을 보시면 손쉬운 생성을 선택했는데 저렇게 할 경우 AWS에서 권장하는 기본값들로 설정이 됩니다.</p>
+<h4 id="5-DB옵션-설정"><a href="#5-DB옵션-설정" class="headerlink" title="5. DB옵션 설정"></a>5. DB옵션 설정</h4><p><img src="https://user-images.githubusercontent.com/53684676/87926288-7099a000-cabc-11ea-99e9-c6a31e70b395.png" alt="스크린샷 2020-07-20 오후 6 59 39"></p>
+<ul>
+<li><p>DB 인스턴스 식별자: DB인스턴스의 이름입니다. DB인스턴스를 여러개 만들때 구별하기 위한 것입니다.</p>
+</li>
+<li><p>마스터 사용자 이름: DB USER ID입니다. DB접속시 사용할 USER ID(작성)</p>
+</li>
+<li><p>마스터 암호: PASSWORD입니다. DB접속시 사용할 PASSWORD(작성)</p>
+<p><img src="https://user-images.githubusercontent.com/53684676/87926300-755e5400-cabc-11ea-8044-bf10e20722a3.png" alt="스크린샷 2020-07-20 오후 7 04 58"></p>
+</li>
+<li><p>VPC(Virtual Private Cloud): AWS안에서 웹으로부터 독립된 안전한 네트워크를 구성해주는 서비스(기본값)</p>
+</li>
+<li><p>서브넷 그룹: VPC에서 DB인스턴스의 사용 IP범위 지정(Default)</p>
+</li>
+<li><p>퍼블릭 엑세스 기능성: EC2를 만들어서 RDS를 사용할 때 VPC를 이용하고 외부 인터넷에서 RDS를 바로 사용할땐 사용하지 않는 것이 간단한 설정 즉, EC2로 DB연결할 시 - (아니오), 외부에서 인터넷으로 연결할 시 - (예) / <strong>DB생성 후 연결시</strong>에 본인이 <strong>어떻게 연결할지에 알맞게 선택</strong>(생성 후 수정가능함)</p>
+</li>
+<li><p>VPC보안 그룹: 같은 VPC에 연결하는것이 아니라 지정한 것끼리만 접속할 때 사용</p>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/87926306-77281780-cabc-11ea-95b5-294f6c98058e.png" alt="스크린샷 2020-07-20 오후 7 07 36"></p>
+<p>기다리면 10~15분 후 생성 됩니다. 이렇게해서 간단한 설정만으로 관계형 데이터베이스를 만들어보았습니다. 쉽게 관계형 데이터베이스를 만들어 사용할 수 있을 뿐만 아니라, 유지보수, 보안 관리 등 쉽지 않은 분야의 업무를 저렴한 비용으로 사용할 수 있게 해주는 것이 AWS RDS의 장점입니다.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Develop/" rel="tag"># Develop</a>
+              <a href="/tags/AWS/" rel="tag"># AWS</a>
+              <a href="/tags/RDS/" rel="tag"># RDS</a>
+              <a href="/tags/DB/" rel="tag"># DB</a>
+              <a href="/tags/database/" rel="tag"># database</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/09/docker%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="prev" title="docker명령어">
+      <i class="fa fa-chevron-left"></i> docker명령어
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-RDS-Amazon-Relational-Database-Service"><span class="nav-number">1.</span> <span class="nav-text">AWS RDS(Amazon Relational Database Service)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#기능"><span class="nav-number">1.1.</span> <span class="nav-text">기능</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#특징"><span class="nav-number">1.2.</span> <span class="nav-text">특징</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#사용방법-생성하기"><span class="nav-number">1.3.</span> <span class="nav-text">사용방법 - 생성하기</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-AWS홈페이지-접속"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. AWS홈페이지 접속</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-로그인-후-RDS-서비스-선택"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 로그인 후 RDS 서비스 선택</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-데이터-베이스-생성-클릭"><span class="nav-number">1.3.3.</span> <span class="nav-text">3. 데이터 베이스 생성 클릭</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-본인이-사용할-엔진-선택"><span class="nav-number">1.3.4.</span> <span class="nav-text">4. 본인이 사용할 엔진 선택</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-DB옵션-설정"><span class="nav-number">1.3.5.</span> <span class="nav-text">5. DB옵션 설정</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hong been Park</p>
+  <div class="site-description" itemprop="description">불타는 열정보단 지속적인 열정</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">149</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hong been Park</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hongbeen.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2020/07/20/AWSRDS/";
+    this.page.identifier = "2020/07/20/AWSRDS/";
+    this.page.title = "AWS(RDS)";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hongbeen.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
