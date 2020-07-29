@@ -23,12 +23,12 @@
   <meta name="description" content="Django mail 보내기개인이나 기업이 SMTP서버를 설치해서 이를 통해 메일을 발송할 수 있습니다. 하지만 요즘은 구글, 마이크로소프트 등의 기업에서 SMTP 서버를 오픈하기 때문에 이를 통해서 메일을 전송할 수 있습니다. 오늘은 GMail의 SMTP 서버를 이용해서 메일을 전송해보겠습니다.">
 <meta name="keywords" content="Django,SendEmail,SMTP,email">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DjangoEmail">
+<meta property="og:title" content="Django Email 전송">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;29&#x2F;DjangoEmail&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
 <meta property="og:description" content="Django mail 보내기개인이나 기업이 SMTP서버를 설치해서 이를 통해 메일을 발송할 수 있습니다. 하지만 요즘은 구글, 마이크로소프트 등의 기업에서 SMTP 서버를 오픈하기 때문에 이를 통해서 메일을 전송할 수 있습니다. 오늘은 GMail의 SMTP 서버를 이용해서 메일을 전송해보겠습니다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-29T13:28:45.979Z">
+<meta property="og:updated_time" content="2020-07-29T13:33:51.668Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/07/29/DjangoEmail/">
@@ -43,7 +43,7 @@
   };
 </script>
 
-  <title>DjangoEmail | hongbeen's blog</title>
+  <title>Django Email 전송 | hongbeen's blog</title>
   
 
 
@@ -192,7 +192,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          DjangoEmail
+          Django Email 전송
         </h1>
 
         <div class="post-meta">
@@ -203,7 +203,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-29 22:27:33 / Modified: 22:28:45" itemprop="dateCreated datePublished" datetime="2020-07-29T22:27:33+09:00">2020-07-29</time>
+              <time title="Created: 2020-07-29 22:27:33 / Modified: 22:33:51" itemprop="dateCreated datePublished" datetime="2020-07-29T22:27:33+09:00">2020-07-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,8 +253,8 @@
 
 <h2 id="GMail-SMTP서버"><a href="#GMail-SMTP서버" class="headerlink" title="GMail SMTP서버"></a>GMail SMTP서버</h2><p>Gmail의 SMTP서버를 사용하기 위해 설정을 해야합니다.</p>
 <ul>
-<li>다른 이메일 크라이언트에서 GMail을 확인할 수 있도록 IMAP 사용 설정</li>
-<li>보안 수준이 낮은 앱 및 Google 계정 허용(이 설정을 하지 않으면 계정이 틀렸다고 나옵니다.)</li>
+<li><a href="https://support.google.com/mail/answer/7126229?hl=ko&rd=3&visit_id=1-636281811566888160-3239280507#ts=1665018" target="_blank" rel="noopener">다른 이메일 크라이언트에서 GMail을 확인할 수 있도록 IMAP 사용 설정</a></li>
+<li><a href="https://myaccount.google.com/lesssecureapps?pli=1" target="_blank" rel="noopener">보안 수준이 낮은 앱 및 Google 계정 허용</a>(이 설정을 하지 않으면 계정이 틀렸다고 나옵니다.)</li>
 </ul>
 <p>두가지 설정을 마치게 되면 SMTP 서버를 이용할 수 있습니다.(주의: 해당 계정의 비밀번호가 유출되지 않도록 잘 관리해주셔야 합니다.)</p>
 <h2 id="Django-설정"><a href="#Django-설정" class="headerlink" title="Django 설정"></a>Django 설정</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">settings.py</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">EMAIL_BACKEND = <span class="string">'django.core.mail.backends.smtp.EmailBackend'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">EMAIL_HOST = <span class="string">"smtp.gmail.com"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">EMAIL_HOST_USER = <span class="string">'user-ID@gmail.com'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">EMAIL_HOST_PASSWORD = <span class="string">'user-PW'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">EMAIL_PORT = <span class="number">587</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">EMAIL_USE_TLS = <span class="literal">True</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">DEFAULT_FROM_EMAIL = EMAIL_HOST_USER</span></pre></td></tr></table></figure>
@@ -271,7 +271,7 @@
 
 
 
-<p>참고글: <a href="https://docs.djangoproject.com/en/3.0/topics/email/" target="_blank" rel="noopener">공식문서</a>, [블로그](</p>
+<p>참고글: <a href="https://docs.djangoproject.com/en/3.0/topics/email/" target="_blank" rel="noopener">공식문서</a>, <a href="https://velog.io/@ground4ekd/django-send-mail" target="_blank" rel="noopener">블로그</a></p>
 
     </div>
 
@@ -505,7 +505,7 @@
   var disqus_config = function() {
     this.page.url = "http://yoursite.com/2020/07/29/DjangoEmail/";
     this.page.identifier = "2020/07/29/DjangoEmail/";
-    this.page.title = "DjangoEmail";
+    this.page.title = "Django Email 전송";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
