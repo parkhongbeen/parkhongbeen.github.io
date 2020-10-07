@@ -177,6 +177,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80IPC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80IPC/" class="post-title-link" itemprop="url">프로세스와IPC</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-04 14:32:30" itemprop="dateCreated datePublished" datetime="2020-06-04T14:32:30+09:00">2020-06-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 18:42:56" itemprop="dateModified" datetime="2020-06-10T18:42:56+09:00">2020-06-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">운영체제</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/04/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80IPC/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/04/프로세스와IPC/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="프로세스-Process-란"><a href="#프로세스-Process-란" class="headerlink" title="프로세스(Process)란?"></a>프로세스(Process)란?</h2><blockquote>
+<p>실행중인 프로그램, 작업, 테스크라고도 부름</p>
+</blockquote>
+<h3 id="프로세스와-프로그램의-차이"><a href="#프로세스와-프로그램의-차이" class="headerlink" title="프로세스와 프로그램의 차이"></a>프로세스와 프로그램의 차이</h3><p>프로그램자체는 생명이 없습니다.프로그램은 보조 기억장치(하드디스크, SSD)에 존재하며 실행되기를 기다리는 명령어(코드)와 정적인 데이터의 묶음입니다. 이 프로그램의 명령어와 정적 데이터가 메모리에 적재되면 생명이 있는 프로세스가 됩니다.</p>
+<h3 id="프로세스-구조"><a href="#프로세스-구조" class="headerlink" title="프로세스 구조"></a>프로세스 구조</h3><ul>
+<li><strong>Text</strong>: 코드, 기계어</li>
+<li><strong>Data</strong>: 변수/초기화된 데이터</li>
+<li><strong>Heap</strong>: 코드에서 동적으로 만들어지는 데이터</li>
+<li><strong>Stack</strong> : 임시 데이터</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/83714280-45bad000-a665-11ea-8a1f-1b2e3eaa8dbd.png" alt="image"></p>
+<blockquote>
+<p>위 그림에서 보면 Heap과 Stack사이에 빈 공간을 설명해드리면, 컴파일타임에 지역변수를 얼마나 사용할지 미리 계산할 수 없기 때문에 런타임에 지역변수 선언 순서에 따라 스택영역은 위쪽으로 주소 값을 매기고 동적 할당될 때 힙영역은 아래쪽으로 주소값을 매깁니다.</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/04/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80IPC/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/%EC%9B%B9%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1116,116 +1228,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/" class="post-title-link" itemprop="url">프로세스와 스케쥴러의이해</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-26 17:07:28" itemprop="dateCreated datePublished" datetime="2020-05-26T17:07:28+09:00">2020-05-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-28 18:46:56" itemprop="dateModified" datetime="2020-06-28T18:46:56+09:00">2020-06-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" itemprop="url" rel="index"><span itemprop="name">운영체제</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/26/프로세스와스케쥴러의이해/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="프로세스-process-란"><a href="#프로세스-process-란" class="headerlink" title="프로세스(process)란?"></a>프로세스(process)란?</h2><blockquote>
-<p>실행중인 프로그램은 프로세스라고 함, 메모리에 올려져서 실행중인 프로그램</p>
-</blockquote>
-<p>코드 이미지(바이너리): 실행 파일</p>
-<p>응용 프로그램 != 프로세스</p>
-<p>응용 프로그램은 여러 프로세스로 구성 가능</p>
-<h2 id="프로세스-스케쥴링"><a href="#프로세스-스케쥴링" class="headerlink" title="프로세스 스케쥴링"></a>프로세스 스케쥴링</h2><h3 id="배치-처리-시스템"><a href="#배치-처리-시스템" class="headerlink" title="배치 처리 시스템"></a>배치 처리 시스템</h3><p>여러 프로그램을 순차적으로 실행시킬 수 있도록  / 어떤 프로그램은 실행이 너무 오래 걸려서, 다른 프로그램이 실행하는데 시간을 많이 기다려야 함</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/05/26/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC%EC%9D%98%EC%9D%B4%ED%95%B4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1291,7 +1298,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1302,7 +1309,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">220</span>
+        <span class="site-state-item-count">222</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
