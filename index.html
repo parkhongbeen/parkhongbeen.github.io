@@ -177,6 +177,244 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/08/SSO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/08/SSO/" class="post-title-link" itemprop="url">SSO</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-08 00:04:53 / Modified: 00:05:49" itemprop="dateCreated datePublished" datetime="2020-10-08T00:04:53+09:00">2020-10-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EA%B0%9C%EB%85%90%EC%A0%95%EB%A6%AC/" itemprop="url" rel="index"><span itemprop="name">개념정리</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/08/SSO/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/08/SSO/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="SSO-Single-Sign-On"><a href="#SSO-Single-Sign-On" class="headerlink" title="SSO(Single Sign On)"></a>SSO(Single Sign On)</h2><p>여러 서비스를 <strong>로그인 한번</strong>으로 이용하도록 하는 기술</p>
+<h3 id="용어"><a href="#용어" class="headerlink" title="용어"></a>용어</h3><ul>
+<li>SP(Service Provider): 서비스 제공자, 어플리케이션</li>
+<li>Idp(Identity Provider): SP들의 인증 관련 부분만 모아서 구현해 놓은 것(하나의 웹 서비스)</li>
+</ul>
+<h3 id="어떻게-동작할까"><a href="#어떻게-동작할까" class="headerlink" title="어떻게 동작할까?"></a>어떻게 동작할까?</h3><p>ex) 구글 드라이브를 사용하는 시나리오</p>
+<ol>
+<li>사용자가 SP(Service Provider/서비스 제공자)를 사용하려고 합니다.</li>
+<li>사용자의 세션 정보가 SP(구글 드라이브)에 남아있지 않아서, SP는 사용자를 idP(구글 통합 로그인 페이지)로 redirect시킵니다.</li>
+<li>사용자의 세션 정보가 IdP에 남아있지 않아서, 사용자는 IdP에서 <strong>로그인(또는 어떤 방식으로든 ‘인증’)</strong>합니다.</li>
+<li>인증이 완료되면, IdP는 사용자를 SP로 다시 redirect시키며, 동시에 사용자의 ‘인증 정보’를 SP에게 전달합니다.</li>
+<li>로그인 처리가 완료되어 구글 드라이브를 사용할 수 있습니다.</li>
+</ol>
+<p>이 직후에, Gmail을 사용하면 사용자 흐름은 아래와 같습니다.</p>
+<ol>
+<li>사용자가 SP(Gmail)을 사용하려 합니다.</li>
+<li>사용자의 세션 정보가 SP에 남아있지 않아서, SP는 사용자를 IdP로 redirect 시킵니다.</li>
+<li>사용자의 세션 정보가 IdP에 남아있습니다. 그러면 IdP는 사용자를 SP로 다시 redirect시키며, 동시에 사용자의 ‘인증 정보’를 SP에게 전달합니다.</li>
+<li>로그인 처리가 완료되어 Gmail을 사용할 수 있습니다.</li>
+</ol>
+<h3 id="어떻게-구현할까"><a href="#어떻게-구현할까" class="headerlink" title="어떻게 구현할까?"></a>어떻게 구현할까?</h3><p>SSO시스템을 구혈할 때의 가장 중요한 포인트는, <strong>IdP에서 SP로 사용자 인증 정보 전달을 처리할 때</strong>의 보안입니다. 이 부분은 여러 표준,프레임워크 등에 의해 구현할 수 있습니다. 그 중에 대표적으로 OAuth, JWT등이 있습니다.</p>
+<p>[참고블로그](</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/06/Java%EC%A0%9C%EC%96%B4%EC%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/06/Java%EC%A0%9C%EC%96%B4%EC%9E%90/" class="post-title-link" itemprop="url">Java제어자</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-06 21:40:30 / Modified: 21:40:59" itemprop="dateCreated datePublished" datetime="2020-10-06T21:40:30+09:00">2020-10-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/06/Java%EC%A0%9C%EC%96%B4%EC%9E%90/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/06/Java제어자/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="제어자-modifier"><a href="#제어자-modifier" class="headerlink" title="제어자(modifier)"></a>제어자(modifier)</h2><ul>
+<li>클래스와 클래스의 멤버(멤버 변수, 메서드)에 부가적인 의미 부여</li>
+<li><strong>접근 제어자</strong>: <code>public</code>, <code>protected</code>, <code>defalut</code>(아무것도 붙이지 않은 것), <code>private</code></li>
+<li><strong>제어자</strong>: static, final, abstract, native, transient, synchronized, volatile, strictfp</li>
+<li>하나의 대상에 여러 제어자를 같이 사용 가능(접근 제어자는 하나만)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ModifierTest</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WHIDTH = <span class="number">200</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"WIDTH="</span>+WHIDTH);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h3 id="static-클래스의-공통적인"><a href="#static-클래스의-공통적인" class="headerlink" title="static - 클래스의, 공통적인"></a>static - 클래스의, 공통적인</h3><ul>
+<li>멤버변수<ul>
+<li>모든 인스턴스에 공통적으로 사용되는 클래스 변수가 됨</li>
+<li>클래스 변수는 인스턴스를 생성하지 않고도 사용 가능</li>
+<li>클래스가 메모리에 로드될 떄 생성</li>
+</ul>
+</li>
+<li>메서드<ul>
+<li>인스턴스를 생성하지 않고도 호출이 가능한 stiatic메서드가 됨</li>
+<li>static메서드 내에서는 인스턴스멤버들을 직접 사용할 수 없음</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 객체 생성없이 사용 가능</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StaticTest</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> width = <span class="number">200</span>; <span class="comment">//클래스변수</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> height = <span class="number">120</span>; <span class="comment">//클래스변수</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">static</span> &#123; <span class="comment">//클래스초기화블록</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//static변수의 복잡한 초기화 수행</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; <span class="comment">//클래스메서드</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// iv, instance 메서드 사용불가 이유: 객체를 생성 후 사용가능하기 때문</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> a &gt; b ? a: b;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h3 id="final-마지막의-변경될-수-없음"><a href="#final-마지막의-변경될-수-없음" class="headerlink" title="final - 마지막의, 변경될 수 없음"></a>final - 마지막의, 변경될 수 없음</h3><ul>
+<li>클래스<ul>
+<li>변경될 수 없는 클래스, 확장될 수 없는 클래스</li>
+</ul>
+</li>
+<li>메서드<ul>
+<li>변경될 수 없는 메서드, final로 지정된 메서드는 오버라이딩을 통해 재정의할 수 없음</li>
+</ul>
+</li>
+<li>멤버변수, 지역변수<ul>
+<li>변수 앞에 final이 붙으면, 값을 변경할 수 없는 상수가 됨</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalTest</span> </span>&#123; <span class="comment">// 조상이 될 수 없는 클래스</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">final</span> <span class="keyword">int</span> MAX_SIZE = <span class="number">10</span>; <span class="comment">// 값을 변경할 수 없는 멤버변수(상수)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title">getMaxSize</span><span class="params">()</span> </span>&#123; <span class="comment">// 오버라이딩할 수 없는 메서드(변경불가)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> MS = MAX_SIZE; <span class="comment">// 값을 변경할 수 없는 지역변수(상수)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> MAX_SIZE;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h3 id="abstract-추상의-미완성의"><a href="#abstract-추상의-미완성의" class="headerlink" title="abstract - 추상의, 미완성의"></a>abstract - 추상의, 미완성의</h3><ul>
+<li>클래스<ul>
+<li>클래스내에 추상 메서드가 선언되어 있음을 의미</li>
+</ul>
+</li>
+<li>메서드<ul>
+<li>선언부만 작성하고 구현부는 작성하지 않은 추상 메서드임을 알림</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">abscract <span class="class"><span class="keyword">class</span> <span class="title">AbstractTest</span> </span>&#123; <span class="comment">// 추상클래스(추상 메서드를 포함한 클래스)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>;	<span class="comment">// 추상메서드(구현부가 없는 메서드)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">AbstractTest a = <span class="keyword">new</span> AbstractTest(); <span class="comment">//에러. 추상 클래스의 인스턴스 생성불가</span></span></pre></td></tr></table></figure>
+
+<ul>
+<li>추상클래스를 상속받아서 완전한 클래스를 만든 후에 객체 생성가능</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/06/JavaImport%EB%AC%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -985,190 +1223,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/23/JavaStatic-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/23/JavaStatic-1/" class="post-title-link" itemprop="url">JavaStatic</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-09-23 12:44:09 / Modified: 12:45:12" itemprop="dateCreated datePublished" datetime="2020-09-23T12:44:09+09:00">2020-09-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/09/23/JavaStatic-1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/23/JavaStatic-1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Static-정적-이란"><a href="#Static-정적-이란" class="headerlink" title="Static(정적)이란?"></a>Static(정적)이란?</h3><p>고정된이란 의미를 가지고 있습니다. Static이라는 키워드를 사용하여 Static변수와 Static메소드를 만들 수 있는데 다른말로 정적필드와 정적 메소드라고도 하며 이 둘을 합쳐 <strong>정적 멤버(또는 클래스 멤버)</strong>라고 합니다. 정적 필드와 정적 메소드는 객체에 소속된 멤버가 아니라 클래스에 고정된 멤버입니다.그렇기에 클래스 로더가 클래스를 로딩해서 메소드 메모리 영역에 적재할 때 클래스별로 관리됩니다. 따라서 클래스의 로딩이 끝나는 즉시 사용할 수 있습니다.</p>
-<h3 id="정적-멤버-선언"><a href="#정적-멤버-선언" class="headerlink" title="정적 멤버 선언"></a>정적 멤버 선언</h3><p>필드나 메소드를 생성 시 인스턴스로 생성할것인지 정적으로 생성할것인지에 대한 판단 기준은 공용으로 사용하느냐 아니냐로 내리면 됩니다. 그냥 생성한다면 자동으로 인스턴로 생성되며 정적으로 생성하려면 필드와 메소드 선언 시 <code>static</code>이라는 키워드를 추가적으로 붙이면 됩니다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> num = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">static_method</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="comment">// static 리턴 타입 메소드&#123;&#125;</span></span></pre></td></tr></table></figure>
-
-<h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3><p><img src="https://user-images.githubusercontent.com/53684676/93963851-2ae9a400-fd99-11ea-86c6-955aa8861242.png" alt="image"></p>
-<p>Number라는 클래스안에 클래스 변수 num과 인스턴스 변수 num2를 생성했고 두개의 Number인스턴스 number1, number2를 생성했을때 number1dptj num1과 num2를 각각 1씩 증가시키고 number2에서 num1과 num2를 각각 출력시켰을때는 num1은 1, num2는 0이 출력되었습니다.인스턴스 변수는 인스턴가 생성될때마다 생성되므로 <strong>인스턴스마다 각기 다른 값을 가지지만 정적 변수는 모든 인스턴스가 하나의 저장공간을 공유하고 항상 같은 값을 가지기에 나타난 현상입니다.</strong></p>
-<h3 id="예시2"><a href="#예시2" class="headerlink" title="예시2"></a>예시2</h3><p><img src="https://user-images.githubusercontent.com/53684676/93964279-35f10400-fd9a-11ea-89ae-6fbefb949320.png" alt="image"></p>
-<p>정적 메소든느 클래스가 메모리에 올라갈 때 정적 메소드가 자동으로 생성됩니다. 그렇기에 정적 메소드는 인스턴스를 생성하지 않아도 호출을 할 수 있습니다. 정적 메소드는 유틸리티 함수를 만드는데 유용하게 사용됩니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/Javainstanceof/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/17/Javainstanceof/" class="post-title-link" itemprop="url">Javainstanceof</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-09-17 13:30:30 / Modified: 13:31:28" itemprop="dateCreated datePublished" datetime="2020-09-17T13:30:30+09:00">2020-09-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/09/17/Javainstanceof/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/17/Javainstanceof/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>어떤 계층에 속하는지. 클래스의 등급</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">unit</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">public</span> <span class="keyword">int</span> age;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"critical!"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">enemy</span> <span class="keyword">extends</span> <span class="title">unit</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<p>위와 같이 unit과 unit을 상속받은 enemy라는 class가 있을 때, unit과 enemy의 기능은 유사합니다. 이 때, unit class인지 enemy class인지 구분할 때 사용하는 것이 instance입니다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="string">'class변수'</span> <span class="keyword">instanceof</span> <span class="string">'class이름'</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ex)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  unit parent = <span class="keyword">new</span> unit();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span>(parent <span class="keyword">instanceof</span> unit) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"unit 클래스입니다."</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<p><strong>클래스가 상속 관계에 있을 시, 자식 클래스 변수를 instanceof를 사용하여, 부모 클래스 타입이름과 비교하더라도 true를 반환합니다.(반대로 부모 클래스는 자식 클래스로 인지되지 않습니다.)</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  unit parent = <span class="keyword">new</span> unit();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  enemy child = <span class="keyword">new</span> enemy();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span>(child <span class="keyword">instanceof</span> unit)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"Child는 enemy클래스이지만, enemy클래스는 unit클래스의 자식 클래스이므로 이 문구가 출력됩니다."</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<p><strong>Object는 모든 클래스의 부모클래스이므로, 다른 클래스 변수와 instaceof 사용 시, ture를 반환합니다.</strong></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/93420387-c090b980-f8e9-11ea-9ca8-cd8ebc89d1e0.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/93420398-c4bcd700-f8e9-11ea-931e-f6438ee81a95.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/93420456-e3bb6900-f8e9-11ea-9f89-ad201e35596e.png" alt="image"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1239,7 +1293,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">100</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1250,7 +1304,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">217</span>
+        <span class="site-state-item-count">220</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
