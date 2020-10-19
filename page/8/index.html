@@ -177,6 +177,133 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/26/%EB%B9%84%ED%8A%B8%EC%97%B0%EC%82%B0%EC%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/26/%EB%B9%84%ED%8A%B8%EC%97%B0%EC%82%B0%EC%9E%90/" class="post-title-link" itemprop="url">비트연산자</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-06-26 16:55:38 / Modified: 16:56:13" itemprop="dateCreated datePublished" datetime="2020-06-26T16:55:38+09:00">2020-06-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/%EC%97%B0%EC%82%B0%EC%9E%90/" itemprop="url" rel="index"><span itemprop="name">연산자</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/06/26/%EB%B9%84%ED%8A%B8%EC%97%B0%EC%82%B0%EC%9E%90/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/26/비트연산자/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="비트연산자"><a href="#비트연산자" class="headerlink" title="비트연산자"></a>비트연산자</h2><p>a = 60, b = 13이라고 가정하겠습니다.</p>
+<p>a = 0011 1100</p>
+<p>b = 0000 1101</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th align="center">Description</th>
+<th align="center">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;</td>
+<td align="center">AND연산. 둘 다 참일때만 만족</td>
+<td align="center">(a &amp; b) = 12 &gt; 0000 1100</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center">OR연산. 둘 중 하나만 참이여도 만족</td>
+<td align="center">(a | b) = 61 &gt; 0011 1101</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">XOR연산. 둘 중 하나만 참일 때 만족</td>
+<td align="center">(a ^ b) = 49 &gt; 0011 0001</td>
+</tr>
+<tr>
+<td align="center">~</td>
+<td align="center">보수 연산</td>
+<td align="center">(~a) = -61 &gt; 1100 0011</td>
+</tr>
+<tr>
+<td align="center">&lt;&lt;</td>
+<td align="center">왼쪽 시프트 연산자, 변수의 값을 왼쪽으로 지정된 비트 수 만큼 이동</td>
+<td align="center">a &lt;&lt; 2 = 240 &gt; 1111 0000</td>
+</tr>
+<tr>
+<td align="center">&gt;&gt;</td>
+<td align="center">오른쪽 시프트 연산자. 변수의 값을 오른쪽으로 지정된 비트 수 만큼 이동</td>
+<td align="center">a &gt;&gt; 2 = 15 &gt; 0000 1111</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/26/%ED%95%A0%EB%8B%B9%EC%97%B0%EC%82%B0%EC%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1172,106 +1299,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/19/Class-Instance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/19/Class-Instance/" class="post-title-link" itemprop="url">Class,Instance</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-19 16:03:23" itemprop="dateCreated datePublished" datetime="2020-06-19T16:03:23+09:00">2020-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-20 19:18:08" itemprop="dateModified" datetime="2020-07-20T19:18:08+09:00">2020-07-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/Class/" itemprop="url" rel="index"><span itemprop="name">Class</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/06/19/Class-Instance/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/19/Class-Instance/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Class-객체-Instance"><a href="#Class-객체-Instance" class="headerlink" title="Class, 객체, Instance"></a>Class, 객체, Instance</h2><h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3><p>함수의 호출은 특정 잡업만을 수행할 뿐 그 결과값을 계속 사용하기 위해서는 반드시 어디가에 따로 저장해야만 합니다. 즉, 함수를 포함한 프로그램 코드의 일부를 재사용하기 위해서는 해당 함수뿐만 아니라 데이터가 저장되는 변수까지도 한꺼번에 관리하는 것이 편할 것입니다. 이처럼 함수뿐만 아니라 <strong>관련된 변수까지도 한꺼번에 묶어서 관리하고 재사용할 수 있게 해주는 것이 바로 클래스(Class)입니다.</strong></p>
-<h3 id="객체-Object-인스턴스-Instance"><a href="#객체-Object-인스턴스-Instance" class="headerlink" title="객체(Object), 인스턴스(Instance)"></a>객체(Object), 인스턴스(Instance)</h3><p>과자를 계속해서 찍어낼 수 있는 틀을 클래스(class)라고 한다면, 이러한 과자틀에서 찍혀 나온 맛있는 쿠키들이 하나의 객체라고 이해할 수 있는 것입니다. 이렇게 <strong>찍혀서 나온 객체들을 우리는 인스턴스(Instance)</strong>라고 부릅니다. 객체와 인스턴스는 전혀 별개의 것이 아니며, 객체를 바라보는 관점의 차이입니다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/19/Class-Instance/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1342,7 +1369,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">118</span>
+          <span class="site-state-item-count">119</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1353,7 +1380,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">241</span>
+        <span class="site-state-item-count">242</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
