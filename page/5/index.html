@@ -177,6 +177,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/23/JavaStatic-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/23/JavaStatic-1/" class="post-title-link" itemprop="url">JavaStatic</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-09-23 12:44:09 / Modified: 12:45:12" itemprop="dateCreated datePublished" datetime="2020-09-23T12:44:09+09:00">2020-09-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/09/23/JavaStatic-1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/23/JavaStatic-1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Static-정적-이란"><a href="#Static-정적-이란" class="headerlink" title="Static(정적)이란?"></a>Static(정적)이란?</h3><p>고정된이란 의미를 가지고 있습니다. Static이라는 키워드를 사용하여 Static변수와 Static메소드를 만들 수 있는데 다른말로 정적필드와 정적 메소드라고도 하며 이 둘을 합쳐 <strong>정적 멤버(또는 클래스 멤버)</strong>라고 합니다. 정적 필드와 정적 메소드는 객체에 소속된 멤버가 아니라 클래스에 고정된 멤버입니다.그렇기에 클래스 로더가 클래스를 로딩해서 메소드 메모리 영역에 적재할 때 클래스별로 관리됩니다. 따라서 클래스의 로딩이 끝나는 즉시 사용할 수 있습니다.</p>
+<h3 id="정적-멤버-선언"><a href="#정적-멤버-선언" class="headerlink" title="정적 멤버 선언"></a>정적 멤버 선언</h3><p>필드나 메소드를 생성 시 인스턴스로 생성할것인지 정적으로 생성할것인지에 대한 판단 기준은 공용으로 사용하느냐 아니냐로 내리면 됩니다. 그냥 생성한다면 자동으로 인스턴로 생성되며 정적으로 생성하려면 필드와 메소드 선언 시 <code>static</code>이라는 키워드를 추가적으로 붙이면 됩니다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> num = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">static_method</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125; <span class="comment">// static 리턴 타입 메소드&#123;&#125;</span></span></pre></td></tr></table></figure>
+
+<h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3><p><img src="https://user-images.githubusercontent.com/53684676/93963851-2ae9a400-fd99-11ea-86c6-955aa8861242.png" alt="image"></p>
+<p>Number라는 클래스안에 클래스 변수 num과 인스턴스 변수 num2를 생성했고 두개의 Number인스턴스 number1, number2를 생성했을때 number1dptj num1과 num2를 각각 1씩 증가시키고 number2에서 num1과 num2를 각각 출력시켰을때는 num1은 1, num2는 0이 출력되었습니다.인스턴스 변수는 인스턴가 생성될때마다 생성되므로 <strong>인스턴스마다 각기 다른 값을 가지지만 정적 변수는 모든 인스턴스가 하나의 저장공간을 공유하고 항상 같은 값을 가지기에 나타난 현상입니다.</strong></p>
+<h3 id="예시2"><a href="#예시2" class="headerlink" title="예시2"></a>예시2</h3><p><img src="https://user-images.githubusercontent.com/53684676/93964279-35f10400-fd9a-11ea-89ae-6fbefb949320.png" alt="image"></p>
+<p>정적 메소든느 클래스가 메모리에 올라갈 때 정적 메소드가 자동으로 생성됩니다. 그렇기에 정적 메소드는 인스턴스를 생성하지 않아도 호출을 할 수 있습니다. 정적 메소드는 유틸리티 함수를 만드는데 유용하게 사용됩니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/Javainstanceof/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1047,106 +1136,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/16/Java%EB%B0%B0%EC%97%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/16/Java%EB%B0%B0%EC%97%B4/" class="post-title-link" itemprop="url">Java배열</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-16 23:54:16" itemprop="dateCreated datePublished" datetime="2020-09-16T23:54:16+09:00">2020-09-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-06 20:16:14" itemprop="dateModified" datetime="2020-10-06T20:16:14+09:00">2020-10-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/09/16/Java%EB%B0%B0%EC%97%B4/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/16/Java배열/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h2><p>하나의 변수이름안에 여러값이 들어가 있는 것입니다. 같은 타입의 변수가 연속적으로 사용될 때 사용됩니다.</p>
-<p><img src="https://user-images.githubusercontent.com/53684676/93296946-41d54700-f82b-11ea-8c2e-e711bca52c05.png" alt="image"></p>
-<p><strong>배열안의 값이 어떤 것이 들어갈지 모르는 경우 배열의 크기만 선언해주는 방법</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">String[] fruits = <span class="keyword">new</span> Sting [<span class="number">3</span>] <span class="comment">//크기가 3인 배열 생성</span></span></pre></td></tr></table></figure>
-
-<p><img src="https://user-images.githubusercontent.com/53684676/93297260-e6578900-f82b-11ea-9fc6-ec654c573eed.png" alt="image"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/16/Java%EB%B0%B0%EC%97%B4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1217,7 +1206,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">129</span>
+          <span class="site-state-item-count">130</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1228,7 +1217,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">255</span>
+        <span class="site-state-item-count">257</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
