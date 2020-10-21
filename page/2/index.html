@@ -177,6 +177,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/19/%EB%82%B4%EB%B6%80%ED%81%B4%EB%9E%98%EC%8A%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/19/%EB%82%B4%EB%B6%80%ED%81%B4%EB%9E%98%EC%8A%A4/" class="post-title-link" itemprop="url">내부클래스</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-19 16:24:40 / Modified: 16:25:06" itemprop="dateCreated datePublished" datetime="2020-10-19T16:24:40+09:00">2020-10-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/19/%EB%82%B4%EB%B6%80%ED%81%B4%EB%9E%98%EC%8A%A4/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/19/내부클래스/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="내부-클래스"><a href="#내부-클래스" class="headerlink" title="내부 클래스"></a>내부 클래스</h2><ul>
+<li>클래스안의 클래스</li>
+<li>장점<ul>
+<li>내부 클래스에서 외부 클래스의 멤버들을 쉽게 접근할 수 있음</li>
+<li>코드의 복잡성을 줄일 수 있음(캡슐화)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123; <span class="comment">// 외부클래스</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123; <span class="comment">// 내부클래스</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h3 id="종류와-특징"><a href="#종류와-특징" class="headerlink" title="종류와 특징"></a>종류와 특징</h3><ul>
+<li>내부 클래스의 종류와 유효범위(scope)는 변수와 동일</li>
+<li>인스턴스 내부 클래스<ul>
+<li>외부 클래스의 멤버변수 선언위치에 선언하며, 외부 클래스의 인스턴스멤버처럼 다뤄짐. 주로 외부 클래스의 인스턴스멤버들과 관련된 작업에 사용될 목적으로 선언</li>
+</ul>
+</li>
+<li>Static 내부 클래스<ul>
+<li>외부 클래스의 멤버변수 선언위치에 선언하며, 외부 클래스의 static멤버처럼 다뤄짐. 주로 외부 클래스의 static멤버, 특히 static메서드에서 사용될 목적으로 선언</li>
+</ul>
+</li>
+<li>지역 내부 클래스<ul>
+<li>외부 클래스의 메서드나 초기화블럭안에 선언하며, 선언된 영역 내부에서만 사용될 수 있음</li>
+</ul>
+</li>
+<li>익명클래스<ul>
+<li>클래스의 선언관 객체의 생성을 동시에하는 이름없는 클래스(일회용)</li>
+</ul>
+</li>
+</ul>
+<h3 id="내부클래스의-제어자와-접근성"><a href="#내부클래스의-제어자와-접근성" class="headerlink" title="내부클래스의 제어자와 접근성"></a>내부클래스의 제어자와 접근성</h3><ul>
+<li>내부클래스의 제어자는 변수에 사용 가능한 제어자와 동일</li>
+<li>내부클래스에서 외부 클래스의 private멤버도 접근 가능</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/96409184-d44c7a00-121f-11eb-9f66-070a42f6f6c0.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/53684676/96411893-2f806b80-1224-11eb-832c-37e1770aa563.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/53684676/96412735-86d30b80-1225-11eb-9855-d4759d67be49.png" alt="image"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/19/interfaceDefaultStatic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1148,99 +1265,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/11/%ED%98%95%EB%B3%80%ED%99%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/11/%ED%98%95%EB%B3%80%ED%99%98/" class="post-title-link" itemprop="url">참조변수와형변환</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-10-11 18:00:43 / Modified: 18:01:10" itemprop="dateCreated datePublished" datetime="2020-10-11T18:00:43+09:00">2020-10-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/10/11/%ED%98%95%EB%B3%80%ED%99%98/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/11/형변환/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="참조변수의-형변환"><a href="#참조변수의-형변환" class="headerlink" title="참조변수의 형변환"></a>참조변수의 형변환</h2><ul>
-<li>사용할 수 있는 <strong>멤버의 갯수를 조절</strong>하는 것</li>
-<li><strong>조상 자손 관계의 참조변수는 형변환 가능</strong></li>
-<li>사용하는 멤버의 갯수를 줄이고 늘릴 수 있음</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  String color;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">int</span> door;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">drive</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"drive, Brrrrrr"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"stop!"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FireEngine</span> <span class="keyword">extends</span> <span class="title">Car</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">water</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"water!"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ambulance</span> <span class="keyword">extends</span> <span class="title">Car</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">FireEngine f = <span class="keyword">new</span> FireEngine();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Car c = (Car)f; <span class="comment">// OK. 조상인 Car타입으로 형변환(생략가능)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">FireEngine f2 = (fireEngine)c; <span class="comment">// OK. 자손인 FireEngine타입으로 형변환(생략불가)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Ambulance a = (Ambulance)f;	<span class="comment">// 에러. 상속관계X</span></span></pre></td></tr></table></figure>
-
-<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><p><img src="https://user-images.githubusercontent.com/53684676/95673995-443b7e80-0be8-11eb-9391-ae80b9c7121e.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/95674011-66cd9780-0be8-11eb-9439-78eb2fb2951a.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/53684676/95674510-9e8a0e80-0beb-11eb-8b64-3e997456c82b.png" alt="image"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1311,7 +1335,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">125</span>
+          <span class="site-state-item-count">126</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1322,7 +1346,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">250</span>
+        <span class="site-state-item-count">251</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
