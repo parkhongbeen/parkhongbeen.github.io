@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="컬렉션 프레임웍(collections framework) 컬렉션  여러 객체(데이터)를 모아 놓은 것을 의미   프레임원(framework)  표준화, 정형화된 체계적인 프로그래밍 방식    컬렉션 프레임웍  컬렉션을 다루기 위한 표준화된 프로그래밍 방식 컬렉션을 쉽고 편리하게 다룰 수 있는 다양한 클래스를 제공 java.util패키지에 포함   컬렉션 클">
+<meta name="keywords" content="collectionframework,컬렉션프레임웍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CollectionFramework">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;CollectionFramework&#x2F;index.html">
+<meta property="og:site_name" content="hongbeen&#39;s blog">
+<meta property="og:description" content="컬렉션 프레임웍(collections framework) 컬렉션  여러 객체(데이터)를 모아 놓은 것을 의미   프레임원(framework)  표준화, 정형화된 체계적인 프로그래밍 방식    컬렉션 프레임웍  컬렉션을 다루기 위한 표준화된 프로그래밍 방식 컬렉션을 쉽고 편리하게 다룰 수 있는 다양한 클래스를 제공 java.util패키지에 포함   컬렉션 클">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-10-26T11:29:53.734Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/10/26/CollectionFramework/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>CollectionFramework | hongbeen's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hongbeen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Beginner Developer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/26/CollectionFramework/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CollectionFramework
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-26 20:29:24 / Modified: 20:29:53" itemprop="dateCreated datePublished" datetime="2020-10-26T20:29:24+09:00">2020-10-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/26/CollectionFramework/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/26/CollectionFramework/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="컬렉션-프레임웍-collections-framework"><a href="#컬렉션-프레임웍-collections-framework" class="headerlink" title="컬렉션 프레임웍(collections framework)"></a>컬렉션 프레임웍(collections framework)</h2><ul>
+<li><p>컬렉션</p>
+<ul>
+<li>여러 객체(데이터)를 모아 놓은 것을 의미</li>
+</ul>
+</li>
+<li><p>프레임원(framework)</p>
+<ul>
+<li>표준화, 정형화된 체계적인 프로그래밍 방식 </li>
+</ul>
+</li>
+<li><p>컬렉션 프레임웍</p>
+<ul>
+<li>컬렉션을 다루기 위한 표준화된 프로그래밍 방식</li>
+<li>컬렉션을 쉽고 편리하게 다룰 수 있는 다양한 클래스를 제공</li>
+<li><code>java.util</code>패키지에 포함</li>
+</ul>
+</li>
+<li><p>컬렉션 클래스(collection class)</p>
+<ul>
+<li>다수의 데이터를 저장할 수 있는 클래스(ex. Vector, ArrayList, HashSet)</li>
+</ul>
+</li>
+</ul>
+<h3 id="컬렉션-프레임웍의-핵심-인터페이스"><a href="#컬렉션-프레임웍의-핵심-인터페이스" class="headerlink" title="컬렉션 프레임웍의 핵심 인터페이스"></a>컬렉션 프레임웍의 핵심 인터페이스</h3><ul>
+<li><code>List</code><ul>
+<li><strong>순서가 있는 데이터의 집합</strong>. <strong>데이터의 중복을 허용</strong>함 </li>
+<li>ex) 대기자 명단</li>
+<li>두현클래스: ArrayList, LinkedList, Stack, Vector 등</li>
+</ul>
+</li>
+<li><code>Set</code> <ul>
+<li><strong>순서를 유지하지 않는 데이터의 집합</strong>. *<em>데이터의 중복을 허용하지 않음 *</em></li>
+<li>ex)양의 정수 집합, 소수의 집합</li>
+<li>HashSet, TreeSet 등</li>
+</ul>
+</li>
+<li><code>Map</code><ul>
+<li>키와 값의 쌍으로 이루어진 데이터의 집합. <strong>순서는 유지되지 않으며</strong>, <strong>키는 중복을 허용하지 않고, 값은 중복을 허용</strong>함 </li>
+<li>ex)우편번호, 지역번호(전화번호)</li>
+<li>HashMap, TreeMap, Hashtable, Properties 등</li>
+</ul>
+</li>
+</ul>
+<h3 id="List인터페이스-순서O-중복O"><a href="#List인터페이스-순서O-중복O" class="headerlink" title="List인터페이스 - 순서O, 중복O"></a>List인터페이스 - 순서O, 중복O</h3><ul>
+<li>핵심: ArrayList, LinkedList</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void add(int index, Object element)<br />boolean add(int index, Collection c)</td>
+<td>지정된 위치에 객체 또는 컬렉션에 포함된 객체들을 추가</td>
+</tr>
+<tr>
+<td>Object get(int index)</td>
+<td>지정된 위치에 있는 객체를 반환</td>
+</tr>
+<tr>
+<td>int indexOf(Object o)</td>
+<td>지정된 객체의 위치를 반환(List의 첫 번쨰 요소부터 순방향으로 찾음)</td>
+</tr>
+<tr>
+<td>int lastindexOf(Object o)</td>
+<td>지정된 객체의 위치를 반환<br />(List의 마지막 요소부터 역방향으로 찾음)</td>
+</tr>
+<tr>
+<td>Listlterator listlterator()<br />LIstlterator listlterator(int index)</td>
+<td>List의 객체에 접근할 수 있는 Listlterator를 반환a</td>
+</tr>
+<tr>
+<td>Object remove(int index)</td>
+<td>지정된 위치에 있는 객체를 삭제하고 삭제된 객체를 반환</td>
+</tr>
+<tr>
+<td>Object set(int index, Object element)</td>
+<td>지정된 위치에 객체를 저장</td>
+</tr>
+<tr>
+<td>void sort(Comparator c)</td>
+<td>지정된 비교자로 List를 정렬</td>
+</tr>
+<tr>
+<td>List subList(int fromindex, int tolndex)</td>
+<td>지정된 범위에 있는 객체를 반환</td>
+</tr>
+</tbody></table>
+<h3 id="Set인터페이스-순서X-중복X"><a href="#Set인터페이스-순서X-중복X" class="headerlink" title="Set인터페이스 - 순서X, 중복X"></a>Set인터페이스 - 순서X, 중복X</h3><ul>
+<li>핵심: HashSet, TreeSet</li>
+<li>Set인터페이스의 메서드는 Collection인터페이스와 동일</li>
+<li>집합과 관련된 메서드(Colleciton에 변화가 있으면 true, 아니면 false를 반환)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean addAll(Collection c)</td>
+<td>지정된 Collection(c)의 객체들을 Collection에 추가(합집합)</td>
+</tr>
+<tr>
+<td>boolean containsAll(Collection c)</td>
+<td>지정된 Collection(c)의 객체들이 Collection에 포함되어 있는지 확인(부분집합)</td>
+</tr>
+<tr>
+<td>boolean removeAll(Collection c)</td>
+<td>지정된 Collection(c)에 포함된 객체들을 삭제(차집합)</td>
+</tr>
+<tr>
+<td>boolean retainAll(Collection c)</td>
+<td>지정된 Collection(c)에 포함된 객체만을 남기고나머지는 Collection에서 삭제(교집합)</td>
+</tr>
+</tbody></table>
+<h3 id="Map인터페이스-순서X-중복-키X-값O"><a href="#Map인터페이스-순서X-중복-키X-값O" class="headerlink" title="Map인터페이스 - 순서X, 중복(키X, 값O)"></a>Map인터페이스 - 순서X, 중복(키X, 값O)</h3><ul>
+<li>핵심: HashMap, TreeMap</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void clear()</td>
+<td>Map의 모든 객체를 삭제</td>
+</tr>
+<tr>
+<td>boolean containKey(Object key)</td>
+<td>지정된 key객체와 일치하는 Map의 key객체가있는지 확인</td>
+</tr>
+<tr>
+<td>boolean containsValue(Object value)</td>
+<td>지정된 value객체와 일치하는 Map의 value객체가 있는지 확인</td>
+</tr>
+<tr>
+<td>Set entrySet()</td>
+<td>Map에 저장되어 있는 key-value쌍을 Map,Entry타입의 객체로 저장한 Set을 반환</td>
+</tr>
+<tr>
+<td>boolean equals(Object o)</td>
+<td>동일한 Map인지 비교</td>
+</tr>
+<tr>
+<td>Object get(Object key)</td>
+<td>지정한 key객체에 대응하는 value객체를 찾아서 반환</td>
+</tr>
+<tr>
+<td>int hashCode()</td>
+<td>해시코드를 반환</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>Map이 비어있는지 확인</td>
+</tr>
+<tr>
+<td>Set keySet()</td>
+<td>Map에 저장된 모든 key객체를 반환</td>
+</tr>
+<tr>
+<td>Object put(Object key, Object value)</td>
+<td>Map에 value객체를 key객체에 연결(mapping)하여 저장</td>
+</tr>
+<tr>
+<td>void putAll(Map t)</td>
+<td>지정된 Map의 모든 key-value쌍을 추가</td>
+</tr>
+<tr>
+<td>Object remove(Oeject key)</td>
+<td>지정한 key객체와 일치하는 key-value객체를 삭제</td>
+</tr>
+<tr>
+<td>int size()</td>
+<td>Map에 저장된 key-value쌍의 개수를 반환</td>
+</tr>
+<tr>
+<td>Collection values()</td>
+<td>Map에 저장된 모든 value객체를 반환</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/collectionframework/" rel="tag"># collectionframework</a>
+              <a href="/tags/%EC%BB%AC%EB%A0%89%EC%85%98%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8D/" rel="tag"># 컬렉션프레임웍</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/26/CalendarClass/" rel="prev" title="CalendarClass">
+      <i class="fa fa-chevron-left"></i> CalendarClass
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#컬렉션-프레임웍-collections-framework"><span class="nav-number">1.</span> <span class="nav-text">컬렉션 프레임웍(collections framework)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#컬렉션-프레임웍의-핵심-인터페이스"><span class="nav-number">1.1.</span> <span class="nav-text">컬렉션 프레임웍의 핵심 인터페이스</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List인터페이스-순서O-중복O"><span class="nav-number">1.2.</span> <span class="nav-text">List인터페이스 - 순서O, 중복O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set인터페이스-순서X-중복X"><span class="nav-number">1.3.</span> <span class="nav-text">Set인터페이스 - 순서X, 중복X</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map인터페이스-순서X-중복-키X-값O"><span class="nav-number">1.4.</span> <span class="nav-text">Map인터페이스 - 순서X, 중복(키X, 값O)</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hong been Park</p>
+  <div class="site-description" itemprop="description">불타는 열정보단 지속적인 열정</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">134</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">265</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hong been Park</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hongbeen.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2020/10/26/CollectionFramework/";
+    this.page.identifier = "2020/10/26/CollectionFramework/";
+    this.page.title = "CollectionFramework";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hongbeen.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
