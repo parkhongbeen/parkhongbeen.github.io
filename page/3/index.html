@@ -177,6 +177,114 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/19/interfaceDefaultStatic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/19/interfaceDefaultStatic/" class="post-title-link" itemprop="url">interface/DefaultStatic</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-19 14:32:51 / Modified: 14:33:25" itemprop="dateCreated datePublished" datetime="2020-10-19T14:32:51+09:00">2020-10-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/19/interfaceDefaultStatic/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/19/interfaceDefaultStatic/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Interface-디폴트-메서드와-static메서드"><a href="#Interface-디폴트-메서드와-static메서드" class="headerlink" title="Interface 디폴트 메서드와 static메서드"></a>Interface 디폴트 메서드와 static메서드</h2><ul>
+<li><p>인터페이스에 디폴트메서드, static메서드 추가 기능(JDK1.8부터)</p>
+</li>
+<li><p>인터페이스에 새로운 메서드(추상 메서드)를 추가하기 어려움</p>
+<ul>
+<li>해결책 =&gt; 디폴트메서드(default method)</li>
+</ul>
+</li>
+<li><p>디폴트메서드는 인스턴스 메서드(인터페이스 원칙 위반)</p>
+</li>
+<li><pre><code class="java"><span class="class"><span class="keyword">interface</span> <span class="title">MyInterface</span> </span>{
+  <span class="function"><span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>;
+  <span class="function"><span class="keyword">void</span> <span class="title">newMethod</span><span class="params">()</span></span>; <span class="comment">// 추상메서드</span>
+}
+
+</code></pre>
+</li>
+</ul>
+<p>  interface MyInterface {<br>    void method();<br>    default void newMethod() {}<br>  }</p>
+<pre><code>
+- 디폴트 메서드가 기존의 메서드와 출돌할 때의 해결책
+
+  1. 여러 인터페이스의 디폴트 메서드간의 충돌
+  2. 디폴트 메서드와 조상 클래스의 메서드간의 충돌
+
+  - 해결: 그냥 직접 오버라이딩하면 해결됨
+
+</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/18/JDBC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1133,96 +1241,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/10/java%EC%BA%A1%EC%8A%90%ED%99%94/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/10/java%EC%BA%A1%EC%8A%90%ED%99%94/" class="post-title-link" itemprop="url">java캡슐화</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-10-10 21:30:48 / Modified: 21:32:08" itemprop="dateCreated datePublished" datetime="2020-10-10T21:30:48+09:00">2020-10-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/10/10/java%EC%BA%A1%EC%8A%90%ED%99%94/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/10/java캡슐화/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="캡슐화와-접근제어자"><a href="#캡슐화와-접근제어자" class="headerlink" title="캡슐화와 접근제어자"></a>캡슐화와 접근제어자</h2><ul>
-<li>접근제어자의 사용이유<ul>
-<li>외부로부터 데이터를 보호하기 위함</li>
-<li>외부에는 불필요한, 내부적으로만 사용되는, 부분을 감추기 위해서</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// private로 접근을 제한</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 간접적인 접근은 허용함</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimeEx</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> hour;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> minute;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> second;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">gethour</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">return</span> hour;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sethour</span><span class="params">(<span class="keyword">int</span> hour)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">if</span> (hour &lt; <span class="number">0</span> || hour &gt; <span class="number">23</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">return</span>;										<span class="comment">// 값을 보호</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">else</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">this</span>.hour = hour; <span class="comment">// 유효한 값이면 저장</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<p><em>주석의 설명을 같이 보며 이해해주시면 감사하겠습니다.</em><br><img src="https://user-images.githubusercontent.com/53684676/95655065-c02dbc00-0b3f-11eb-9174-7d626210a47c.png" alt="image"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1293,7 +1311,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">134</span>
+          <span class="site-state-item-count">135</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

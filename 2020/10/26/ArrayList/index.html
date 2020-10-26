@@ -20,21 +20,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="쓰레드 쓰레드는 프로세스내에서 작업을 하는 단위로 프로세스는 하나 이상의 쓰레드를 갖고 있습니다.  멀티쓰레드 프로그래밍선언1Runnable 변수이름 &#x3D; new Runnable()&amp;#123;2  @Override3  public void run() &amp;#123;4    5  &amp;#125;6&amp;#125;;7Thread 변수이름 &#x3D; new Thread(Runnabl">
-<meta name="keywords" content="Java,Thread,multithread,쓰레드">
+  <meta name="description" content="ArrayList 기존의 Vector를 개선한 것으로 구현원리와 기능적으로 동일 ArrayList와 달리 Vector는 자체적으로 동기화처리 되어 있다. List인터페이스를 구현하므로, 저장순서가 유지되고 중복을 허용 데이터의 저장공간으로 배열을 사용(배열기반)  1public class Vector extends AbstractList implements">
+<meta name="keywords" content="java,ArrayList">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javamultithread">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;09&#x2F;17&#x2F;Javamultithread&#x2F;index.html">
+<meta property="og:title" content="ArrayList">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;ArrayList&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
-<meta property="og:description" content="쓰레드 쓰레드는 프로세스내에서 작업을 하는 단위로 프로세스는 하나 이상의 쓰레드를 갖고 있습니다.  멀티쓰레드 프로그래밍선언1Runnable 변수이름 &#x3D; new Runnable()&amp;#123;2  @Override3  public void run() &amp;#123;4    5  &amp;#125;6&amp;#125;;7Thread 변수이름 &#x3D; new Thread(Runnabl">
+<meta property="og:description" content="ArrayList 기존의 Vector를 개선한 것으로 구현원리와 기능적으로 동일 ArrayList와 달리 Vector는 자체적으로 동기화처리 되어 있다. List인터페이스를 구현하므로, 저장순서가 유지되고 중복을 허용 데이터의 저장공간으로 배열을 사용(배열기반)  1public class Vector extends AbstractList implements">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;93373903-f5245700-f890-11ea-9f28-95104dddaf9d.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;93374480-bcd14880-f891-11ea-9375-ae1dc5cd46e6.png">
-<meta property="og:updated_time" content="2020-09-16T18:40:56.561Z">
+<meta property="og:updated_time" content="2020-10-26T12:43:49.982Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;93373903-f5245700-f890-11ea-9f28-95104dddaf9d.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/09/17/Javamultithread/">
+<link rel="canonical" href="http://yoursite.com/2020/10/26/ArrayList/">
 
 
 <script id="page-configurations">
@@ -46,7 +43,7 @@
   };
 </script>
 
-  <title>Javamultithread | hongbeen's blog</title>
+  <title>ArrayList | hongbeen's blog</title>
   
 
 
@@ -182,7 +179,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/Javamultithread/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/26/ArrayList/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -195,7 +192,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Javamultithread
+          ArrayList
         </h1>
 
         <div class="post-meta">
@@ -206,7 +203,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-09-17 03:39:33 / Modified: 03:40:56" itemprop="dateCreated datePublished" datetime="2020-09-17T03:39:33+09:00">2020-09-17</time>
+              <time title="Created: 2020-10-26 21:43:32 / Modified: 21:43:49" itemprop="dateCreated datePublished" datetime="2020-10-26T21:43:32+09:00">2020-10-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,8 +231,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/09/17/Javamultithread/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/09/17/Javamultithread/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/10/26/ArrayList/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/26/ArrayList/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -250,21 +247,78 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="쓰레드"><a href="#쓰레드" class="headerlink" title="쓰레드"></a>쓰레드</h2><blockquote>
-<p>쓰레드는 프로세스내에서 작업을 하는 단위로 프로세스는 하나 이상의 쓰레드를 갖고 있습니다.</p>
-</blockquote>
-<h2 id="멀티쓰레드-프로그래밍"><a href="#멀티쓰레드-프로그래밍" class="headerlink" title="멀티쓰레드 프로그래밍"></a>멀티쓰레드 프로그래밍</h2><h3 id="선언"><a href="#선언" class="headerlink" title="선언"></a>선언</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Runnable 변수이름 = <span class="keyword">new</span> Runnable()&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">Thread 변수이름 = <span class="keyword">new</span> Thread(Runnable값);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// example</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">Runnable todo = <span class="keyword">new</span> Runnable() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="meta">@Override</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">Thread thread = <span class="keyword">new</span> Thread(todo)</span></pre></td></tr></table></figure>
-<p><code>Override</code>는 기존에 있는 코드를 재정의하는 것을 말합니다.</p>
-<a id="more"></a>
-
-<h3 id="간단한-멀티쓰레드-프로그래밍"><a href="#간단한-멀티쓰레드-프로그래밍" class="headerlink" title="간단한 멀티쓰레드 프로그래밍"></a>간단한 멀티쓰레드 프로그래밍</h3><p><img src="https://user-images.githubusercontent.com/53684676/93373903-f5245700-f890-11ea-9f28-95104dddaf9d.png" alt="image"></p>
-<ul>
-<li><code>Thread.sleep(1000)</code>은 1초간 딜레이 시켜줍니다.</li>
-<li>Runnable값을 넣어준 thread를 실행시킬 땐 <code>.start()</code>를 사용합니다.<br>위와 같은 코드를 실행하여도 동시에 두 개의 쓰레드가 실행되지 않고, 첫번째 쓰레드가 모두 실행된 후에 두번째 쓰레드가 실행됩니다. 왜냐하면, 새로운 쓰레드를 만들어주는 코드 위에 첫 번째 쓰레드가 실행되고 있으므로, <code>Thread thread</code>를 만나기 전까지는 단일쓰레드 프로그램이랑 같이 때문입니다. 따라서 순서를 바꿔줍니다.</li>
+        <h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
+<li>기존의 Vector를 개선한 것으로 구현원리와 기능적으로 동일</li>
+<li>ArrayList와 달리 Vector는 자체적으로 동기화처리 되어 있다.</li>
+<li>List인터페이스를 구현하므로, <strong>저장순서가 유지</strong>되고 <strong>중복을 허용</strong></li>
+<li><strong>데이터의 저장공간으로 배열</strong>을 사용(배열기반)</li>
 </ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/93374480-bcd14880-f891-11ea-9375-ae1dc5cd46e6.png" alt="image"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Vector</span> <span class="keyword">extends</span> <span class="title">AbstractList</span> <span class="keyword">implements</span> <span class="title">List</span>, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializeable</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">protected</span> Object[] elementData; <span class="comment">//객체를 담기 위한 배열</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
 <ul>
-<li><code>Thread thread = new Thread()</code>로 돌아가는 쓰레드가 백그라운드 쓰레드이고, 우리가 일반적으로 코딩하던 부분은 메인쓰레드입니다.</li>
+<li>생성자<ul>
+<li>ArrayList() //생성자</li>
+<li>ArrayList(Collection c) //컬렉션들끼리 변환할때사용</li>
+<li>ArrayList(int initalCapacity) //배열의길이</li>
+</ul>
+</li>
+<li>추가<ul>
+<li><code>boolean add(Object o)</code></li>
+<li><code>void add(int index, Object element)</code></li>
+<li><code>boolean addAll(Collenction c)</code></li>
+<li><code>boolean addAll(int index, Collection)</code></li>
+</ul>
+</li>
+<li>삭제<ul>
+<li><code>booelean remove(Object o)</code></li>
+<li><code>Object remove(int index)</code></li>
+<li><code>boolean remove(Collenction c)</code></li>
+<li><code>void clear() //모든객체삭제</code> </li>
+</ul>
+</li>
+<li>검색<ul>
+<li><code>int indexOf(Object o)</code></li>
+<li><code>int lastIndexOf(Object o)</code></li>
+<li><code>boolean contains(Object o) //객체가존재하는지</code></li>
+<li><code>Object get(int index) //객체읽기</code></li>
+<li><code>Object set(int index, Object element) //객체변경</code></li>
+</ul>
+</li>
+<li>새로운 리스트를 만듦<ul>
+<li><code>List subList(int fromindex, toindex) //from~to 새로운 리스트를 만듦</code></li>
+<li><code>Object[] toArray() //ArrayList의 객체배열를 리스트반환</code></li>
+<li><code>Object[] toArray(Object[] a)</code></li>
+<li><code>boolean isEmpty() //비어있는지확인</code></li>
+<li><code>void trimToSize() //빈공간제거</code></li>
+<li><code>int size() //객체갯수반환</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="ArrayList에-저장된-객체의-삭제과정"><a href="#ArrayList에-저장된-객체의-삭제과정" class="headerlink" title="ArrayList에 저장된 객체의 삭제과정"></a>ArrayList에 저장된 객체의 삭제과정</h3><ol>
+<li><p>삭제할 데이터 아래의 데이터를 한 칸씩 위로 복사해서 삭제할 데이터를 덮어씀</p>
+<ul>
+<li><pre><code class="java">System.arraycopy(data, <span class="number">3</span>, data, <span class="number">2</span>, <span class="number">2</span>) <span class="comment">//data[3]에서 data[2]로 2개의 데이터를 복사하라는 의미</span>
+&lt;!--￼<span class="number">1</span>--&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li><p>데이터가 삭제되어 데이터의 개수가 줄었으므로 size의 값을 감소</p>
+<ul>
+<li><pre><code class="java">size--;
+&lt;!--￼<span class="number">2</span>--&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>ArryaList에 저장된 마지막 객체부터 삭제하는 경우(배열 복사 발생안함)</p>
+<ul>
+<li><pre><code class="java"><span class="keyword">for</span> (<span class="keyword">int</span> i=list.size(); i&gt;<span class="number">0</span>; i--){
+  list.remove(i);
+}</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -275,10 +329,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Java/" rel="tag"># Java</a>
-              <a href="/tags/Thread/" rel="tag"># Thread</a>
-              <a href="/tags/multithread/" rel="tag"># multithread</a>
-              <a href="/tags/%EC%93%B0%EB%A0%88%EB%93%9C/" rel="tag"># 쓰레드</a>
+              <a href="/tags/java/" rel="tag"># java</a>
+              <a href="/tags/ArrayList/" rel="tag"># ArrayList</a>
           </div>
 
         
@@ -287,13 +339,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/17/JavaArrayListHashTable/" rel="prev" title="Java자주사용되는 자료구조/ ArrayList, HashTable">
-      <i class="fa fa-chevron-left"></i> Java자주사용되는 자료구조/ ArrayList, HashTable
+    <a href="/2020/10/26/CollectionFramework/" rel="prev" title="CollectionFramework">
+      <i class="fa fa-chevron-left"></i> CollectionFramework
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/17/JavaOverride/" rel="next" title="JavaOverride">
-      JavaOverride <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -360,7 +409,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#쓰레드"><span class="nav-number">1.</span> <span class="nav-text">쓰레드</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#멀티쓰레드-프로그래밍"><span class="nav-number">2.</span> <span class="nav-text">멀티쓰레드 프로그래밍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#선언"><span class="nav-number">2.1.</span> <span class="nav-text">선언</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#간단한-멀티쓰레드-프로그래밍"><span class="nav-number">2.2.</span> <span class="nav-text">간단한 멀티쓰레드 프로그래밍</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.</span> <span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList에-저장된-객체의-삭제과정"><span class="nav-number">1.1.</span> <span class="nav-text">ArrayList에 저장된 객체의 삭제과정</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -500,9 +549,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2020/09/17/Javamultithread/";
-    this.page.identifier = "2020/09/17/Javamultithread/";
-    this.page.title = "Javamultithread";
+    this.page.url = "http://yoursite.com/2020/10/26/ArrayList/";
+    this.page.identifier = "2020/10/26/ArrayList/";
+    this.page.title = "ArrayList";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
