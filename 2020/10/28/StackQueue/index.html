@@ -20,20 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="스키마란?데이터 베이스 스키마(database schema)는 데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료간의 관계를 형식 언어로 정의한 구조입니다. 데이터베이스관리시스템(DBMS)이 주어진 설정에 따라 데이터베이스 스키마를 생성하며, 데이터베이스 사용자가 자료를 저장, 조회, 삭제, 변경할 때 DBMS는 자신이 생성한 데이터베이스 스키마를 참조">
-<meta name="keywords" content="Develop,CS,스키마,스키마개념,데이터베이스">
+  <meta name="description" content="스택과 큐(Stack&amp;amp;Queue) 스택(Stack): LIFO구조. 마지막에 저장된 것을 제일 먼저 꺼냄 큐(Queue): FIFO구조. 제일 먼저 저장한 것을 제일 먼저 꺼냄  스택 메서드   메서드 설명    boolean empty() Stack이 비어있는지 알려줌   Object peek() Stack의 맨 위에 저장된 객체를 반환. pop(">
+<meta name="keywords" content="java,stack,Queue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="스키마">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;17&#x2F;%EC%8A%A4%ED%82%A4%EB%A7%88&#x2F;index.html">
+<meta property="og:title" content="StackQueue">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;28&#x2F;StackQueue&#x2F;index.html">
 <meta property="og:site_name" content="hongbeen&#39;s blog">
-<meta property="og:description" content="스키마란?데이터 베이스 스키마(database schema)는 데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료간의 관계를 형식 언어로 정의한 구조입니다. 데이터베이스관리시스템(DBMS)이 주어진 설정에 따라 데이터베이스 스키마를 생성하며, 데이터베이스 사용자가 자료를 저장, 조회, 삭제, 변경할 때 DBMS는 자신이 생성한 데이터베이스 스키마를 참조">
+<meta property="og:description" content="스택과 큐(Stack&amp;amp;Queue) 스택(Stack): LIFO구조. 마지막에 저장된 것을 제일 먼저 꺼냄 큐(Queue): FIFO구조. 제일 먼저 저장한 것을 제일 먼저 꺼냄  스택 메서드   메서드 설명    boolean empty() Stack이 비어있는지 알려줌   Object peek() Stack의 맨 위에 저장된 객체를 반환. pop(">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;84883201-39a22a00-b0cb-11ea-8091-5e2fa7a9d598.png">
-<meta property="og:updated_time" content="2020-06-17T09:50:26.340Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97381873-5a964980-190d-11eb-8703-2f8627da15ee.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97382928-c37ec100-190f-11eb-8972-1df42698820c.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97389189-2165d580-191d-11eb-8bd4-ffdde5e84257.png">
+<meta property="og:updated_time" content="2020-10-28T04:02:34.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;84883201-39a22a00-b0cb-11ea-8091-5e2fa7a9d598.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97381873-5a964980-190d-11eb-8703-2f8627da15ee.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/06/17/%EC%8A%A4%ED%82%A4%EB%A7%88/">
+<link rel="canonical" href="http://yoursite.com/2020/10/28/StackQueue/">
 
 
 <script id="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>스키마 | hongbeen's blog</title>
+  <title>StackQueue | hongbeen's blog</title>
   
 
 
@@ -181,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%EC%8A%A4%ED%82%A4%EB%A7%88/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/28/StackQueue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -194,7 +196,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          스키마
+          StackQueue
         </h1>
 
         <div class="post-meta">
@@ -205,7 +207,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-06-17 18:45:32 / Modified: 18:50:26" itemprop="dateCreated datePublished" datetime="2020-06-17T18:45:32+09:00">2020-06-17</time>
+              <time title="Created: 2020-10-28 13:02:08 / Modified: 13:02:34" itemprop="dateCreated datePublished" datetime="2020-10-28T13:02:08+09:00">2020-10-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,7 +215,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DataBase/" itemprop="url" rel="index"><span itemprop="name">DataBase</span></a>
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">-Java</span></a>
                 </span>
             </span>
 
@@ -233,8 +235,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2020/06/17/%EC%8A%A4%ED%82%A4%EB%A7%88/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/17/스키마/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/10/28/StackQueue/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/28/StackQueue/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -249,22 +251,82 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="스키마란"><a href="#스키마란" class="headerlink" title="스키마란?"></a>스키마란?</h2><p><strong>데이터 베이스 스키마(database schema)</strong>는 데이터베이스에서 자료의 구조, 자료의 표현 방법, 자료간의 관계를 형식 언어로 정의한 구조입니다. 데이터베이스관리시스템(DBMS)이 주어진 설정에 따라 데이터베이스 스키마를 생성하며, 데이터베이스 사용자가 자료를 저장, 조회, 삭제, 변경할 때 DBMS는 자신이 생성한 데이터베이스 스키마를 참조하여 명령을 수행합니다. 스키마는 3층 구조로 되어있습니다..</p>
-<ul>
-<li>외부 스키마: 프로그래머나 사용자의 입장에서 데이터 베이스의 모습으로 조직의 일부분을 정의한 것</li>
-<li>개념 스키마: 모든 응용 시스템과 사용자들이 필요로하는 데이터를 통합한 조식 전체의 데이터베이스 구조를 논리적으로 정의한 것</li>
-<li>내부 스키마: 전체 데이터베이스의 물리적 저장 형태를 기술하는 것</li>
+        <h2 id="스택과-큐-Stack-amp-Queue"><a href="#스택과-큐-Stack-amp-Queue" class="headerlink" title="스택과 큐(Stack&amp;Queue)"></a>스택과 큐(Stack&amp;Queue)</h2><ul>
+<li>스택(Stack): LIFO구조. 마지막에 저장된 것을 제일 먼저 꺼냄</li>
+<li>큐(Queue): FIFO구조. 제일 먼저 저장한 것을 제일 먼저 꺼냄</li>
 </ul>
-<p><img src="https://user-images.githubusercontent.com/53684676/84883201-39a22a00-b0cb-11ea-8091-5e2fa7a9d598.png" alt="image-20200617183934251"></p>
-<p>그림 참조: <a href="https://ykcb.tistory.com/entry/데이터베이스-스키마의-개념-특징" target="_blank" rel="noopener">참조 블로그</a></p>
-<a id="more"></a>
+<h3 id="스택-메서드"><a href="#스택-메서드" class="headerlink" title="스택 메서드"></a>스택 메서드</h3><table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>boolean empty()</code></td>
+<td>Stack이 비어있는지 알려줌</td>
+</tr>
+<tr>
+<td><code>Object peek()</code></td>
+<td>Stack의 맨 위에 저장된 객체를 반환. pop()과 달리 Stack에서 객체를 꺼내지는 않음</td>
+</tr>
+<tr>
+<td><code>Object pop()</code></td>
+<td>Stack의 맨 위에 저장된 객체를 꺼냄</td>
+</tr>
+<tr>
+<td><code>Object push(Object item)</code></td>
+<td>Stack에 객체(item)을 저장</td>
+</tr>
+<tr>
+<td>int search(Object o)</td>
+<td>Stack에서 주어진 객체(o)를 찾아서 그 위치를 반환, 못찾으면 -1을 반환(배열과 달리 위치는 0이 아닌 1부터 시작)</td>
+</tr>
+</tbody></table>
+<h3 id="큐-메서드"><a href="#큐-메서드" class="headerlink" title="큐 메서드"></a>큐 메서드</h3><table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean add(Object o)</td>
+<td>지정된 객체를 Queue에 추가. 성공하면 true를 반환.</td>
+</tr>
+<tr>
+<td>Object remove()</td>
+<td>Queue에서 객체를 꺼내 반환.</td>
+</tr>
+<tr>
+<td>Object element()</td>
+<td>삭제없이 요소를 읽어옴 peek과 달리 Queue가 비어있을 때 NoSuchElementException발생</td>
+</tr>
+<tr>
+<td>boolean offer(Object o)</td>
+<td>Queue에 객체를 저장. 성공하면 true. 실패하면 false</td>
+</tr>
+<tr>
+<td>object poll()</td>
+<td>Queue에서 객체를 꺼내서 반환</td>
+</tr>
+<tr>
+<td>Object peek()</td>
+<td>삭제없이 요소를 읽어옴</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Queue는 인터페이스로 되어 있어서 객체생성이 안됨</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Queue q = <span class="keyword">new</span> LinkedList();</span></pre></td></tr></table></figure>
 
-<p>이 각각의 스키마는 결국 데이터베이스의 구조와 제약조건에 대한 전반적인 명세를 기술한 것을 의미한다. 3계층으로 스키마를 나눈 이유는 관점에 따라서 분류한 것입니다.</p>
-<ul>
-<li>외부 스키마: 개인의 입장, ‘서브 스키마’라고도 합니다. 하나의 외부스키마는 여럿이 공유 가능하며, 하나의 DB시스템에 여러 개의 외부 스키마가 존재 가능</li>
-<li>내부 스키마: 시스템 프로그래머나 설계자의 관점에서 바라보는 스키마입니다. 데이터베이스의 물리적 구조를 가리킵니다.</li>
-<li>개념 스키마: 조직 전체의 입장, 전체적인 뷰를 가리킵니다. 개체간의 관계와 제약조건을 나타내고, 데이터베이스의 접근권한,보안,무결성 규칙에 대한 명세를 정의합니다.</li>
+<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><p><img src="https://user-images.githubusercontent.com/53684676/97381873-5a964980-190d-11eb-8703-2f8627da15ee.png" alt="image"></p>
+<h2 id="스택과-큐의-활용"><a href="#스택과-큐의-활용" class="headerlink" title="스택과 큐의 활용"></a>스택과 큐의 활용</h2><ul>
+<li>스택의 활용 예 - 수식계싼, 수식괄호검사, 워드프로세스의 undo/redo, 웹브라우저의 뒤로/앞으로</li>
+<li>큐의 활용 예 - 최근사용문서, 인쇄작업 대기목록</li>
 </ul>
+<p><img src="https://user-images.githubusercontent.com/53684676/97382928-c37ec100-190f-11eb-8972-1df42698820c.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/53684676/97389189-2165d580-191d-11eb-8bd4-ffdde5e84257.png" alt="image"></p>
 
     </div>
 
@@ -274,11 +336,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Develop/" rel="tag"># Develop</a>
-              <a href="/tags/CS/" rel="tag"># CS</a>
-              <a href="/tags/%EC%8A%A4%ED%82%A4%EB%A7%88/" rel="tag"># 스키마</a>
-              <a href="/tags/%EC%8A%A4%ED%82%A4%EB%A7%88%EA%B0%9C%EB%85%90/" rel="tag"># 스키마개념</a>
-              <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/" rel="tag"># 데이터베이스</a>
+              <a href="/tags/java/" rel="tag"># java</a>
+              <a href="/tags/stack/" rel="tag"># stack</a>
+              <a href="/tags/Queue/" rel="tag"># Queue</a>
           </div>
 
         
@@ -287,13 +347,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/06/16/Counting-Sort/" rel="prev" title="카운팅정렬(Counting Sort)">
-      <i class="fa fa-chevron-left"></i> 카운팅정렬(Counting Sort)
+    <a href="/2020/10/28/LinkedList/" rel="prev" title="LinkedList">
+      <i class="fa fa-chevron-left"></i> LinkedList
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/06/17/DataBase/" rel="next" title="DataBase">
-      DataBase <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -360,7 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#스키마란"><span class="nav-number">1.</span> <span class="nav-text">스키마란?</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#스택과-큐-Stack-amp-Queue"><span class="nav-number">1.</span> <span class="nav-text">스택과 큐(Stack&amp;Queue)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#스택-메서드"><span class="nav-number">1.1.</span> <span class="nav-text">스택 메서드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#큐-메서드"><span class="nav-number">1.2.</span> <span class="nav-text">큐 메서드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#예제"><span class="nav-number">1.3.</span> <span class="nav-text">예제</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#스택과-큐의-활용"><span class="nav-number">2.</span> <span class="nav-text">스택과 큐의 활용</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -500,9 +557,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2020/06/17/%EC%8A%A4%ED%82%A4%EB%A7%88/";
-    this.page.identifier = "2020/06/17/스키마/";
-    this.page.title = "스키마";
+    this.page.url = "http://yoursite.com/2020/10/28/StackQueue/";
+    this.page.identifier = "2020/10/28/StackQueue/";
+    this.page.title = "StackQueue";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
