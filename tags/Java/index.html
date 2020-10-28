@@ -739,7 +739,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">138</span>
+          <span class="site-state-item-count">139</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -859,6 +859,14 @@
     s.src = 'https://hongbeen.disqus.com/count.js';
     s.id = 'dsq-count-scr';
     (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
+</body>
+</html>
+).appendChild(s);
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
