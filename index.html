@@ -177,6 +177,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/29/Comparator%EC%99%80Comparable/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/29/Comparator%EC%99%80Comparable/" class="post-title-link" itemprop="url">Comparator와Comparable</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-29 11:29:09 / Modified: 11:29:55" itemprop="dateCreated datePublished" datetime="2020-10-29T11:29:09+09:00">2020-10-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/29/Comparator%EC%99%80Comparable/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/29/Comparator와Comparable/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Comparator와-Comparable"><a href="#Comparator와-Comparable" class="headerlink" title="Comparator와 Comparable"></a>Comparator와 Comparable</h2><ul>
+<li>객체 정렬에 필요한 메서드를 정의한 인터페이스</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Comparable 기본 정렬기준을 구현하는데 사용</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Comparator 기본 정렬기준 외에 다른 기준으로 정렬하고자할 때 사용</span></pre></td></tr></table></figure>
+
+<ul>
+<li><code>compare()</code>와 <code>compareTo()</code>는 두 객체의 비교결과를 반환하도록 작성. 같으면0, 오른쪽이 크면 음수(-), 작으면 양수(+)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">publci <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Integer</span> <span class="keyword">extends</span> <span class="title">Number</span> <span class="keyword">implements</span> <span class="title">Comparable</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Integer anotherInteger)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> v1 = <span class="keyword">this</span>.value;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> v2 = anotherInteger.value;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> (v1 &lt; v2 ? -<span class="number">1</span> : (v1==v2? <span class="number">0</span> : <span class="number">1</span>));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p><img src="https://user-images.githubusercontent.com/53684676/97517783-36a03a00-19d9-11eb-9e35-3afaf3ac4aec.png" alt="image"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/29/Array%EC%9D%98%EB%A9%94%EC%86%8C%EB%93%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1425,105 +1517,11 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/24/annotation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/24/annotation/" class="post-title-link" itemprop="url">annotation</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-10-24 17:39:14 / Modified: 17:40:08" itemprop="dateCreated datePublished" datetime="2020-10-24T17:39:14+09:00">2020-10-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/10/24/annotation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/24/annotation/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="어노테이션-정리-Annotation"><a href="#어노테이션-정리-Annotation" class="headerlink" title="어노테이션 정리(@, Annotation)"></a>어노테이션 정리(@, Annotation)</h2><p>한국말로 뜻자체는 “주석”이라고 나옵니다. 하지만 코딩할 때 java에서는 설명 그 이상의 역할을 합니다. 어노테이션이 붙은 코드는 어노테이션의 구현된 정보에 따라 연결되는 방향이 결정됩니다. 전체 소스코드에서 <strong>비즈니스 로직에는 영향을 주지는 않지만 해당 타겟의 연결 방법이나 소스코드의 구조를 변경할 수 있습니다.</strong> 쉽게 말해서 “이 속성을 어떤 용도로 사용할까, 이 클래스에서 어떤 역할을 줄까?”를 결정해서 붙여준다고 볼 수 있습니다. 자주 사용하는 어노테이션에 대해서 간단하게 정리하겠습니다.</p>
-<ul>
-<li><code>@Autowired</code>: 의존 자동 주입, 스프링이 알아서 의존 객체를 찾아서 주입해줍니다. 설정 파일에 의존 객체를 명시하지 않아도 스프링이 필요한 의존 빈 객체를 찾아서 주입해줍니다.<ul>
-<li>자동 주입 대상에 <code>@Autowired</code>사용</li>
-<li>XML설정에 &lt;context:annotation-config /&gt; 설정 추가</li>
-</ul>
-</li>
-<li><code>@Controller</code>: 핸들러가 스캔할 수 있는 빈(Bean) 객체가 되어 서블릿용 컨테이너에 생성됩니다. 해당 클래스를 웹 요청을 처리하는 컨트롤러로 사용합니다.</li>
-<li><code>@Service</code>: 서비스가 적용 된 Class는 비즈니스 로직이 들어가는 Service로 등록이 됩니다. Conrooler에 있는 @Autowired는 <code>@Service(&#39;exampleservice&#39;)</code>에 등록된 exampleservice와 변수명이 같아야 하며 Service에 있는 <code>@Autowired</code>는 <code>@Repository(&#39;exampleDao&#39;)</code>에 등록된 exampleDao와 변수명이 같아야 합니다.</li>
-<li><code>@RequestMapping</code>: 요청에 대해 어떤 Controller, 어떤 메소드가 처리할지를 맵핑하기 위한 어노테이션</li>
-<li><code>@PostMapping</code>, <code>@GetMapping</code>: 두 어노테이션은 <code>@RequestMapping(value=&quot;&quot;, method=RequestMethod.GET)</code> or <code>@RequestMapping(value=&quot;&quot;, method=RequestMethod.POST)</code>을 대신하는 코드입니다. get,post메소드에 대해서만 응답을 하는지 확인하는 코드입니다.</li>
-<li><code>@Mapper</code>: 매핑파일에 기재된 SQL을 호출하기 위한 인터페이스입니다.</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1589,7 +1587,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">140</span>
+          <span class="site-state-item-count">141</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1600,7 +1598,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">270</span>
+        <span class="site-state-item-count">272</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
