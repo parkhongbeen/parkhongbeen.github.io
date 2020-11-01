@@ -177,6 +177,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/14/interface%EB%8B%A4%ED%98%95%EC%84%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/14/interface%EB%8B%A4%ED%98%95%EC%84%B1/" class="post-title-link" itemprop="url">interface다형성</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-14 17:11:41 / Modified: 17:12:08" itemprop="dateCreated datePublished" datetime="2020-10-14T17:11:41+09:00">2020-10-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/10/14/interface%EB%8B%A4%ED%98%95%EC%84%B1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/14/interface다형성/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="인터페이스를-이용한-다형성"><a href="#인터페이스를-이용한-다형성" class="headerlink" title="인터페이스를 이용한 다형성"></a>인터페이스를 이용한 다형성</h2><ul>
+<li>인스턴스도 구현 클래스의 부모로 봄</li>
+<li>인터페이스 타입 매개변수는 인터페이스 구현한 클래스의 객체만 가능</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fighter</span> <span class="keyword">extends</span> <span class="title">Unit</span> <span class="keyword">implements</span> <span class="title">Fightable</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123; <span class="comment">/* 내용 생략 */</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Fightable f)</span> </span>&#123; <span class="comment">/* 내용 생략 */</span>&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 인터페이스의 구현부는 비어있기 때문에 충돌x</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">Unit u = <span class="keyword">new</span> Fighter();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">Fighter f = <span class="keyword">new</span> Fighter();</span></pre></td></tr></table></figure>
+
+<ul>
+<li>인터페이스를 메서드의 리턴타입으로 지정할 수 있음</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function">Fighter <span class="title">method</span><span class="params">()</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  Fighter f = <span class="keyword">new</span> Fighter();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> f;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/14/Interface/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1048,132 +1141,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/08/jQuery%EC%84%A0%ED%83%9D%EC%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/08/jQuery%EC%84%A0%ED%83%9D%EC%9E%90/" class="post-title-link" itemprop="url">jQuery선택자</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-10-08 01:00:55 / Modified: 01:01:22" itemprop="dateCreated datePublished" datetime="2020-10-08T01:00:55+09:00">2020-10-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/jQuery/" itemprop="url" rel="index"><span itemprop="name">jQuery</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/10/08/jQuery%EC%84%A0%ED%83%9D%EC%9E%90/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/08/jQuery선택자/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="jQuery선택자"><a href="#jQuery선택자" class="headerlink" title="jQuery선택자"></a>jQuery선택자</h2><p>jQuery선택자에 대해서 정리해보겠습니다.</p>
-<h3 id="태그-선택자"><a href="#태그-선택자" class="headerlink" title="태그 선택자"></a>태그 선택자</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span></pre></td></tr></table></figure>
-
-<h3 id="아이디-선택자"><a href="#아이디-선택자" class="headerlink" title="아이디 선택자"></a>아이디 선택자</h3><ul>
-<li>id는 키역할을 하므로 특정 요소, 객체, 태그를 제어하기 위해서 사용합니다.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#box"</span>).css(<span class="string">"color"</span>, <span class="string">"blue"</span>);</span></pre></td></tr></table></figure>
-
-<h3 id="class선택자"><a href="#class선택자" class="headerlink" title="class선택자"></a>class선택자</h3><ul>
-<li>class는 공통적인 속성을 가진, 즉 그룹핑되어 있는 요소들을 묶어서 제어하기 위해서 사용합니다.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">".box"</span>).css(<span class="string">"color"</span>, <span class="string">"black"</span>);</span></pre></td></tr></table></figure>
-
-<h3 id="자식-자속-선택자"><a href="#자식-자속-선택자" class="headerlink" title="자식, 자속 선택자"></a>자식, 자속 선택자</h3><ul>
-<li>list1이라는 id를 가진 태그안에 있는 li태그들을 모두 선택, 적용 depth 1이상</li>
-<li>바로 아래 자식태그만 건드리는것이 아닌 list1의 모든 자식들을 컨트롤</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#list li"</span>).css(<span class="string">"color"</span>, <span class="string">"yellow"</span>);</span></pre></td></tr></table></figure>
-
-<ul>
-<li>list1이라는 id를 가진 태그안에 있는 바로 1depth아래있는 자식들 중 li태그만 선택됨</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">"list1 &gt; li"</span>).css(<span class="string">"color"</span>, <span class="string">"green"</span>);</span></pre></td></tr></table></figure>
-
-<h3 id="형제-인접-선택자"><a href="#형제-인접-선택자" class="headerlink" title="형제, 인접 선택자"></a>형제, 인접 선택자</h3><ul>
-<li>ul태그가 연속적으로 붙어있는 태그들을 숨긴다.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">"ul + ul"</span>).css(<span class="string">"display"</span>, <span class="string">"none"</span>);</span></pre></td></tr></table></figure>
-
-<h3 id="속성-선택자"><a href="#속성-선택자" class="headerlink" title="속성 선택자"></a>속성 선택자</h3><ul>
-<li>div중에 title속성이 있는 태그들만 가져옴 활용할 여지가 많음</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div[title]"</span>).css(<span class="string">"color"</span>, <span class="string">"gray"</span>);</span></pre></td></tr></table></figure>
-
-<ul>
-<li>모든 태그들(부모태그 자식중에서)중에서 title속성이 있는 모든 태그들을 가져오는 것</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">"큰 부모태그의 id"</span>).find(<span class="string">"*"</span>).attr(<span class="string">'title'</span>);</span></pre></td></tr></table></figure>
-
-<h3 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h3><ul>
-<li>짝수, 홀수</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$(<span class="string">"li:nth-child(even)"</span>).css(<span class="string">"color"</span>, <span class="string">"white"</span>); <span class="comment">// even짝수, odd홀수</span></span></pre></td></tr></table></figure>
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1244,7 +1211,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">141</span>
+          <span class="site-state-item-count">142</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1255,7 +1222,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">272</span>
+        <span class="site-state-item-count">273</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
