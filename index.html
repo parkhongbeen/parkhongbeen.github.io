@@ -177,6 +177,198 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/01/HashMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/01/HashMap/" class="post-title-link" itemprop="url">HashMap</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-01 20:35:35 / Modified: 20:36:06" itemprop="dateCreated datePublished" datetime="2020-11-01T20:35:35+09:00">2020-11-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/11/01/HashMap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/01/HashMap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="HashMap과-Hashtable"><a href="#HashMap과-Hashtable" class="headerlink" title="HashMap과 Hashtable"></a>HashMap과 Hashtable</h2><ul>
+<li>Map인터페이스를 구현. 데이터를 <strong>키와 값의 쌍으로 저장</strong></li>
+<li><strong>순서X, 중복(키X, 값O)</strong></li>
+<li>HashMap(동기화x)은 Hashtable(동기화O)의 신버전</li>
+</ul>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><ul>
+<li>Map인터페이스를 구현한 대푲거인 컬렉션 클래스</li>
+<li>순서를 유지하려면, LinkedHashMap클래스를 사용하면 됨</li>
+</ul>
+<h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><ul>
+<li>배열 + 링크드리스트</li>
+</ul>
+<h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><ul>
+<li>범위 검색과 정렬에 유리한 컬렉션 클래스</li>
+<li>HashMap보다 데이터추가, 삭제에 시간이 더 걸림</li>
+</ul>
+<h3 id="해싱-hashing"><a href="#해싱-hashing" class="headerlink" title="해싱(hashing)"></a>해싱(hashing)</h3><ul>
+<li>해시 함수로 해시테이블에 데이터를 저장, 검색</li>
+<li>해시테이블은 배열과 링크드 리스트가 조합된 형태</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">HashMap()</td>
+<td>기본 생성자</td>
+</tr>
+<tr>
+<td align="center">HashMap(int initialCapacity)</td>
+<td>배열 초기용량지정</td>
+</tr>
+<tr>
+<td align="center">HashMap(int initialCapacity, float loadFactor)</td>
+<td>배열 초기용량지정</td>
+</tr>
+<tr>
+<td align="center">HashMap(Map m)</td>
+<td>다른 맵을 해쉬맵으로 변경</td>
+</tr>
+<tr>
+<td align="center">Object put(Object key, Object value)</td>
+<td>데이터 저장</td>
+</tr>
+<tr>
+<td align="center">void putAll(Map m)</td>
+<td>지정된 맵에 있는것들을 저장</td>
+</tr>
+<tr>
+<td align="center">Object remove(Object key)</td>
+<td>삭제</td>
+</tr>
+<tr>
+<td align="center">Object replace(Object key, Object value)</td>
+<td>변경</td>
+</tr>
+<tr>
+<td align="center">boolean replace(Object key, Object oldValue, Object newValue)</td>
+<td>변경</td>
+</tr>
+<tr>
+<td align="center">Set entrySet()</td>
+<td>키와 값쌍들을 가진 엔트리(키+값)들을 가져옴</td>
+</tr>
+<tr>
+<td align="center">Set keySet()</td>
+<td>키를 가져옴</td>
+</tr>
+<tr>
+<td align="center">Collection values()</td>
+<td>값을 가져옴</td>
+</tr>
+<tr>
+<td align="center">Object get(Object key)</td>
+<td>특정 키값으로 값을 반환</td>
+</tr>
+<tr>
+<td align="center">Object getOrDefault(Object key, Object defaultValue)</td>
+<td>특정 키값이 없을시 default값을 반환</td>
+</tr>
+<tr>
+<td align="center">boolean containKey(Object key)</td>
+<td>키가 있는지 반환</td>
+</tr>
+<tr>
+<td align="center">boolean containsValue(Object value)</td>
+<td>값이 있는지 반환</td>
+</tr>
+<tr>
+<td align="center">int size()</td>
+<td>크기를 반환</td>
+</tr>
+<tr>
+<td align="center">boolean isEmpty()</td>
+<td>비었는지 확인</td>
+</tr>
+<tr>
+<td align="center">void clear()</td>
+<td>모두 삭제</td>
+</tr>
+<tr>
+<td align="center">Object clone()</td>
+<td>복제</td>
+</tr>
+</tbody></table>
+<h4 id="예제1"><a href="#예제1" class="headerlink" title="예제1)"></a>예제1)</h4><p><img src="https://user-images.githubusercontent.com/53684676/97800837-c9600380-1c7b-11eb-8cda-43e02e5f997b.png" alt="image">)<img src="https://user-images.githubusercontent.com/53684676/97800843-d4b32f00-1c7b-11eb-9b8f-4ad61cdbabb7.png" alt="image"></p>
+<h4 id="예제4"><a href="#예제4" class="headerlink" title="예제4)"></a>예제4)</h4><p><img src="https://user-images.githubusercontent.com/53684676/97801253-9b2ff300-1c7e-11eb-9e5a-ce9e7e3e2db8.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/53684676/97801264-b6026780-1c7e-11eb-83e8-580873a11196.png" alt="image"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/01/HashTree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1547,124 +1739,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/26/CalendarClass/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hong been Park">
-      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="hongbeen's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/26/CalendarClass/" class="post-title-link" itemprop="url">CalendarClass</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-10-26 20:27:50 / Modified: 20:28:26" itemprop="dateCreated datePublished" datetime="2020-10-26T20:27:50+09:00">2020-10-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2020/10/26/CalendarClass/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/10/26/CalendarClass/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Calendar클래스"><a href="#Calendar클래스" class="headerlink" title="Calendar클래스"></a>Calendar클래스</h2><ul>
-<li>set()으로 날짜와 시간 지정하기</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> field, <span class="keyword">int</span> value)</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month, <span class="keyword">int</span> date)</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month, <span class="keyword">int</span> date, <span class="keyword">int</span> hourOfDay, <span class="keyword">int</span> minute)</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> year, <span class="keyword">int</span> month, <span class="keyword">int</span> date, <span class="keyword">int</span> hourOfDay, <span class="keyword">int</span> minute, <span class="keyword">int</span> second)</span></span></span></pre></td></tr></table></figure>
-
-<ul>
-<li>날짜 지정하는 방법, 월(MONTH)이 0부터 시작한다는 점에 주의</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Calendar datel = Calendar.getInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">date1.set(<span class="number">2017</span>, <span class="number">7</span>, <span class="number">15</span>); <span class="comment">// 2017년 8월 15일(7월 아님)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// date1.set(Calendar.YEAR, 2017);</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// date1.set(Calendar.MONTH, 7);</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// date1.set(Calendar.DATE, 15);</span></span></pre></td></tr></table></figure>
-
-<ul>
-<li>시간 지정하는 방법</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Calendar time1 &#x3D; Calendar.getInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">time1.set(Calendar.HOUR_OF_DAY, 10); &#x2F;&#x2F;time1을 10시 20분 30초로 설정</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">time1.set(Calendar.MIVUTE, 20);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">time1.set(Calendar.SECOND, 30);</span></pre></td></tr></table></figure>
-
-<ul>
-<li>보통 두 날짜의 일자 차이를 구할 땐 초로 바꾼 후 계산하고 다시 일로 변경합니다.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ex10_3</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span>[] TIME_UNIT = &#123;<span class="number">3600</span>, <span class="number">60</span>, <span class="number">1</span>&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">final</span> String[] TIME_UNIT_NAME = &#123;<span class="string">"시간"</span>, <span class="string">"분"</span>, 초&#125;;　／／큰　단위를　앞에　둠</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        calendar time1 = caleandar.getInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">		calendar time1 = caleandar.getInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        time1.set(Calendar.HOUR_OF_DAY, <span class="number">10</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        time1.set(Calendar.MINUTE, <span class="number">20</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        time1.set(Calendar.SECOND, <span class="number">30</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">       	time2.set(Calendar.HOUR_OF_DAY, <span class="number">20</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        time2.set(Calendar.MINUTE, <span class="number">30</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        time2.set(Calendar.SECOND, <span class="number">10</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"time1: "</span> + time1.get(Calendar.HOUR_OF_DAY) + <span class="string">"시"</span> + time1.get(Calendar.MINUTE) + 		<span class="string">"분"</span> + time1.get(Calendar.SECOND) + <span class="string">"초"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"time2: "</span> + time2.get(Calendar.HOUR_OF_DAY) + <span class="string">"시"</span> + time2.get(Calendar.MINUTE) + 		<span class="string">"분"</span> + time2.get(Calendar.SECOND) + <span class="string">"초"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">long</span> difference = Math.as(time2.getTimeInMillis() - time1.getTimeInMillis())/<span class="number">1000</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        System.out.println(<span class="string">"time1과 time2의 차이는"</span> + difference + <span class="string">"초입니다."</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        Stirng　tmp　= <span class="string">""</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt; TIME_UNIT.length; i++)　&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        tml += difference/TIME_UNIT[i] + TIME_UNIT_NAME[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">    difference %=　TIME_UNIT[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    System.out.println(<span class="string">"시분초로 변환하면"</span> + tmp + <span class="string">"입니다."</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-
-<ul>
-<li>clear()은 Calendar객체의 모든 필드를 초기화</li>
-<li>add()는 특정필드의 값을 증가 또는 감소(다른 필드에 영향O)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">calendar date = Calendar.getInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">date.clear(); <span class="comment">//모든 필드를 초기화</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">date.set(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">31</span>); <span class="comment">//2020년 8월 31일로 설정</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">date.add(Calendar.DATE, <span class="number">1</span>); <span class="comment">//날짜(DATE)에 1을 더함</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">date.add(Calender.MONTH, -<span class="number">8</span>); <span class="comment">//월(MONTH)에서 8을 뻄</span></span></pre></td></tr></table></figure>
-
-<ul>
-<li>roll()은 특정필드의 값을 증가 또는 감소(다른 필드에 영향X)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">date.set(<span class="number">2020</span>, <span class="number">7</span>, <span class="number">31</span>); <span class="comment">//2020년 8월 31일로 설정</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//add()와 달리 roll()은 다른 필드에 영향을 미치지 않는다.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//년, 월, 일이 별도임</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">date.roll(Calendar.DATE, <span class="number">1</span>); <span class="comment">//날짜(DATE)에 1을 더함</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">date.roll(Calendar.MONTH, -<span class="number">8</span>); <span class="comment">//월(MONTH)에서 8을 뻄</span></span></pre></td></tr></table></figure>
-
-<h3 id="Date와-Calendar간의-변환"><a href="#Date와-Calendar간의-변환" class="headerlink" title="Date와 Calendar간의 변환"></a>Date와 Calendar간의 변환</h3><ul>
-<li>Date의 메서드는 대부분 deprecated(사용하지 않는것을 권장)되었지만 여전히 사용/자바는 새로운 기능이 나와도 하위호환성을 따지며 버전이 나옴</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. Calendar를 Date로 변환</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Calendar cal = Calendar.getInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">		...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    Date d = <span class="keyword">new</span> Date(cal.getTimeInMillis()); <span class="comment">//Date(long date)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>.Date를 Calendar로 변환</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    Date d = <span class="keyword">new</span> Date();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">		...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    Calendar cal = Calendar.getInstance();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	cla.setTime(d)</span></pre></td></tr></table></figure>
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1735,7 +1809,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">142</span>
+          <span class="site-state-item-count">143</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1746,7 +1820,7 @@
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">274</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

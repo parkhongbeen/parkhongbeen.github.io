@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="HashMap과 Hashtable Map인터페이스를 구현. 데이터를 키와 값의 쌍으로 저장 순서X, 중복(키X, 값O) HashMap(동기화x)은 Hashtable(동기화O)의 신버전  HashMap Map인터페이스를 구현한 대푲거인 컬렉션 클래스 순서를 유지하려면, LinkedHashMap클래스를 사용하면 됨  HashTable 배열 + 링크드리스트  T">
+<meta name="keywords" content="HashMap,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HashMap">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;11&#x2F;01&#x2F;HashMap&#x2F;index.html">
+<meta property="og:site_name" content="hongbeen&#39;s blog">
+<meta property="og:description" content="HashMap과 Hashtable Map인터페이스를 구현. 데이터를 키와 값의 쌍으로 저장 순서X, 중복(키X, 값O) HashMap(동기화x)은 Hashtable(동기화O)의 신버전  HashMap Map인터페이스를 구현한 대푲거인 컬렉션 클래스 순서를 유지하려면, LinkedHashMap클래스를 사용하면 됨  HashTable 배열 + 링크드리스트  T">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97800837-c9600380-1c7b-11eb-8cda-43e02e5f997b.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97800843-d4b32f00-1c7b-11eb-9b8f-4ad61cdbabb7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97801253-9b2ff300-1c7e-11eb-9e5a-ce9e7e3e2db8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97801264-b6026780-1c7e-11eb-83e8-580873a11196.png">
+<meta property="og:updated_time" content="2020-11-01T11:36:06.672Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-images.githubusercontent.com&#x2F;53684676&#x2F;97800837-c9600380-1c7b-11eb-8cda-43e02e5f997b.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/11/01/HashMap/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>HashMap | hongbeen's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">hongbeen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Beginner Developer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/01/HashMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hong been Park">
+      <meta itemprop="description" content="불타는 열정보단 지속적인 열정">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="hongbeen's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HashMap
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-01 20:35:35 / Modified: 20:36:06" itemprop="dateCreated datePublished" datetime="2020-11-01T20:35:35+09:00">2020-11-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/11/01/HashMap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/01/HashMap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="HashMap과-Hashtable"><a href="#HashMap과-Hashtable" class="headerlink" title="HashMap과 Hashtable"></a>HashMap과 Hashtable</h2><ul>
+<li>Map인터페이스를 구현. 데이터를 <strong>키와 값의 쌍으로 저장</strong></li>
+<li><strong>순서X, 중복(키X, 값O)</strong></li>
+<li>HashMap(동기화x)은 Hashtable(동기화O)의 신버전</li>
+</ul>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><ul>
+<li>Map인터페이스를 구현한 대푲거인 컬렉션 클래스</li>
+<li>순서를 유지하려면, LinkedHashMap클래스를 사용하면 됨</li>
+</ul>
+<h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><ul>
+<li>배열 + 링크드리스트</li>
+</ul>
+<h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><ul>
+<li>범위 검색과 정렬에 유리한 컬렉션 클래스</li>
+<li>HashMap보다 데이터추가, 삭제에 시간이 더 걸림</li>
+</ul>
+<h3 id="해싱-hashing"><a href="#해싱-hashing" class="headerlink" title="해싱(hashing)"></a>해싱(hashing)</h3><ul>
+<li>해시 함수로 해시테이블에 데이터를 저장, 검색</li>
+<li>해시테이블은 배열과 링크드 리스트가 조합된 형태</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">HashMap()</td>
+<td>기본 생성자</td>
+</tr>
+<tr>
+<td align="center">HashMap(int initialCapacity)</td>
+<td>배열 초기용량지정</td>
+</tr>
+<tr>
+<td align="center">HashMap(int initialCapacity, float loadFactor)</td>
+<td>배열 초기용량지정</td>
+</tr>
+<tr>
+<td align="center">HashMap(Map m)</td>
+<td>다른 맵을 해쉬맵으로 변경</td>
+</tr>
+<tr>
+<td align="center">Object put(Object key, Object value)</td>
+<td>데이터 저장</td>
+</tr>
+<tr>
+<td align="center">void putAll(Map m)</td>
+<td>지정된 맵에 있는것들을 저장</td>
+</tr>
+<tr>
+<td align="center">Object remove(Object key)</td>
+<td>삭제</td>
+</tr>
+<tr>
+<td align="center">Object replace(Object key, Object value)</td>
+<td>변경</td>
+</tr>
+<tr>
+<td align="center">boolean replace(Object key, Object oldValue, Object newValue)</td>
+<td>변경</td>
+</tr>
+<tr>
+<td align="center">Set entrySet()</td>
+<td>키와 값쌍들을 가진 엔트리(키+값)들을 가져옴</td>
+</tr>
+<tr>
+<td align="center">Set keySet()</td>
+<td>키를 가져옴</td>
+</tr>
+<tr>
+<td align="center">Collection values()</td>
+<td>값을 가져옴</td>
+</tr>
+<tr>
+<td align="center">Object get(Object key)</td>
+<td>특정 키값으로 값을 반환</td>
+</tr>
+<tr>
+<td align="center">Object getOrDefault(Object key, Object defaultValue)</td>
+<td>특정 키값이 없을시 default값을 반환</td>
+</tr>
+<tr>
+<td align="center">boolean containKey(Object key)</td>
+<td>키가 있는지 반환</td>
+</tr>
+<tr>
+<td align="center">boolean containsValue(Object value)</td>
+<td>값이 있는지 반환</td>
+</tr>
+<tr>
+<td align="center">int size()</td>
+<td>크기를 반환</td>
+</tr>
+<tr>
+<td align="center">boolean isEmpty()</td>
+<td>비었는지 확인</td>
+</tr>
+<tr>
+<td align="center">void clear()</td>
+<td>모두 삭제</td>
+</tr>
+<tr>
+<td align="center">Object clone()</td>
+<td>복제</td>
+</tr>
+</tbody></table>
+<h4 id="예제1"><a href="#예제1" class="headerlink" title="예제1)"></a>예제1)</h4><p><img src="https://user-images.githubusercontent.com/53684676/97800837-c9600380-1c7b-11eb-8cda-43e02e5f997b.png" alt="image">)<img src="https://user-images.githubusercontent.com/53684676/97800843-d4b32f00-1c7b-11eb-9b8f-4ad61cdbabb7.png" alt="image"></p>
+<h4 id="예제4"><a href="#예제4" class="headerlink" title="예제4)"></a>예제4)</h4><p><img src="https://user-images.githubusercontent.com/53684676/97801253-9b2ff300-1c7e-11eb-9e5a-ce9e7e3e2db8.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/53684676/97801264-b6026780-1c7e-11eb-83e8-580873a11196.png" alt="image"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/HashMap/" rel="tag"># HashMap</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/01/HashTree/" rel="prev" title="HashTree">
+      <i class="fa fa-chevron-left"></i> HashTree
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap과-Hashtable"><span class="nav-number">1.</span> <span class="nav-text">HashMap과 Hashtable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">1.1.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashTable"><span class="nav-number">1.2.</span> <span class="nav-text">HashTable</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeMap"><span class="nav-number">1.2.1.</span> <span class="nav-text">TreeMap</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#해싱-hashing"><span class="nav-number">1.3.</span> <span class="nav-text">해싱(hashing)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#예제1"><span class="nav-number">1.3.1.</span> <span class="nav-text">예제1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#예제4"><span class="nav-number">1.3.2.</span> <span class="nav-text">예제4)</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hong been Park</p>
+  <div class="site-description" itemprop="description">불타는 열정보단 지속적인 열정</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">143</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">274</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hong been Park</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
+  </div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hongbeen.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://yoursite.com/2020/11/01/HashMap/";
+    this.page.identifier = "2020/11/01/HashMap/";
+    this.page.title = "HashMap";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://hongbeen.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
